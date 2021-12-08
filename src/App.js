@@ -1,16 +1,34 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Preloader from "./Components/Preloader/Preloader";
-import Timer from "./Components/Countdown/Timer";
-import Optin from "./Components/Optin/Optin";
-import Section from "./Components/Section/index";
-import "./App.css";
-import logo from "./logo-01.png";
+import { useEffect } from "react";
 
-export default function App() {
+import "./App.css";
+
+import MainPage from "./Container/MainPage";
+import AOS from "aos";
+import { Route, Switch } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import AirDropPage from "./Pages/AirdropPage";
+import LandingPage from "./Pages/LandingPage";
+import PrivateSellPage from "./Pages/PrivateSellPage";
+import PublicSellPage from "./Pages/PublicSellPage";
+import "aos/dist/aos.css";
+
+function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="App">
-      <Section />
+      <Switch>
+        <MainPage>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/landing-page" component={LandingPage} />
+          <Route path="/airdrop" component={AirDropPage} />
+          <Route path="/private-sell" component={PrivateSellPage} />
+          <Route path="/public-sell" component={PublicSellPage} />
+        </MainPage>
+      </Switch>
     </div>
   );
 }
+
+export default App;
