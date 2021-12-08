@@ -13,7 +13,7 @@ export default function App() {
         <h1 color="white">Website Coming Soon</h1>
         <img src={logo} className="logo"/>
 
-        <Preloader />
+      
       </div>
     </div>
   );
