@@ -47,11 +47,12 @@
 .pendingButton {
   background-image: url("../image/pending.png");
   background-color: transparent;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   border: none;
 
-  width: 150px;
-  height: 50px;
+  width: 185px;
+  height: 70px;
 }
 .completedButton {
   background-image: url("../image/completed.png");

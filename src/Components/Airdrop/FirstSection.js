@@ -10,7 +10,7 @@ export default function FirstSection() {
     heading: {
       fontStyle: "normal",
       fontWeight: "bolder",
-      margin:"0px",
+      margin: "0px",
       fontSize: "89px",
       lineHeight: "118px",
       textAlign: "center",
@@ -76,7 +76,10 @@ export default function FirstSection() {
         textAlign: "center",
       },
       "@media only screen and (max-width: 767px)": {
-        width: "20px",
+        width: "100px",
+        height: "100px",
+        alignItems: "center",
+        justifyContent: "center",
         marginTop: "10px",
         textAlign: "center",
       },
