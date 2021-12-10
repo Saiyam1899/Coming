@@ -16,7 +16,7 @@ export default function FinalSection() {
         data-aos-duration="1500"
       >
         <img
-          src={process.env.PUBLIC_URL + "/assets/Airdrop/dddd.png"}
+          src={process.env.PUBLIC_URL + "/assets/images/section7.png"}
           className={css(styles.image)}
           alt="six"
         />
@@ -30,7 +30,7 @@ export default function FinalSection() {
               }}
             >
               <img
-                src={process.env.PUBLIC_URL + "/assets/Airdrop/telegram.png"}
+                src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
                 width={20}
                 className="mx-1"
                 alt="seventh"
@@ -48,7 +48,7 @@ export default function FinalSection() {
         data-aos-duration="1500"
       >
         <img
-          src={process.env.PUBLIC_URL + "/assets/Airdrop/claim-reward.png"}
+          src={process.env.PUBLIC_URL + "/assets/images/claim-reward.png"}
           alt="yes"
           className={css(styles.image_mid)}
         />

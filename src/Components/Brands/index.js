@@ -10,7 +10,7 @@ export default class Brand extends Component {
               data-aos="flip-up"
               data-aos-delay="50"
               data-aos-duration="2000"
-              src={process.env.PUBLIC_URL + "assets/img/Trust.svg"}
+              src={process.env.PUBLIC_URL + "assets/img/partners.svg"}
             />
             <div
               data-aos="fade-down"

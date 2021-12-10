@@ -99,6 +99,7 @@ const AccordionWrapper = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  
 `;
 const AccordionContainer = styled.div`
   max-width: 1200px;
@@ -106,6 +107,7 @@ const AccordionContainer = styled.div`
   margin: 0 auto;
   background-color: black;
   padding: 72px 0;
+  opacity: 0.9;
 `;
 
 const Logo = styled.img`

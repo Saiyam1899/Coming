@@ -11,7 +11,6 @@ export default class MainComponent extends Component {
         <div
           style={{
             border: "2px solid purple",
-
             backdropFilter: "saturate(180%) blur(10px)",
             padding: "1.5rem",
             borderBottomLeftRadius: "10px",
@@ -39,9 +38,16 @@ export default class MainComponent extends Component {
                   onChange={(e) => this.props.ChangeForm(e.target.value)}
                   style={{ outline: "none", border: "none" }}
                   value={this.props.fromData}
-                  min={0}
+                  
                 ></input>
-                <div>BUSD</div>
+                <div
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                  }}
+                >
+                  BUSD
+                </div>
               </div>
             </div>
             <div>
@@ -50,7 +56,7 @@ export default class MainComponent extends Component {
                 style={{
                   backgroundColor: "#fff",
                   display: "flex",
-                  padding: "1rem 0.6rem",
+                  padding: "1rem 1rem",
                   width: "70%",
                   margin: "0 auto",
                   borderRadius: "999px",
@@ -64,7 +70,14 @@ export default class MainComponent extends Component {
                   style={{ outline: "none", border: "purple" }}
                   value={this.props.toData}
                 ></input>
-                <div>BTCH</div>
+                <div
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                  }}
+                >
+                  BTCH
+                </div>
               </div>
             </div>
           </div>{" "}

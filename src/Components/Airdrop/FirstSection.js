@@ -5,7 +5,7 @@ import "./style.css";
 
 import { StyleSheet, css } from "aphrodite";
 
-export default function FirstSection() {
+export default function FirstSection(props) {
   const styles = StyleSheet.create({
     heading: {
       fontStyle: "normal",
@@ -166,11 +166,11 @@ export default function FirstSection() {
           our platform.
         </div>
 
-        <div className={css(styles.display)} >
+        <div className={css(styles.display)}>
           {/* <BounceInDiv style={{width:"50%"}}> */}
 
           <img
-            src={process.env.PUBLIC_URL + "assets/Airdrop/image.png"}
+            src={process.env.PUBLIC_URL + "assets/images/section2.png"}
             className={css(styles.image)}
             alt="footer"
           />
@@ -187,14 +187,20 @@ export default function FirstSection() {
                 className="mx-2"
               >
                 <img
-                  src={process.env.PUBLIC_URL + "assets/Airdrop/like.png"}
+                  src={process.env.PUBLIC_URL + "assets/images/like.png"}
                   width={30}
                   alt="sidelogo"
                 />
                 <span className="mx-1">Like</span>
               </Button>
-
-              <button className="pendingButton"></button>
+              {props.first ? (
+                <button>I did this</button>
+              ) : (
+                <button
+                  className="pendingButton"
+                  onClick={props.onClickForFirst}
+                ></button>
+              )}
             </ButtonGroup>
           </div>
         </div>

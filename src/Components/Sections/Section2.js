@@ -19,18 +19,19 @@ export default class Section2 extends Component {
             >
               <img
                 width="100%"
-                src={process.env.PUBLIC_URL + "assets/img/images/section2.png"}
+                src={process.env.PUBLIC_URL + "assets/images/Screen.png"}
                 alt="footer"
               />
             </Section2Image1Container>
             <Section2Content>
               <div>
-                Non Fungible Tokens (NFTs) have many use cases,an NFT is a unit
-                of data stored on a digital ledger,called a blockchain, that
-                certifies a digital asset to be unique and therefore not
-                interchangeable.
+                A non-fungible token is a cryptographic beneficial resource on
+                blockchain with an excellent identifiable proof code and
+                information that distinguishes it from any other identical
+                useful resource. As a result, unlike digital currencies, non-
+                fungible tokens cannot be exchanged or sold at parity.
               </div>
-              <h2>NFTs can be used to:</h2>
+              <h2>NFT STANDARDS</h2>
               <Section2ListWrapper>
                 <Section2ListContainer>
                   <Section2List>
@@ -38,54 +39,35 @@ export default class Section2 extends Component {
                       width="12px"
                       src={process.env.PUBLIC_URL + "assets/img/circle.svg"}
                     />
-                    remove intermediaries
+                    ERC-1155
                   </Section2List>
                   <Section2List>
                     <Section2ListSpan
                       width="12px"
                       src={process.env.PUBLIC_URL + "assets/img/circle.svg"}
                     />
-                    store record of ownership
+                    FA2
                   </Section2List>
                   <Section2List>
                     <Section2ListSpan
                       width="12px"
                       src={process.env.PUBLIC_URL + "assets/img/circle.svg"}
                     />
-                    provide immutable provenance
+                    dGoods
                   </Section2List>
                   <Section2List>
                     <Section2ListSpan
                       width="12px"
                       src={process.env.PUBLIC_URL + "assets/img/circle.svg"}
                     />
-                    connect artists with audiences
-                  </Section2List>
-                  <Section2List>
-                    <Section2ListSpan
-                      width="12px"
-                      src={process.env.PUBLIC_URL + "assets/img/circle.svg"}
-                    />
-                    promote brands
-                  </Section2List>
-                  <Section2List>
-                    <Section2ListSpan
-                      width="12px"
-                      src={process.env.PUBLIC_URL + "assets/img/circle.svg"}
-                    />
-                    create new markets
-                  </Section2List>
-                  <Section2List>
-                    <Section2ListSpan
-                      width="12px"
-                      src={process.env.PUBLIC_URL + "assets/img/circle.svg"}
-                    />
-                    drive growth of the Metaverse
+                    TRC-721
                   </Section2List>
                 </Section2ListContainer>
               </Section2ListWrapper>
               <Section2Button
-                imgURL={process.env.PUBLIC_URL + "assets/img/items/button1.svg"}
+                imgURL={
+                  process.env.PUBLIC_URL + "assets/images/items/button1.svg"
+                }
                 href="#FAQ"
               >
                 <span>Check out our FAQ</span>
@@ -99,7 +81,7 @@ export default class Section2 extends Component {
             >
               <img
                 width="100%"
-                src={process.env.PUBLIC_URL + "assets/img/images/section1.png"}
+                src={process.env.PUBLIC_URL + "assets/images/section1.png"}
                 alt="footer"
               />
             </Section2Image2Container>

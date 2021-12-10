@@ -51,6 +51,12 @@ export default class Footer extends Component {
                     alt="footer"
                   />
                 </SocialIcon>
+                <SocialIcon href="#ig">
+                  <SocialIconImg
+                    src={process.env.PUBLIC_URL + "assets/img/certificate.svg"}
+                    alt="footer"
+                  />
+                </SocialIcon>
               </SocialWrapper>
             </Container>
           </Wrapper>

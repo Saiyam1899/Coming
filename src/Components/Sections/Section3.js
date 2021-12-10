@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 export default class Section3 extends Component {
   render() {
@@ -54,9 +55,12 @@ export default class Section3 extends Component {
               <p>Non Fungible Tokens (NFTs) have</p>
 
               <Section1Button
-                imgURL={process.env.PUBLIC_URL + "assets/img/items/button2.svg"}
+                imgURL={
+                  process.env.PUBLIC_URL + "assets/images/items/button1.svg"
+                }
+                to="/private-sell"
               >
-                <span>Buy NFT</span>
+                <span>Buy Token</span>
               </Section1Button>
             </Section3ContentWrapper>
           </Section3Content>
@@ -113,13 +117,15 @@ const Section2Logo = styled.img`
   }
 `;
 
-const Section1Button = styled.div`
+const Section1Button = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(${(props) => props.imgURL});
   background-repeat: no-repeat;
   background-size: contain;
+  color: white;
+  
   height: 50px;
   width: 150px;
   background-position: center;

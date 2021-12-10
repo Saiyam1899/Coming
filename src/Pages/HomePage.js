@@ -14,7 +14,7 @@ export default function HomePage() {
         <TokenNomics />
         <Roadmap />
         <Team />
-        <Brand />
+        
         <Subscribe />
         <FAQ />
       </div>

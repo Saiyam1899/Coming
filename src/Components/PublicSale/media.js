@@ -112,6 +112,7 @@ export const styles = StyleSheet.create({
   displayRight: {
     display: "flex",
     flexDirection: "row",
+    paddind: "0 100px",
     justifyContent: "space-around",
     alignItems: "center",
     width: "100%",

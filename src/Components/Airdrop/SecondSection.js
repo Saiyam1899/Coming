@@ -152,7 +152,7 @@ export const styles = StyleSheet.create({
     },
   },
 });
-export default function SecondSection() {
+export default function SecondSection(props) {
   return (
     <>
       <section
@@ -169,23 +169,30 @@ export default function SecondSection() {
         <div className={css(styles.display)}>
           <div className={css(styles.button_group)}>
             <ButtonGroup>
-              <button className="completedButton" />
-
-              <Button
-                style={{ borderRadius: "15px", border: "2px solid white" }}
-              >
-                <img
-                  src={process.env.PUBLIC_URL + "assets/Airdrop/share.png"}
-                  width={30}
-                  alt="secondimage"
-                />
-                Share
-              </Button>
+              {props.firstfb ? (
+                <>
+                  <button className="completedButton" />
+                </>
+              ) : (
+                <>
+                  <Button
+                    onClick={props.onClickForSecond}
+                    style={{ borderRadius: "15px", border: "2px solid white" }}
+                  >
+                    <img
+                      src={process.env.PUBLIC_URL + "assets/images/share.png"}
+                      width={30}
+                      alt="secondimage"
+                    />
+                    Share
+                  </Button>
+                </>
+              )}
             </ButtonGroup>
           </div>
 
           <img
-            src={process.env.PUBLIC_URL + "assets/Airdrop/aaa.png"}
+            src={process.env.PUBLIC_URL + "assets/images/section4.png"}
             className={css(styles.image)}
             alt="second"
           />
@@ -207,24 +214,31 @@ export default function SecondSection() {
 
         <div className={css(styles.displayRight)}>
           <img
-            src={process.env.PUBLIC_URL + "assets/Airdrop/bbb.png"}
+            src={process.env.PUBLIC_URL + "assets/images/section6.png"}
             alt="First"
             className={css(styles.image)}
           />
           <div className={css(styles.button_group2)}>
-            <ButtonGroup style={{ border: "none" }}>
-              <Button
-                style={{ borderRadius: "15px", border: "2px solid white" }}
-              >
-                <img
-                  src={process.env.PUBLIC_URL + "assets/Airdrop/twitter.png"}
-                  width={30}
-                  className="mx-1"
-                  alt="fourth"
-                />
-                Follow
-              </Button>
-              <button className="pendingButton" />
+            <ButtonGroup>
+              {props.firstfb ? (
+                <>
+                  <button className="completedButton" />
+                </>
+              ) : (
+                <>
+                  <Button
+                    onClick={props.onClickForSecond}
+                    style={{ borderRadius: "15px", border: "2px solid white" }}
+                  >
+                    <img
+                      src={process.env.PUBLIC_URL + "assets/images/twitter.png"}
+                      width={30}
+                      alt="secondimage"
+                    />
+                    Follow
+                  </Button>
+                </>
+              )}
             </ButtonGroup>
           </div>
         </div>

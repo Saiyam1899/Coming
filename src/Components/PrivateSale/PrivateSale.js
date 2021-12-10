@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-
 import { css } from "aphrodite";
 import { styles } from "../PublicSale/media";
 import { AppCounter } from "../Counter/Counter";
 import PrivateSellFunction from "../PrivateSellFunction";
+import styled from "styled-components";
 
 export default function PrivateSales() {
   return (
@@ -12,9 +12,14 @@ export default function PrivateSales() {
       fluid
       style={{
         width: "100%",
+        backgroundImage: `url(${
+          process.env.PUBLIC_URL + "assets/images/pbg.png"
+        })`,
 
-        background:
-          "linear-gradient(90deg, rgba(9,9,11,1) 35%, rgba(171,52,195,0.8972506483061975) 58%, rgba(0,0,0,0.953273057269783) 60%)",
+        backgroundPosition: "right",
+        backgroundSize: "cover",
+        backgroundColor: "#000",
+        padding: "72px 0",
       }}
       data-aos="fade-right"
       data-aos-delay="50"
@@ -46,27 +51,42 @@ export default function PrivateSales() {
                 className={css(styles.image_Logo)}
               />
             </button>
-            <button
-              style={{
-                background: "none",
-                outline: "none",
-                border: "none",
-              }}
-            >
-              <img
-                src={process.env.PUBLIC_URL + "assets/Psale/white.png"}
-                className={css(styles.image_Logo)}
-              />
-            </button>
+            <a href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view?usp=sharing">
+              <button
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "none",
+                }}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "assets/Psale/white.png"}
+                  className={css(styles.image_Logo)}
+                />
+              </button>
+            </a>
           </div>
         </div>
+        <CircleImage src={process.env.PUBLIC_URL + "assets/images/bg.png"} />
 
         <img
-          src={process.env.PUBLIC_URL + "assets/Psale/Private-sector-01.png"}
+          src={process.env.PUBLIC_URL + "assets/Psale/Private-sector-.png"}
           alt=""
+          style={{ zIndex: "100" }}
           className={css(styles.image_private)}
         />
       </div>
     </Container>
   );
 }
+
+const CircleImage = styled.img`
+  max-width: 1000px;
+  width: 100%;
+  position: absolute;
+  top: -180px;
+  right: 0;
+  @media (max-width: 500px) {
+    top: 20px;
+  }
+`;

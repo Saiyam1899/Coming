@@ -1,0 +1,30 @@
+.container {
+
+  width: 100%;
+  max-width: 190px;
+  text-align: center;
+  /* max-width: 300px; */
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  bottom: 0;
+  color: #f5f0f0;
+  width: 100%;
+  max-width: 140px;
+  transition: 0.5s ease;
+  opacity: 1;
+ 
+  font-size: 20px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+

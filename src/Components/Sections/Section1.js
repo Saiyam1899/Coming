@@ -17,18 +17,17 @@ export default class Section1 extends Component {
 
             <Section1Logo src={process.env.PUBLIC_URL + "assets/img/NFT.svg"} />
             <h3>
-              A Frictionless Platform For Creating, Trading, And Distribution
-              Nfts.
+              BITChro is a platform that intends to make nonfungible tokens (NFTs) more accessible as a financial asset in the metaverse.
             </h3>
             <Section1ButtonContainer>
               <Section1Button
-                imgURL={process.env.PUBLIC_URL + "assets/img/items/button2.svg"}
+                imgURL={process.env.PUBLIC_URL + "assets/images/items/button2.svg"}
                 to="/airdrop"
               >
                 <span>AirDrop</span>
               </Section1Button>
               <Section1Button
-                imgURL={process.env.PUBLIC_URL + "assets/img/items/button1.svg"}
+                imgURL={process.env.PUBLIC_URL + "assets/images/items/button1.svg"}
                 to="/private-sell"
               >
                 <span>Private Sale</span>

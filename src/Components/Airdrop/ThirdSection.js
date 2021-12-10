@@ -28,7 +28,7 @@ export default function ThirdSection() {
                 style={{ borderRadius: "15px", border: "2px solid white" }}
               >
                 <img
-                  src={process.env.PUBLIC_URL + "assets/Airdrop/twitter.png"}
+                  src={process.env.PUBLIC_URL + "assets/images/twitter.png"}
                   width={30}
                   alt="fifth"
                 />
@@ -43,7 +43,7 @@ export default function ThirdSection() {
           </div>
 
           <img
-            src={process.env.PUBLIC_URL + "assets/Airdrop/ccc.png"}
+            src={process.env.PUBLIC_URL + "assets/images/section3.png"}
             className={css(styles.image)}
             alt="sixth"
           />
