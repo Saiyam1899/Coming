@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 import "./style.css";
-
-import styled, { keyframes } from "styled-components";
 import { css } from "aphrodite";
 import { styles } from "./SecondSection";
 
-export default function FinalSection() {
+export default function FinalSection(props) {
   return (
     <>
       <div
@@ -22,37 +20,64 @@ export default function FinalSection() {
         />
         <div>
           <ButtonGroup className={css(styles.button_group)}>
-            <Button
-              style={{
-                borderRadius: "15px",
-
-                border: "2px solid white",
-              }}
-            >
-              <img
-                src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
-                width={20}
-                className="mx-1"
-                alt="seventh"
-              />
-              Follow Group
-            </Button>
-            <button className="pendingButton"></button>
+            {props.fourth ? (
+              <button className="completedButton" />
+            ) : (
+              <button
+                className="pendingButton"
+                onClick={props.fourthClick}
+              ></button>
+            )}
+            <a href="https://t.me/BITChro" target="_blank">
+              <Button
+                style={{
+                  borderRadius: "15px",
+                  border: "2px solid white",
+                }}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
+                  width={20}
+                  className="mx-1"
+                  alt="seventh"
+                />
+                Follow Group
+              </Button>
+            </a>
           </ButtonGroup>
         </div>
       </div>
-
-      <center
-        data-aos="fade-right"
-        data-aos-delay="50"
-        data-aos-duration="1500"
-      >
-        <img
-          src={process.env.PUBLIC_URL + "/assets/images/claim-reward.png"}
-          alt="yes"
-          className={css(styles.image_mid)}
-        />
-      </center>
+      <div>
+        <div
+          onClick={props.connect}
+          style={{
+            background:
+              "linear-gradient( 120deg, rgb(203,1,255) 0%, rgb(0,255,87) 100%",
+            maxWidth: "100px",
+            textAlign: "center",
+            borderRadius: "5px",
+            padding: "10px 30px",
+            width: "100%",
+            margin: "0 auto",
+            color: "white",
+            fontWeight: "bold",
+          }}
+        >
+          Conncet
+        </div>
+        <center
+          onClick={props.claimReward}
+          data-aos="fade-right"
+          data-aos-delay="50"
+          data-aos-duration="1500"
+        >
+          <img
+            src={process.env.PUBLIC_URL + "/assets/images/claim-reward.png"}
+            alt="yes"
+            className={css(styles.image_mid)}
+          />
+        </center>
+      </div>
 
       <hr style={{ border: "2px solid black", margin: "0px" }} />
     </>

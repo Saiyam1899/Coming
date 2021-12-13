@@ -25,7 +25,10 @@ export default function PrivateSales() {
       data-aos-delay="50"
       data-aos-duration="1500"
     >
-      <div className={css(styles.displayRight)}>
+      <div
+        className={css(styles.displayRight)}
+        // style={{ padding: "0 200px " }}
+      >
         <div className={css(styles.display)}>
           <p>
             <p style={{ fontSize: "50px", fontWeight: "bold" }}>

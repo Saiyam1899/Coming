@@ -93,10 +93,9 @@ export const styles = StyleSheet.create({
   display: {
     display: "flex",
     justifyContent: "end",
-    alignItems: "baseline",
+    
     flexDirection: "column",
     textAlign: "left",
-
     "@media (max-width: 567px)": {
       textAlign: "center",
     },
@@ -104,15 +103,14 @@ export const styles = StyleSheet.create({
       display: "flex",
       flexDirection: "column",
       textAlign: "center",
-      width: "100%",
-
+      width: "60%",
+      alignItems: "center",
       textAlign: "center",
     },
   },
   displayRight: {
     display: "flex",
     flexDirection: "row",
-    paddind: "0 100px",
     justifyContent: "space-around",
     alignItems: "center",
     width: "100%",

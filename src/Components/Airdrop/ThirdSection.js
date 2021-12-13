@@ -7,7 +7,9 @@ import styled, { keyframes } from "styled-components";
 
 import { styles } from "./SecondSection";
 
-export default function ThirdSection() {
+export default function ThirdSection(props) {
+  const textContent =
+    "Participate in World's Most innovative 	%23NFT 	%23Metaverse 	%23ICO of the Year. Join BIT_Chro  	%23PrivateSale followed by 	%23publicSale. Officially Registered in UK. BIT_Chro(BTCH) coin will be the next 1000x coin. 	%23PrivateSale price: 0.003 	%23BUSD 	%23Exchange listing price will be 0.1 	%23BUSD.";
   return (
     <>
       <section
@@ -22,9 +24,16 @@ export default function ThirdSection() {
         </div>
         <div className={css(styles.display)}>
           <div className={css(styles.button_group)}>
-            <ButtonGroup>
-              <button className="completedButton" />
-              <Button
+            <ButtonGroup style={{ alignItems: "center" }}>
+              {props.third ? (
+                <button className="completedButton" />
+              ) : (
+                <button
+                  className="pendingButton"
+                  onClick={props.thirdClick}
+                ></button>
+              )}
+              {/* <Button
                 style={{ borderRadius: "15px", border: "2px solid white" }}
               >
                 <img
@@ -38,7 +47,16 @@ export default function ThirdSection() {
                 >
                   Tweet
                 </span>
-              </Button>
+              </Button> */}
+              <a
+                class="twitter-share-button"
+                href={`${
+                  "https://twitter.com/intent/tweet?text=" + textContent
+                }`}
+                data-size="large"
+              >
+                Tweet
+              </a>
             </ButtonGroup>
           </div>
 

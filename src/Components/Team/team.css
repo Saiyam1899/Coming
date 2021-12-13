@@ -1,30 +1,77 @@
-.container {
+* {
+  margin: 0;
+  padding: 0;
 
+  font-family: Exo;
+}
+
+
+.profile-card{
+  position: relative;
+  font-family: sans-serif;
+  width: 199px;
+  height: 260px;
+  padding: 30px;
+  border-radius: 40%;
+  box-shadow: 0 0 22px rgba(247, 69, 223, 0.4);
+  transition: .6s;
+  margin: 0 25px;
+  margin-bottom: 25px;
+}
+.profile-card:hover{
+  border-radius: 14px;
+  height: 260px;
+}
+.profile-card .img{
+  position: relative;
   width: 100%;
-  max-width: 190px;
+  height: 100%;
+  transition: .6s;
+  z-index: 99;
+}
+.profile-card:hover .img{
+  transform: translateY(-60px);
+}
+.img img{
+  width: 100%;
+  border-radius: 100%;
+  box-shadow: 0 0 22px rgb(255, 254, 255);
+  transition: .6s;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+.profile-card:hover img{
+  border-radius: 14px;
+}
+.caption{
   text-align: center;
-  /* max-width: 300px; */
-}
-
-/* Make the image to responsive */
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* The overlay effect - lays on top of the container and over the image */
-.overlay {
-  bottom: 0;
-  color: #f5f0f0;
-  width: 100%;
-  max-width: 140px;
-  transition: 0.5s ease;
+  transform: translateY(-80px);
+  margin-top: 30px;
   opacity: 1;
- 
-  font-size: 20px;
-  text-align: center;
+  transition: .6s;
 }
+.profile-card:hover .caption{
+  opacity: 1;
+}
+.caption h3{
+  font-size: 14px;
+  font-family: sans-serif;
+}
+.caption p{
+  font-size: 12px;
+  color: #a1a1a1;
+  font-family: sans-serif;
+  margin: 10px 0 9px 0;
+}
+.caption .social-links a{
+  width: 30px;
+  cursor: pointer;
+  color: rgb(250, 249, 249);
 
-/* When you mouse over the container, fade in the overlay title */
+  
+  transition: .6s;
+}
+.social-links a:hover{
+  color: #fdfeff;
+}
 

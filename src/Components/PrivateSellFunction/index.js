@@ -4,12 +4,7 @@ import MainComponent from "./MainContent";
 import { ethers } from "ethers";
 import Web3 from "web3";
 
-import {
-  ContractABI,
-  ContractAddress,
-  BUSDABI,
-  BUSDaddress,
-} from "../../services/config";
+import { ContractABI, ContractAddress, BUSDABI, BUSDaddress } from "./config";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +13,7 @@ class App extends React.Component {
       address: "",
       wallet_add: "",
       connect: false,
-      from: 0,
+      from: "",
       to: 0,
       prefrom: 0,
       balance: 0,
@@ -40,6 +35,11 @@ class App extends React.Component {
 
   //CheckApproved Function
   CheckApproved(Fdata) {
+
+    if(Fdata=="")
+    {
+      this.setState({from:""})
+    }
     if (this.state.connect === true) {
       if (this.state.balance > Fdata && Fdata >= 0) {
         this.setState({ disable: false, isAmmountHigh: false });
@@ -73,10 +73,11 @@ class App extends React.Component {
   //Get From data
   ChangeForm(data) {
     this.CheckApproved(data);
+    console.log(data* 10 ** 18);
     let TO;
     if (data !== "") {
       this.setState({ from: data });
-      TO = (data * 100) / 5;
+      TO = (data * 1000) / 3;
     } else {
       TO = 0;
     }
@@ -95,11 +96,17 @@ class App extends React.Component {
       disable: true,
     });
     this.ChangeForm(0);
-    window.Contract.Airdrop(this.state.address, this.state.from)
+
+    let str=this.state.from*10**18;
+    console.log(str.toString());
+    console.log(str[0])
+    window.Contract.privateSell(this.state.address,  ethers.BigNumber.from(str.toString()))
       .then((d) => this.setState({ TransactionHash: d.hash }))
       .catch((error) => {
         if (error.code === -32603) {
           alert("User Already Exists");
+        } else {
+          console.log(error);
         }
       });
   }
@@ -170,6 +177,7 @@ class App extends React.Component {
         ContractABI,
         signer
       );
+      console.log(window.Contract);
     } else {
       alert("MetaMask is not installed!");
     }
@@ -177,7 +185,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div style={{ width: "400px", alignSelf: "center" }}>
+        <div style={{ width: "300px", alignSelf: "center" }}>
           <Header />
           <MainComponent
             fromData={this.state.from}

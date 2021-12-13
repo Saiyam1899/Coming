@@ -168,26 +168,39 @@ export default function SecondSection(props) {
 
         <div className={css(styles.display)}>
           <div className={css(styles.button_group)}>
-            <ButtonGroup>
-              {props.firstfb ? (
-                <>
-                  <button className="completedButton" />
-                </>
+            <ButtonGroup style={{ alignItems: "center" }}>
+              {props.second ? (
+                <button className="completedButton" />
               ) : (
-                <>
-                  <Button
-                    onClick={props.onClickForSecond}
-                    style={{ borderRadius: "15px", border: "2px solid white" }}
-                  >
-                    <img
-                      src={process.env.PUBLIC_URL + "assets/images/share.png"}
-                      width={30}
-                      alt="secondimage"
-                    />
-                    Share
-                  </Button>
-                </>
+                <button
+                  className="pendingButton"
+                  onClick={props.secondClick}
+                ></button>
               )}
+              {/* <Button
+                style={{ borderRadius: "15px", border: "2px solid white" }}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "assets/images/share.png"}
+                  width={30}
+                  alt="secondimage"
+                />
+                Share
+              </Button> */}
+              <div
+                class="fb-share-button"
+                data-href="https://www.facebook.com/ChroBIT"
+                data-layout="button"
+                data-size="small"
+              >
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FChroBIT&amp;src=sdkpreparse"
+                  class="fb-xfbml-parse-ignore"
+                >
+                  Share
+                </a>
+              </div>
             </ButtonGroup>
           </div>
 
@@ -219,26 +232,35 @@ export default function SecondSection(props) {
             className={css(styles.image)}
           />
           <div className={css(styles.button_group2)}>
-            <ButtonGroup>
-              {props.firstfb ? (
-                <>
-                  <button className="completedButton" />
-                </>
+            <ButtonGroup style={{ alignItems: "center" }}>
+              {props.second2 ? (
+                <button className="completedButton" />
               ) : (
-                <>
-                  <Button
-                    onClick={props.onClickForSecond}
-                    style={{ borderRadius: "15px", border: "2px solid white" }}
-                  >
-                    <img
-                      src={process.env.PUBLIC_URL + "assets/images/twitter.png"}
-                      width={30}
-                      alt="secondimage"
-                    />
-                    Follow
-                  </Button>
-                </>
+                <button
+                  className="pendingButton"
+                  onClick={props.second2Click}
+                ></button>
               )}
+
+              {/* <Button
+                style={{ borderRadius: "15px", border: "2px solid white" }}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "assets/images/twitter.png"}
+                  width={30}
+                  alt="secondimage"
+                />
+                Follow
+              </Button> */}
+
+              <a
+                class="twitter-follow-button"
+                href="https://twitter.com/bit_chro"
+                data-size="large"
+                data-show-count="false"
+              >
+                Follow @bit_chro
+              </a>
             </ButtonGroup>
           </div>
         </div>

@@ -177,8 +177,8 @@ export default function FirstSection(props) {
 
           {/* </BounceInDiv> */}
           <div className={css(styles.button_group)}>
-            <ButtonGroup>
-              <Button
+            <ButtonGroup style={{ alignItems: "center" }}>
+              {/* <Button
                 style={{
                   borderRadius: "15px",
                   border: "2px solid white",
@@ -192,13 +192,22 @@ export default function FirstSection(props) {
                   alt="sidelogo"
                 />
                 <span className="mx-1">Like</span>
-              </Button>
+              </Button> */}
+              <div
+                class="fb-like"
+                data-href="https://www.facebook.com/ChroBIT"
+                data-width=""
+                data-layout="button"
+                data-action="like"
+                data-size="large"
+                data-share="false"
+              ></div>
               {props.first ? (
-                <button>I did this</button>
+                <button className="completedButton" />
               ) : (
                 <button
                   className="pendingButton"
-                  onClick={props.onClickForFirst}
+                  onClick={props.firstClick}
                 ></button>
               )}
             </ButtonGroup>

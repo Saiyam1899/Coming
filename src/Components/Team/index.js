@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
+import { AiFillLinkedin } from "react-icons/ai";
+
 import "./team.css";
+import TeamCompo from "./TeamCompo";
 export default class Team extends Component {
   render() {
     return (
@@ -15,141 +18,54 @@ export default class Team extends Component {
                 data-aos-delay="50"
                 data-aos-duration="3000"
               >
-                <Row style={{ textAlign: "center" }}>
-                  <Col>
-                    <TeamMemberLinks
-                      href="https://www.linkedin.com/in/salmon-cathol-536459228/"
-                      className="container"
-                    >
-                      <TeamMember
-                        src={process.env.PUBLIC_URL + "assets/Team/Selmon.jpg"}
-                      ></TeamMember>
-                      <TeamOverlay>
-                        Salmon Cathol
-                        <br />
-                        Chief Executive Officer
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                  <Col>
-                    <TeamMemberLinks
-                      href=" https://www.linkedin.com/in/hermann-walter-787461228/
-                      "
-                      className="container"
-                    >
-                      <TeamMember
-                        src={process.env.PUBLIC_URL + "assets/Team/Herman.jpg"}
-                      />
-                      <TeamOverlay>
-                        Hermann Walter
-                        <br />
-                        Chief Technical Officer
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                  <Col>
-                    <TeamMemberLinks
-                      href="https://www.linkedin.com/in/wilhelm-carl-b02639227/"
-                      className="container"
-                    >
-                      <TeamMember
-                        src={
-                          process.env.PUBLIC_URL + "assets/Team/WilhelmCarl.jpg"
-                        }
-                      />
-                      <TeamOverlay>
-                        {" "}
-                        Wilhelm Carl
-                        <br />
-                        Business Manager
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                  <Col>
-                    <TeamMemberLinks
-                      href=" https://www.linkedin.com/in/akira-botan-108641227/"
-                      className="container"
-                    >
-                      <TeamMember
-                        src={
-                          process.env.PUBLIC_URL + "assets/Team/AkiraBotan.jpg"
-                        }
-                      />
-                      <TeamOverlay>
-                        Akira Botan
-                        <br />
-                        Senior Manager
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                </Row>
-                <Row className="my-3" style={{ textAlign: "center" }}>
-                  <Col>
-                    {" "}
-                    <TeamMemberLinks
-                      href="https://www.linkedin.com/in/shota-shun-183640227/"
-                      className="container"
-                    >
-                      {" "}
-                      <TeamMember
-                        src={
-                          process.env.PUBLIC_URL + "assets/Team/ShotaShun.jpg"
-                        }
-                      />
-                      <TeamOverlay>
-                        Shota Shum
-                        <br />
-                        Marketing Head
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                  <Col>
-                    <TeamMemberLinks
-                      href="https://www.linkedin.com/in/uyemura-akio-a36705227/"
-                      className="container"
-                    >
-                      {" "}
-                      <TeamMember
-                        src={
-                          process.env.PUBLIC_URL + "assets/Team/UyemuraAkio.jpg"
-                        }
-                      />
-                      <TeamOverlay>
-                        Uyemura Akio
-                        <br />
-                        Accounts Executive
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                  <Col>
-                    <TeamMemberLinks className="container">
-                      <TeamMember
-                        src={
-                          process.env.PUBLIC_URL + "assets/Team/StevenJohn.jpg"
-                        }
-                      />
-                      <TeamOverlay>
-                        Steven John
-                        <br />
-                        Advisor
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                  <Col>
-                    <TeamMemberLinks className="container">
-                      <TeamMember
-                        src={
-                          process.env.PUBLIC_URL + "assets/Team/HenryMax.jpg"
-                        }
-                      />
-                      <TeamOverlay>
-                        Henry Max
-                        <br />
-                        Advisor
-                      </TeamOverlay>
-                    </TeamMemberLinks>
-                  </Col>
-                </Row>
+                <TeamCompo
+                  name="Salmon Cathol"
+                  designation="Chief Executive Officer"
+                  img={process.env.PUBLIC_URL + "/assets/Team/selmon.jpg"}
+                  linked={"https://www.linkedin.com/in/salmon-cathol-536459228/"}
+                />
+                <TeamCompo
+                  name="Wilhelm Carl"
+                  designation="Business Manager"
+                  img={process.env.PUBLIC_URL + "/assets/Team/WilhelmCarl.jpg"}
+                  linked={"https://www.linkedin.com/in/wilhelm-carl-b02639227/"}
+                />
+                <TeamCompo
+                  name="Shota Shum"
+                  designation="Marketing Head"
+                  img={process.env.PUBLIC_URL + "/assets/Team/ShotaShun.jpg"}
+                  linked={"https://www.linkedin.com/in/shota-shun-183640227/"}
+                />
+                <TeamCompo
+                  name="Herman Walter"
+                  designation="Chief Technical Officer"
+                  img={process.env.PUBLIC_URL + "/assets/Team/Herman.jpg"}
+                  linked={"https://www.linkedin.com/in/hermann-walter-787461228/"}
+                />
+                <TeamCompo
+                  name="Akira Botan"
+                  designation="Senior Manager"
+                  img={process.env.PUBLIC_URL + "/assets/Team/AkiraBotan.jpg"}
+                  linked={"https://www.linkedin.com/in/akira-botan-108641227/"}
+                />
+                <TeamCompo
+                  name="Uyemura Akio"
+                  designation="Senior Manager"
+                  img={process.env.PUBLIC_URL + "/assets/Team/UyemuraAkio.jpg"}
+                  linked={"https://www.linkedin.com/in/uyemura-akio-a36705227/"}
+                />
+                <TeamCompo
+                  name="Steven John"
+                  designation="Advisor"
+                  img={process.env.PUBLIC_URL + "/assets/Team/StevenJohn.jpg"}
+                  
+                />
+                <TeamCompo
+                  name="Henry Max"
+                  designation="Advisor"
+                  img={process.env.PUBLIC_URL + "/assets/Team/HenryMax.jpg"}
+              
+                />
               </TeamWrapper>
             </ContainerImages>
           </Container>
@@ -237,59 +153,21 @@ const Logo2 = styled.img`
   }
 `;
 const TeamWrapper = styled.div`
-  max-width: 690px;
+  max-width: 1000px;
   text-align: center;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1024px) {
+    justify-content: center;
+    alignitems: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
   @media (max-width: 425px) {
     justify-content: center;
-  }
-`;
-const ContentWrapper = styled.div`
-  flex: 0.8;
-  margin-left: 3rem;
-  @media (max-width: 1024px) {
-    margin: 1rem;
-  }
-`;
-const Content = styled.div`
-  line-height: 1.8;
-  max-width: 600px;
-  @media (max-width: 1024px) {
-    width: 100%;
-  }
-`;
-const TeamMemberLinks = styled.a`
-  
-  width: 100%;
-  max-width: 150px;
-  width: 100%;
-  height: 100%;
-  font-size:14px;
-  text-align:center;
- 
-  text-decoration:none;
-  
-  border-radius: 3px;
-
-  
-}
-`;
-const TeamMember = styled.img`
-  max-width: 150px;
-  max-height: 150px;
-  width: 100%;
-  height: 100%;
-
-  border-radius: 3px;
-`;
-const TeamOverlay = styled.div`
-  margin-left: 10px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  font-size: "10px";
-  @media (max-width: 768px) {
-    font-size: "5px";
+    alignitems: center;
+    flex-wrap: wrap;
+    width: 300px;
   }
 `;

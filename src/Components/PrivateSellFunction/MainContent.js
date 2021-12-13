@@ -17,6 +17,9 @@ export default class MainComponent extends Component {
             borderBottomRightRadius: "10px",
           }}
         >
+          <div style={{ textAlign: "left", paddingBottom: "20px" }}>
+            <span>1BUSD = 333BTCH</span>
+          </div>
           <div>
             <div>
               <h4>From</h4>
@@ -26,19 +29,18 @@ export default class MainComponent extends Component {
                   display: "flex",
                   padding: "1rem 0.6rem",
                   textTransform: "uppercase",
-                  width: "70%",
+                  width: "100%",
                   margin: "0 auto",
                   borderRadius: "999px",
                   justifyContent: "space-around",
                 }}
               >
                 <input
-                  placeholder="0.0"
+                  placeholder="0"
                   type="number"
                   onChange={(e) => this.props.ChangeForm(e.target.value)}
                   style={{ outline: "none", border: "none" }}
                   value={this.props.fromData}
-                  
                 ></input>
                 <div
                   style={{
@@ -57,7 +59,7 @@ export default class MainComponent extends Component {
                   backgroundColor: "#fff",
                   display: "flex",
                   padding: "1rem 1rem",
-                  width: "70%",
+                  width: "100%",
                   margin: "0 auto",
                   borderRadius: "999px",
                   justifyContent: "space-around",
