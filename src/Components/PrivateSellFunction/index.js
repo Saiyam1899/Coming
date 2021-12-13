@@ -148,6 +148,7 @@ class App extends React.Component {
         window.ethereum,
         "any"
       );
+      console.log(provider);
 
       const signer = await provider.getSigner();
 
@@ -240,7 +241,7 @@ class App extends React.Component {
               style={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: `${this.state.disable ? "purple" : "#000"}`,
+                backgroundColor: `${this.state.disable ? "gray" : "purple"}`,
                 color: "rgb(255, 255, 255)",
                 width: "120px",
                 textAlign: "center",
@@ -264,19 +265,19 @@ class App extends React.Component {
             }}
           >
             <div>
-              <strong>Address: </strong> {this.state.address}
+              <strong>Address: </strong> 
             </div>
             <div>
               <strong>Balance: </strong>
               {this.state.balance}
             </div>
 
-            {this.state.TransactionHash === null ? null : (
+            {/* {this.state.TransactionHash === null ? null : (
               <div>
                 <strong>Transcation: </strong>
-                {this.state.TransactionHash}
+               
               </div>
-            )}
+            )} */}
             {this.state.approvedHash === null ? null : (
               <div>
                 <strong>Approved: </strong>

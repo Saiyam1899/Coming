@@ -86,7 +86,7 @@ export default class MainComponent extends Component {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div
               style={{
-                backgroundColor: `${this.props.isApproved ? "#000" : "purple"}`,
+                backgroundColor: `${this.props.isApproved ? "purple" : "gray"}`,
                 borderRadius: "999px",
                 width: "40%",
                 padding: "0.8rem",

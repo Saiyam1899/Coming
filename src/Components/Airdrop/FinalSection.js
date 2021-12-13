@@ -56,14 +56,14 @@ export default function FinalSection(props) {
             maxWidth: "100px",
             textAlign: "center",
             borderRadius: "5px",
-            padding: "10px 30px",
+            padding: "10px 10px",
             width: "100%",
             margin: "0 auto",
             color: "white",
             fontWeight: "bold",
           }}
         >
-          Conncet
+          Connect
         </div>
         <center
           onClick={props.claimReward}
