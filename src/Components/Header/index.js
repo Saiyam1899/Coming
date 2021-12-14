@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "../Sidebar";
 import { Link } from "react-router-dom";
+import AlertDismiss from "../Alert/AlertDismiss";
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -67,6 +68,7 @@ export default class Header extends Component {
               </SocialIcon>
             </SocialWrapper>
           </Container>
+     
         </Wrapper>
       </>
     );
@@ -74,7 +76,7 @@ export default class Header extends Component {
 }
 
 const Wrapper = styled.div`
-  height: 80px;
+  height: 60px;
   background-color: #380936;
   color: #fff;
   /* font-family: "FADAM"; */

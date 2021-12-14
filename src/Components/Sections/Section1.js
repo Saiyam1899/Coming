@@ -1,33 +1,61 @@
 import React, { Component } from "react";
+import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import AlertDismiss from "../Alert/AlertDismiss";
 export default class Section1 extends Component {
   render() {
     return (
       <>
-        <Section1Container>
+        
+        <Section1Container
+          style={{
+            width: "100%",
+            backgroundImage: `url(${
+              process.env.PUBLIC_URL + "assets/images/pbg.png"
+            })`,
+            backgroundPosition: "right",
+            backgroundSize: "cover",
+            backgroundColor: "#000",
+            padding: "72px 0",
+          }}
+        >
+ 
           <Section1Content
             data-aos="fade-right"
             data-aos-delay="50"
             data-aos-duration="1500"
           >
+          <AlertDismiss/>
             <Section1Logo
               src={process.env.PUBLIC_URL + "assets/img/mainLogo.svg"}
             />
 
             <Section1Logo src={process.env.PUBLIC_URL + "assets/img/NFT.svg"} />
             <h3>
-              BITChro is a platform that intends to make nonfungible tokens (NFTs) more accessible as a financial asset in the metaverse.
+            
+              BITChro is a platform that intends to make nonfungible tokens
+              (NFTs) more accessible as a financial asset in the metaverse.
             </h3>
             <Section1ButtonContainer>
               <Section1Button
-                imgURL={process.env.PUBLIC_URL + "assets/images/items/button2.svg"}
+                imgURL={
+                  process.env.PUBLIC_URL + "assets/images/items/button2.svg"
+                }
+                imgURLHover={
+                  process.env.PUBLIC_URL + "assets/images/items/button1.svg"
+                }
                 to="/airdrop"
               >
                 <span>AirDrop</span>
               </Section1Button>
               <Section1Button
-                imgURL={process.env.PUBLIC_URL + "assets/images/items/button1.svg"}
+                imgURL={
+                  process.env.PUBLIC_URL + "assets/images/items/button1.svg"
+                }
+                imgURLHover={
+                  process.env.PUBLIC_URL + "assets/images/items/button2.svg"
+                }
                 to="/private-sell"
               >
                 <span>Private Sale</span>
@@ -46,6 +74,7 @@ export default class Section1 extends Component {
             />
           </Section1ImgContainer>
         </Section1Container>
+   
       </>
     );
   }
@@ -96,11 +125,26 @@ const Section1Button = styled(Link)`
   color: white;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.5s ease-out;
+  :hover {
+    background-image: url(${(props) => props.imgURLHover});
+    transition: 0.5s ease-in;
+  }
 `;
 const Section1ImgContainer = styled.div`
   max-width: 700px;
   width: 100%;
   @media (max-width: 768px) {
     max-width: 532px;
+  }
+`;
+const CircleImage = styled.img`
+  max-width: 1000px;
+  width: 100%;
+  position: absolute;
+  top: -180px;
+  right: 0;
+  @media (max-width: 500px) {
+    top: 20px;
   }
 `;

@@ -66,8 +66,10 @@ export const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    margin: "20px",
-
+    margin: "10px",
+    "@media (max-width: 320px)": {
+     margin:"0px"
+    },
     "@media (max-width: 567px)": {
       textAlign: "center",
     },
@@ -78,6 +80,7 @@ export const styles = StyleSheet.create({
 
       textAlign: "center",
     },
+    
   },
   display: {
     display: "flex",
@@ -162,8 +165,7 @@ export default function SecondSection(props) {
         data-aos-duration="1500"
       >
         <div className={css(styles.heading2)}>
-          Task 2: Share Your Platform information on Your Facebook for way to
-          let world know about this great product
+          Task 2: Click the share button to share information regarding BITChro (BTCH) platform.
         </div>
 
         <div className={css(styles.display)}>
@@ -221,8 +223,7 @@ export default function SecondSection(props) {
         data-aos-duration="1500"
       >
         <div className={css(styles.heading2)}>
-          Task 3:Follow Our Twitter Page Where you can get lot of updates
-          regarding Our Platform.
+          Task 3:Click the follow button to follow our twitter page.
         </div>
 
         <div className={css(styles.displayRight)}>

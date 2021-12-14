@@ -5,7 +5,10 @@ export default class Section3 extends Component {
   render() {
     return (
       <>
-        <Section3Container id="works">
+        <Section3Container id="works" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        backgroundSize: "cover",
+        backgroundColor: "#000",
+        padding: "72px 0"}}>
           <Section2Logo
             data-aos="flip-up"
             data-aos-delay="50"
@@ -58,9 +61,12 @@ export default class Section3 extends Component {
                 imgURL={
                   process.env.PUBLIC_URL + "assets/images/items/button1.svg"
                 }
+                imgURLHover={
+                  process.env.PUBLIC_URL + "assets/images/items/button2.svg"
+                }
                 to="/private-sell"
               >
-                <span>Buy Token</span>
+                <span >Buy Token</span>
               </Section1Button>
             </Section3ContentWrapper>
           </Section3Content>
@@ -125,8 +131,12 @@ const Section1Button = styled(Link)`
   background-repeat: no-repeat;
   background-size: contain;
   color: white;
-  
   height: 50px;
   width: 150px;
   background-position: center;
+  transition:0.5s ease-out;
+   :hover {
+    transition:0.5s ease-in;
+    background-image: url(${(props) => props.imgURLHover});
+    }
 `;

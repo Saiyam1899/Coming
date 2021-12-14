@@ -19,8 +19,7 @@ export default function ThirdSection(props) {
         data-aos-duration="1500"
       >
         <div className={css(styles.heading2)}>
-          Task 4: Tweet our platform information on your twitter account to let
-          knows about this great product updates regarding our platform.
+          Task 4: Click the tweet button to tweet something about BITChro (BTCH) platfrom.
         </div>
         <div className={css(styles.display)}>
           <div className={css(styles.button_group)}>
@@ -71,8 +70,7 @@ export default function ThirdSection(props) {
       <section className={css(styles.section_each)}>
         <div className={css(styles.heading2)}>
           Task 5: Join our telegram group to recive latest updates regarding our
-          platform,In this group,you can ask any queries regarding this platform
-          and became a part of this community.
+          platform.
         </div>
       </section>
     </>

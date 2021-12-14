@@ -51,12 +51,7 @@ export default class Footer extends Component {
                     alt="footer"
                   />
                 </SocialIcon>
-                <SocialIcon href="https://drive.google.com/file/d/1mTUVzX3H9lQJIvoptJ-oNLiJxsLp-d2q/view?usp=sharing" target="_blank">
-                  <SocialIconImg
-                    src={process.env.PUBLIC_URL + "assets/images/certificate.png"}
-                    alt="footer"
-                  />
-                </SocialIcon>
+               
               </SocialWrapper>
             </Container>
           </Wrapper>

@@ -56,22 +56,27 @@ export const styles = StyleSheet.create({
       width: "100%",
     },
     "@media only screen and (max-width: 767px)": {
-      width: "80%",
+      width: "60%",
+      textAlign: "center",
+    },
+    "@media only screen and (max-width: 1024px)": {
+      width: "50%",
       textAlign: "center",
     },
   },
   image: {
     width: "50%",
     paddingRight: "40px",
+    "@media only screen and (max-width: 1023px)": {
+      width: "20%",
+      textAlign: "center",
+    },
     "@media (max-width: 567px)": {
       textAlign: "center",
       float: "center",
       width: "100%",
     },
-    "@media only screen and (max-width: 767px)": {
-      width: "80%",
-      textAlign: "center",
-    },
+  
   },
   button_group: {
     display: "flex",
@@ -92,8 +97,8 @@ export const styles = StyleSheet.create({
   },
   display: {
     display: "flex",
-    justifyContent: "end",
-    
+
+    alignItems:"center",
     flexDirection: "column",
     textAlign: "left",
     "@media (max-width: 567px)": {
@@ -110,6 +115,7 @@ export const styles = StyleSheet.create({
   },
   displayRight: {
     display: "flex",
+    padding:"0 72px ",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",

@@ -9,9 +9,12 @@ export default class Team extends Component {
   render() {
     return (
       <>
-        <Wrapper>
+        <Wrapper >
           <Logo src={process.env.PUBLIC_URL + "assets/img/Team.svg"} />
-          <Container id="Team">
+          <Container id="Team" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        backgroundSize: "cover",
+        backgroundColor: "#000",
+        padding: "72px 0"}}>
             <ContainerImages>
               <TeamWrapper
                 data-aos="zoom-in-right"
@@ -70,7 +73,10 @@ export default class Team extends Component {
             </ContainerImages>
           </Container>
         </Wrapper>
-        <Wrapper>
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        backgroundSize: "cover",
+        backgroundColor: "#000",
+        padding: "72px 0"}}>
           <h1
             data-aos="zoom-in-right"
             data-aos-delay="50"

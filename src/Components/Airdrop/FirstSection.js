@@ -36,7 +36,7 @@ export default function FirstSection(props) {
       fontSize: "28px",
       lineHeight: "27px",
       textAlign: "center",
-      color: "#7879f1",
+      color: "rgb(8, 255, 33)",
       fontFamily: "Franklin Gothic",
 
       "@media (max-width: 567px)": {
@@ -140,6 +140,37 @@ export default function FirstSection(props) {
         color: "white",
       },
     },
+    instruction: {
+      fontSize: "20px",
+      color: "white",
+      textAlign: "left",
+      fontWeight: "bold",
+      padding:"20px",
+      margin:"10px",
+      border:"1px solid purple",
+     borderRadius:"15px",
+  
+      boxShadow: "0 0 1rem 0 rgba(0, 0, 0, 0.9)",
+
+      height: "220px",
+      overflow: "hidden",
+      position: "relative",
+      width: "370px",
+      textTransform:"capitalize",
+      maxWidth:"1000px",
+      width:"100%",
+      alignItems:"center",
+      justifyContent:"center",
+
+      "@media (max-width: 567px)": {
+        textAlign: "center",
+      },
+      "@media only screen and (max-width: 767px)": {
+        width:"60%",
+        fontSize: "12px",
+        color: "white",
+      },
+    },
   });
 
   const [statee, setStatee] = useState(0);
@@ -154,16 +185,32 @@ export default function FirstSection(props) {
         data-aos-delay="50"
         data-aos-duration="1500"
       >
-        <p className={css(styles.heading)}>Welcome To Airdrop Feature</p>
+        <p className={css(styles.heading)}>Welcome To BITChro AirDrop</p>
 
         <p className={css(styles.secondText)}>
           {" "}
-          You have to complete below mentioned tasks to claim 1000 bitchro
+          You have to complete below mentioned tasks to claim 1000 BITChro(BTCH)
           tokens in your wallet
         </p>
+        <p className={css(styles.secondText)}>
+          {" "}
+        <span style={{color:"red"}}> * All Task are manadtory to participate in BITChro (BTCH) AirDrop
+        <center>
+        <p className={css(styles.instruction)}>
+         <ol>
+            <li>Complete all the 5 tasks.</li>
+            <li>Click “Pending” options in every task segments, if you have completed the Task.</li>
+            <li>claim your 1000 BTCH coins . </li>
+             Note- You need to connect your MetaMask or Trust wallet to claim BTCH coins instantly in your wallet. Use  BEP-20/BSC-20 wallet to receive the token.
+          </ol>
+        </p>
+        </center>
+       
+        
+        </span>
+        </p>
         <div className={css(styles.heading2)}>
-          Task 1: Like our facebook page what you can get of updates regarding
-          our platform.
+          Task 1: Click the like button to like our facebook page
         </div>
 
         <div className={css(styles.display)}>

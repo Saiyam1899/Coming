@@ -19,7 +19,7 @@ export default function FinalSection(props) {
           alt="six"
         />
         <div>
-          <ButtonGroup className={css(styles.button_group)}>
+          <div className={css(styles.button_group)}>
             {props.fourth ? (
               <button className="completedButton" />
             ) : (
@@ -38,13 +38,13 @@ export default function FinalSection(props) {
                 <img
                   src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
                   width={20}
-                  className="mx-1"
+                
                   alt="seventh"
                 />
                 Follow Group
               </Button>
             </a>
-          </ButtonGroup>
+          </div>
         </div>
       </div>
       <div>

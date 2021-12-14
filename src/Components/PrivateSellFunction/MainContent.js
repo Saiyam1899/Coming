@@ -18,7 +18,7 @@ export default class MainComponent extends Component {
           }}
         >
           <div style={{ textAlign: "left", paddingBottom: "20px" }}>
-            <span>1BUSD = 333BTCH</span>
+            <span>1 BTCH = 0.003 BUSD</span>
           </div>
           <div>
             <div>

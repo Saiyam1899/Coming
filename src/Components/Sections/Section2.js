@@ -4,7 +4,10 @@ export default class Section2 extends Component {
   render() {
     return (
       <>
-        <Section2Wrapper id="overview">
+        <Section2Wrapper id="overview" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        backgroundSize: "cover",
+        backgroundColor: "#000",
+        padding: "72px 0"}}>
           <Section2Logo
             data-aos="flip-up"
             data-aos-delay="50"
@@ -68,6 +71,9 @@ export default class Section2 extends Component {
                 imgURL={
                   process.env.PUBLIC_URL + "assets/images/items/button1.svg"
                 }
+                imgURLHover={
+                  process.env.PUBLIC_URL + "assets/images/items/button2.svg"
+                }
                 href="#FAQ"
               >
                 <span>Check out our FAQ</span>
@@ -81,7 +87,7 @@ export default class Section2 extends Component {
             >
               <img
                 width="100%"
-                src={process.env.PUBLIC_URL + "assets/images/section1.png"}
+                src={process.env.PUBLIC_URL + "assets/images/duck.png"}
                 alt="footer"
               />
             </Section2Image2Container>
@@ -129,10 +135,12 @@ const Section2ListWrapper = styled.div`
   display: flex;
 `;
 const Section2Image1Container = styled.div`
-  max-width: 530px;
+  max-width: 630px;
   min-width: 200px;
   width: 100%;
   margin-top: 2rem;
+  marginLeft:2rem;
+
   @media (max-width: 920px) {
     padding-bottom: 32px;
   }
@@ -157,8 +165,10 @@ const Section2Button = styled.a`
   color: white;
   text-decoration: none;
   cursor: pointer;
+  transition:0.5s ease-out;
   :hover {
-    color: white;
+    background-image: url(${(props) => props.imgURLHover});
+    transition:0.5s ease-in;
   }
 `;
 const Section2Image2Container = styled.div`

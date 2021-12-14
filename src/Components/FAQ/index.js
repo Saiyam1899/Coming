@@ -15,8 +15,12 @@ const FAQ = () => {
   };
 
   return (
+    <>
     <AccordionWrapper id="FAQ">
-      <AccordionContainer>
+      <AccordionContainer style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        backgroundSize: "cover",
+        backgroundColor: "#000",
+        padding: "72px 0"}}>
         <Logo
           width="100%"
           style={{ zIndex: "100", opacity: "1" }}
@@ -40,9 +44,22 @@ const FAQ = () => {
               );
             })}
           </Container>
+   
+   
+
         </AccordionSection>
+  
       </AccordionContainer>
+    
+          <BackToTop src={process.env.PUBLIC_URL+"assets/images/graypath.png"} width="50" style={{float:"none"}} onClick={()=>{
+            window.scrollTo(0,0)
+          }}/>
+          
+     
+      
     </AccordionWrapper>
+
+</>
   );
 };
 
@@ -109,6 +126,33 @@ const AccordionContainer = styled.div`
   padding: 72px 0;
   opacity: 0.9;
 `;
+const BackToTop = styled.img`
+  
+margin:0 1600px;
+
+  padding: 72px 0;
+  opacity: 1;
+  @media (max-width: 1235px) {
+    padding: 30px 0;
+    margin: 0 1090px
+  }
+  @media (max-width: 1500px) {
+    align-items: center;
+   margin: 0 1190px
+  }
+  @media (max-width: 920px) {
+    align-items: center;
+   margin: 0 910px
+  }
+  @media (max-width: 768px) {
+
+    margin: 0 250px
+  }
+  @media (max-width: 508px) {
+    padding: 30px 0;
+    margin: 0 170px
+  }
+`;
 
 const Logo = styled.img`
   max-width: 200px;
@@ -126,6 +170,7 @@ const Container = styled.div`
 const Wrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content:space-between
 `;
 const AccordianItem = styled.div`
   border-bottom: 1px solid #fff;

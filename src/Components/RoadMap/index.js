@@ -5,7 +5,10 @@ export default class Roadmap extends Component {
   render() {
     return (
       <>
-        <Wrapper>
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        backgroundSize: "cover",
+        backgroundColor: "#000",
+        padding: "72px 0"}}>
           <Container id="roadmap">
             <Logo
               data-aos="flip-up"
