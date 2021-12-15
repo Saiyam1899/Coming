@@ -44,16 +44,16 @@ const FAQ = () => {
               );
             })}
           </Container>
-   
+          <BackToTop src={process.env.PUBLIC_URL+"assets/images/graypath.png"} width="50" style={{float:"none"}} onClick={()=>{
+            window.scrollTo(0,0)
+          }}/>
    
 
         </AccordionSection>
   
       </AccordionContainer>
     
-          <BackToTop src={process.env.PUBLIC_URL+"assets/images/graypath.png"} width="50" style={{float:"none"}} onClick={()=>{
-            window.scrollTo(0,0)
-          }}/>
+        
           
      
       
@@ -128,7 +128,7 @@ const AccordionContainer = styled.div`
 `;
 const BackToTop = styled.img`
   
-margin:0 1600px;
+
 
   padding: 72px 0;
   opacity: 1;

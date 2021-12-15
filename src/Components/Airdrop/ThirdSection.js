@@ -8,9 +8,8 @@ import styled, { keyframes } from "styled-components";
 import { styles } from "./SecondSection";
 
 export default function ThirdSection(props) {
-  const textContent =
-    "Participate in World's Most innovative 	%23NFT 	%23Metaverse 	%23ICO of the Year. Join BIT_Chro  	%23PrivateSale followed by 	%23publicSale. Officially Registered in UK. BIT_Chro(BTCH) coin will be the next 1000x coin. 	%23PrivateSale price: 0.003 	%23BUSD 	%23Exchange listing price will be 0.1 	%23BUSD.";
-  return (
+  const textContent="Invest in World's Most innovative %23NFT %26 %23Metaverse %23ICO of the Year.Join BIT_Chro  %23PrivateSale followed by %23publicSale.BIT_Chro(BTCH):next 1000x coin.%23PrivateSale price: 0.003 %23BUSD%23Exchange listing price will be 0.1 BUSD. %23Pancakeswap %23Probit %23kucoin www.bitchro.com"
+ return(
     <>
       <section
         className={css(styles.section_each)}

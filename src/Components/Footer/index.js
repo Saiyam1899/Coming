@@ -51,9 +51,37 @@ export default class Footer extends Component {
                     alt="footer"
                   />
                 </SocialIcon>
-               
               </SocialWrapper>
+              <SocialIcon
+                href="https://bscscan.com/token/0x881c3f97d994f7ba6b8a2d5488f32ed9ab15e502"
+                target="_blank"
+              >
+                <SocialIconImgSet
+                  src={process.env.PUBLIC_URL + "assets/img/logobscscan.png"}
+                  width="70"
+                  alt="footer"
+                />
+         </SocialIcon>
+         <SocialIcon href="https://github.com/Bitchro/Bitchro" target="_blank">
+            <SocialIconImgSet
+                style={{backgroundColor:"white",borderRadius:"999px"}}
+                  src={process.env.PUBLIC_URL + "assets/img/git.png"}
+                  width="70"
+                  alt="footer"
+                />
+         </SocialIcon>
+           
+             
+         
+              
+              
             </Container>
+            <h3>Reach Us</h3>
+            <ContainerFoot>
+            
+             <FooterLinks href="">finance@bitchro.com</FooterLinks>
+                <FooterLinks href="">support@bitchro.com</FooterLinks>
+ </ContainerFoot>
           </Wrapper>
         </MainWrapper>
       </>
@@ -89,6 +117,22 @@ const Container = styled.div`
     padding-right: 0;
   }
 `;
+const ContainerFoot = styled.div`
+  display: flex;
+  background: black;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
+  marginLeft:20px;
+  padding: 32px 0;
+  flex-wrap: wrap;
+  @media (max-width: 728px) {
+    align-items: center;
+    padding-right: 0;
+  }
+`;
 const Logo = styled.div`
   cursor: pointer;
 `;
@@ -100,10 +144,13 @@ const FooterLinksContainer = styled.div`
 `;
 const FooterLinksWrapper = styled.div`
   display: flex;
+  justifycontent: space-between;
 `;
 
 const FooterLinks = styled.a`
+  display: flex;
   margin-bottom: 20px;
+  justifycontent: space;
   cursor: pointer;
   color: white;
   text-decoration: none;
@@ -114,8 +161,14 @@ const SocialWrapper = styled.div`
 const SocialIcon = styled.a`
   margin: 0 10px;
   cursor: pointer;
+  color: white;
+  text-direction: none;
 `;
 
 const SocialIconImg = styled.img`
   max-width: 32px;
+`;
+const SocialIconImgSet = styled.img`
+  max-width: 52px;
+  margin:10px;
 `;
