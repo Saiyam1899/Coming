@@ -32,7 +32,7 @@ export default class Section1 extends Component {
             />
 
             <Section1Logo src={process.env.PUBLIC_URL + "assets/img/NFT.svg"} />
-            <h3>
+            <h3 style={{margin:"30px 0"}}>
             
               BITChro is a platform that intends to make nonfungible tokens
               (NFTs) more accessible as a financial asset in the metaverse.
