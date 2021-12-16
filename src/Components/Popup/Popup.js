@@ -1,31 +1,25 @@
-import React, { useEffect } from 'react'
-import { render } from "@testing-library/react";
-import { useState } from "react";
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import 'react-responsive-modal/styles.css';
 import "./popup.css"
-import { Alert, Button, Container, Modal } from "react-bootstrap";
+import { Modal } from 'react-responsive-modal';
+import { Link } from 'react-router-dom';
 
-function Popup() {
-    const [show, setShow] = useState(false);
+export const Popup = () => {
+  const [open, setOpen] = useState(true);
 
-    const handleClose = () => setShow(false);
-    
-    useEffect(() => {
-        setShow(true);
-    }, [])
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+
   return (
-    <>
-
-
-  <Modal show={show} onHide={handleClose} size={'sm'} className="container">
-        <Modal.Header closeButton style={{backgroundColor:"purple"}}/>
-        <img src={process.env.PUBLIC_URL+"assets/images/poster.jpg"} />
-    
+    <div>
+     
+      <Modal open={open} onClose={onCloseModal}>
+      
+      <Link>
+      <img src={process.env.PUBLIC_URL+"assets/images/poster.jpg"} style={{width:"100%"}}/>
+      </Link> 
       </Modal>
-
-    
-
-    </>
+    </div>
   );
-  }
-
-export default Popup
+}

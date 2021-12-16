@@ -10,21 +10,20 @@ import Team from "../Components/Team";
 import TokenNomics from "../Components/TokenNomics";
 import Particles from 'react-particles-js';
 import Certificate from "../Components/certificate/Certificate";
+import { Popup } from "../Components/Popup/Popup";
 
 export default function HomePage() {
   return (
     <>
       <div>
-  
+      <Popup/>
         <Section />
         <TokenNomics />
         <Roadmap />
         <Team />
-        
         <MetaverseShare/>
         <Advanatges/>
         <Subscribe />
-    
         <FAQ />
     </div>
     </>

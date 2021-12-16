@@ -6,3 +6,7 @@
       width: 800px;
     }
   }
+  .react-responsive-modal-closeButton
+  {
+    background: purple;
+  }
