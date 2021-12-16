@@ -134,23 +134,23 @@ const BackToTop = styled.img`
   opacity: 1;
   @media (max-width: 1235px) {
     padding: 30px 0;
-    margin: 0 1090px
+   
   }
   @media (max-width: 1500px) {
     align-items: center;
-   margin: 0 1190px
+
   }
   @media (max-width: 920px) {
     align-items: center;
-   margin: 0 910px
+
   }
   @media (max-width: 768px) {
 
-    margin: 0 250px
+
   }
   @media (max-width: 508px) {
     padding: 30px 0;
-    margin: 0 170px
+ 
   }
 `;
 

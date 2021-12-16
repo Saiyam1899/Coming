@@ -20,6 +20,10 @@ export default function Certificate() {
           padding: "72px 0",
         }}
       >
+       
+     
+        <div className="container">
+        <div>
         <img
           src={process.env.PUBLIC_URL + "assets/img/textcertificate.svg"}
           className="imageOne"
@@ -32,7 +36,8 @@ export default function Certificate() {
           <br/> 
           BITCHRO METAVERSE LIMITED
         </p>
-        <div className="container">
+        </div>
+        <div className="imageFlex">
         <img
           src={process.env.PUBLIC_URL + "assets/images/certificateframefinal.jpg"}
           className="imageOne"
@@ -43,6 +48,7 @@ export default function Certificate() {
           src={process.env.PUBLIC_URL + "assets/images/logocertificate.png"}
           className="imageTwo"
         />
+        </div>
         </div>
         
       </div>

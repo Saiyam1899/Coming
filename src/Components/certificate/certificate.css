@@ -3,14 +3,15 @@
 .container{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     background-color: black;
-    margin: 30px; 
+   
     justify-content: center;
   }
 
 @media only screen and (max-width: 800px) {
     .container {
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -57,4 +58,9 @@
   to {
     background-position: 200% center;
   }
+}
+.imageFlex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
