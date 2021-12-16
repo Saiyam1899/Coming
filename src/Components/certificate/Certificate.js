@@ -14,7 +14,7 @@ export default function Certificate() {
           backgroundImage: `url(${
             process.env.PUBLIC_URL + "assets/images/pbg.png"
           })`,
-          backgroundPosition: "right",
+  
           backgroundSize: "cover",
           backgroundColor: "#000",
           padding: "72px 0",
