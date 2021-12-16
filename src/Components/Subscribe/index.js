@@ -45,7 +45,7 @@ export default class Subscribe extends Component {
                 />
               </SocialIcon>
             </SocialWrapper>
-    
+            <Certificate/>
           </Container>
         
         </Wrapper>

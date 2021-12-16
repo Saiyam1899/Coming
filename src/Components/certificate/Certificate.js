@@ -5,7 +5,7 @@ export default function Certificate() {
     <a
       href="https://drive.google.com/file/d/1mTUVzX3H9lQJIvoptJ-oNLiJxsLp-d2q/view?usp=sharing"
       target="_blank"
-      style={{textDecoration:"none",fontSize:"30px",color:"white"}}
+      style={{ textDecoration: "none", fontSize: "30px", color: "white" }}
     >
       <div
         className="certificate"
@@ -14,43 +14,40 @@ export default function Certificate() {
           backgroundImage: `url(${
             process.env.PUBLIC_URL + "assets/images/pbg.png"
           })`,
-  
+
           backgroundSize: "cover",
           backgroundColor: "#000",
           padding: "72px 0",
         }}
       >
-       
-     
         <div className="container">
-        <div>
-        <img
-          src={process.env.PUBLIC_URL + "assets/img/textcertificate.svg"}
-          className="imageOne"
+          <div>
+            <img
+              src={process.env.PUBLIC_URL + "assets/img/textcertificate.svg"}
+              className="imageLogo"
+            />
+            <p style={{ marginTop: "30px" }}>
+              The Registrar of Companies for England and Wales, hereby certifies
+              that
+              <br />
+              BITCHRO METAVERSE LIMITED
+            </p>
+          </div>
+          <div className="imageFlex">
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "assets/images/certificateframefinal.jpg"
+              }
+              className="imageOne"
+            />
 
-
-        />
-          <p style={{marginTop:"30px"}}>
-          The Registrar of Companies for England and Wales, hereby certifies
-          that
-          <br/> 
-          BITCHRO METAVERSE LIMITED
-        </p>
+            <img
+              src={process.env.PUBLIC_URL + "assets/images/logocertificate.png"}
+              className="imageTwo"
+            />
+          </div>
         </div>
-        <div className="imageFlex">
-        <img
-          src={process.env.PUBLIC_URL + "assets/images/certificateframefinal.jpg"}
-          className="imageOne"
-
-        />
-      
-        <img
-          src={process.env.PUBLIC_URL + "assets/images/logocertificate.png"}
-          className="imageTwo"
-        />
-        </div>
-        </div>
-        
       </div>
     </a>
   );
