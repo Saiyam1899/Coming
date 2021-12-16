@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import "./advantage.css"
 // import { IconContext } from "react-icons";
 // import { FiPlus, FiMinus } from "react-icons/fi";
 
