@@ -79,6 +79,8 @@ const Wrapper = styled.div`
   height: 60px;
   background-color: #380936;
   color: #fff;
+  z-index:1000;
+  position:relative;
   /* font-family: "FADAM"; */
 `;
 const Container = styled.div`
