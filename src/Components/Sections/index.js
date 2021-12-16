@@ -22,7 +22,7 @@ export default class Section extends Component {
 }
 
 const HeroSectionContainer = styled.div`
-  padding: 72px;
+  padding: 0 72px;
   background: black;
   color: #fff;
 

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -15,12 +15,16 @@ import "aos/dist/aos.css";
 function App() {
   useEffect(() => {
     AOS.init();
+
   }, []);
+  const [popup,showPopup]=useState("true");
   return (
     <div className="App">
       <Switch>
         <MainPage>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" >
+            <HomePage popupToggle={popup} popupFunction={showPopup}/>
+          </Route>
           <Route path="/landing-page" component={LandingPage} />
           <Route path="/airdrop" component={AirDropPage} />
           <Route path="/private-sell" component={PrivateSellPage} />

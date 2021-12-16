@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 // import { IconContext } from "react-icons";
 // import { FiPlus, FiMinus } from "react-icons/fi";
@@ -16,50 +18,69 @@ const FAQ = () => {
 
   return (
     <>
-    <AccordionWrapper id="FAQ">
-      <AccordionContainer style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
-        backgroundSize: "cover",
-        backgroundColor: "#000",
-        padding: "72px 0"}}>
-        <Logo
-          width="100%"
-          style={{ zIndex: "100", opacity: "1" }}
-          src={process.env.PUBLIC_URL + "assets/img/FAQ.svg"}
-        />
-        <AccordionSection>
-          <Container>
-            {Data.map((item, index) => {
-              return (
-                <AccordianItem>
-                  <Wrap onClick={() => toggle(index)} key={index}>
-                    <div>{item.question}</div>
-                    <span>{clicked === index ? "-" : "+"}</span>
-                  </Wrap>
-                  {clicked === index ? (
-                    <Dropdown>
-                      <p>{item.answer}</p>
-                    </Dropdown>
-                  ) : null}
-                </AccordianItem>
-              );
-            })}
-          </Container>
-          <BackToTop src={process.env.PUBLIC_URL+"assets/images/graypath.png"} width="50" style={{float:"none"}} onClick={()=>{
-            window.scrollTo(0,0)
-          }}/>
-   
-
-        </AccordionSection>
-  
-      </AccordionContainer>
-    
-        
-          
-     
-      
-    </AccordionWrapper>
-
-</>
+      <AccordionWrapper id="FAQ">
+        <AccordionContainer
+          style={{
+            width: "100%",
+            backgroundImage: `url(${
+              process.env.PUBLIC_URL + "assets/images/bg.png"
+            })`,
+            backgroundPosition: "right",
+            backgroundSize: "cover",
+            backgroundColor: "#000",
+            padding: "72px 0",
+          }}
+        >
+          <Logo
+            width="100%"
+            style={{ zIndex: "100", opacity: "1" }}
+            src={process.env.PUBLIC_URL + "assets/img/FAQ.svg"}
+          />
+          <AccordionSection>
+            <Container>
+              {Data.map((item, index) => {
+                return (
+                  <AccordianItem>
+                    <Wrap onClick={() => toggle(index)} key={index}>
+                      <div>{item.question}</div>
+                      <span>{clicked === index ? "-" : "+"}</span>
+                    </Wrap>
+                    {clicked === index ? (
+                      <Dropdown>
+                        <p>{item.answer}</p>
+                      </Dropdown>
+                    ) : null}
+                  </AccordianItem>
+                );
+              })}
+            </Container>
+            <BackToTop
+              src={process.env.PUBLIC_URL + "assets/images/graypath.png"}
+              width="50"
+              style={{ float: "none" }}
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            />
+          </AccordionSection>
+          <center>
+            <Link to="/private-sell">
+              <Section1Button
+                imgURL={
+                  process.env.PUBLIC_URL + "assets/images/items/button1.svg"
+                }
+                imgURLHover={
+                  process.env.PUBLIC_URL + "assets/images/items/button2.svg"
+                }
+                to="/private-sell"
+              >
+                <span>Buy Token</span>
+              </Section1Button>
+            </Link>
+          </center>
+        </AccordionContainer>
+      </AccordionWrapper>
+    </>
   );
 };
 
@@ -116,7 +137,6 @@ const AccordionWrapper = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  
 `;
 const AccordionContainer = styled.div`
   max-width: 1200px;
@@ -126,31 +146,40 @@ const AccordionContainer = styled.div`
   padding: 72px 0;
   opacity: 0.9;
 `;
+const Section1Button = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(${(props) => props.imgURL});
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
+  height: 50px;
+  width: 150px;
+  background-position: center;
+  transition: 0.5s ease-out;
+  :hover {
+    transition: 0.5s ease-in;
+    background-image: url(${(props) => props.imgURLHover});
+  }
+`;
+
 const BackToTop = styled.img`
-  
-
-
   padding: 72px 0;
   opacity: 1;
   @media (max-width: 1235px) {
     padding: 30px 0;
-   
   }
   @media (max-width: 1500px) {
     align-items: center;
-
   }
   @media (max-width: 920px) {
     align-items: center;
-
   }
   @media (max-width: 768px) {
-
-
   }
   @media (max-width: 508px) {
     padding: 30px 0;
- 
   }
 `;
 
@@ -161,6 +190,7 @@ const Logo = styled.img`
 
 const AccordionSection = styled.div`
   color: #fff;
+  font-size: 20px;
 `;
 
 const Container = styled.div`
@@ -170,7 +200,7 @@ const Container = styled.div`
 const Wrap = styled.div`
   display: flex;
   align-items: center;
-  justify-content:space-between
+  justify-content: space-between;
 `;
 const AccordianItem = styled.div`
   border-bottom: 1px solid #fff;

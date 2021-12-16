@@ -7,12 +7,12 @@ export default class Section1 extends Component {
   render() {
     return (
       <>
-        
+          <AlertDismiss/>
         <Section1Container
           style={{
             width: "100%",
             backgroundImage: `url(${
-              process.env.PUBLIC_URL + "assets/images/pbg.png"
+              process.env.PUBLIC_URL + "assets/images/bg.png"
             })`,
             backgroundPosition: "right",
             backgroundSize: "cover",
@@ -20,13 +20,13 @@ export default class Section1 extends Component {
             padding: "72px 0",
           }}
         >
- 
+  
           <Section1Content
             data-aos="fade-right"
             data-aos-delay="50"
             data-aos-duration="1500"
           >
-          <AlertDismiss/>
+     
             <Section1Logo
               src={process.env.PUBLIC_URL + "assets/img/mainLogo.svg"}
             />
@@ -79,6 +79,8 @@ export default class Section1 extends Component {
     );
   }
 }
+
+
 
 const Section1Container = styled.div`
   display: flex;
@@ -138,11 +140,11 @@ const Section1ImgContainer = styled.div`
     max-width: 532px;
   }
 `;
-const CircleImage = styled.img`
-  max-width: 1000px;
+const CircleImageTwo = styled.img`
+  max-width: 1500px;
   width: 100%;
   position: absolute;
-  top: -180px;
+  top: -170px;
   right: 0;
   @media (max-width: 500px) {
     top: 20px;

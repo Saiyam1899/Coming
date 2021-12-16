@@ -4,7 +4,7 @@ export default class Subscribe extends Component {
   render() {
     return (
       <>
-        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
         padding: "72px 0"}}>

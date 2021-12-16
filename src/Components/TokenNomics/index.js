@@ -5,10 +5,10 @@ export default class TokenNomics extends Component {
   render() {
     return (
       <>
-        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
-        padding: "72px 0"}}>
+        padding: " 0"}}>
           <Container id="tokonomics">
             <Logo
               data-aos="flip-up"
@@ -35,6 +35,17 @@ const Wrapper = styled.div`
     padding: 20px;
   }
 `;
+const CircleImage = styled.img`
+  max-width: 1000px;
+  width: 100%;
+  position: absolute;
+  top: -180px;
+  right: 0;
+  @media (max-width: 500px) {
+    top: 20px;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;

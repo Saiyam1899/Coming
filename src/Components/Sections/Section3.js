@@ -5,7 +5,7 @@ export default class Section3 extends Component {
   render() {
     return (
       <>
-        <Section3Container id="works" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        <Section3Container id="works" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
         padding: "72px 0"}}>
@@ -81,6 +81,17 @@ const Section3Container = styled.div`
     padding: 32px 0;
   }
 `;
+const CircleImage = styled.img`
+  max-width: 1000px;
+  width: 100%;
+  position: absolute;
+  top: -180px;
+  right: 0;
+  @media (max-width: 500px) {
+    top: 20px;
+  }
+`;
+
 const Section3Content = styled.div`
   background-image: url(${(props) => props.imgURL});
   background-size: cover;
@@ -106,6 +117,7 @@ const Section3ContentWrapper = styled.div`
   width: 100%;
   margin-top: 7rem;
   align-items: center;
+  font-size:20px;
   @media (max-width: 768px) {
     align-items: center;
     margin-top: 1rem;

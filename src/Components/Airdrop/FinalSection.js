@@ -57,6 +57,7 @@ export default function FinalSection(props) {
             textAlign: "center",
             borderRadius: "5px",
             padding: "10px 10px",
+            cursor:"pointer",
             width: "100%",
             margin: "0 auto",
             color: "white",

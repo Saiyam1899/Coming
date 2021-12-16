@@ -5,10 +5,10 @@ export default class Roadmap extends Component {
   render() {
     return (
       <>
-        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
-        padding: "72px 0"}}>
+        padding: "0"}}>
           <Container id="roadmap">
             <Logo
               data-aos="flip-up"
@@ -39,9 +39,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+const CircleImage = styled.img`
+  max-width: 1000px;
+  width: 100%;
+  position: absolute;
+  top: -180px;
+  right: 0;
+  @media (max-width: 500px) {
+    top: 20px;
+  }
+`;
 
 const Logo = styled.img`
-  margin: 6rem 0;
+  margin: 3rem 0;
   max-width: 350px;
   width: 100%;
   @media (max-width: 425px) {

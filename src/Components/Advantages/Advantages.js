@@ -1,122 +1,145 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
+import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
-import "./advantage.css"
-// import { IconContext } from "react-icons";
-// import { FiPlus, FiMinus } from "react-icons/fi";
+import { AiFillLinkedin } from "react-icons/ai";
 
-const FAQ = () => {
-  const [clicked, setClicked] = useState(false);
 
-  const toggle = (index) => {
-    if (clicked === index) {
-      return setClicked(null);
-    }
 
-    setClicked(index);
-  };
-
-  return (
-    <AccordionWrapper 
-    style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+import AdvantageCompo from "./AdvantageCompo";
+export default class Team extends Component {
+  render() {
+    return (
+      <>
+        <Wrapper >
+         
+          <Container id="Team" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
-        padding: "72px 0"}}
-    >
-      <AccordionContainer
-             data-aos="fade-right"
-            data-aos-delay="50"
-            data-aos-duration="1500"
-      >
-        <Logo
-          width="100%"
-          src={process.env.PUBLIC_URL + "assets/images/advantages.svg"}
-        />
-        <AccordionSection>
-          <Container>
-            {Data.map((item, index) => {
-              return (
-                <AccordianItem>
-                  <Wrap onClick={() => toggle(index)} key={index}>
-                    <div className="animate-charcter">{item.question}</div>
-                 </Wrap>
-                 <p style={{textAlign:"left"}}>{item.answer}</p>
-                </AccordianItem>
-              );
-            })}
+        padding: "72px 0"}}>
+         <Logo src={process.env.PUBLIC_URL + "assets/images/advantages.svg"} />
+            <ContainerImages>
+              <TeamWrapper
+                data-aos="zoom-in-right"
+                data-aos-delay="50"
+                data-aos-duration="3000"
+              >
+                <AdvantageCompo
+                  desc="BITChro has always been straightforward and upfront,and this is ingrained in our nature and who we are."
+                  img={process.env.PUBLIC_URL + "/assets/Advanatages/ethics.svg"}
+                  linked={"https://www.linkedin.com/in/salmon-cathol-536459228/"}
+                />
+                <AdvantageCompo
+                  desc="In BITChro,we treat our organization very carefully.we take complete responsibility and accountability in front of our shareholders,staff,users and followers."
+                  img={process.env.PUBLIC_URL + "/assets/Advanatages/midone.svg"}
+                  linked={"https://www.linkedin.com/in/wilhelm-carl-b02639227/"}
+                />
+                <AdvantageCompo
+                 desc="BITChro belives in progress,but we also believe in being able to adapt to that development.We understand there will be no growth unless we are adaptive and nimble."
+                  img={process.env.PUBLIC_URL + "/assets/Advanatages/versatile.svg"}
+                  linked={"https://www.linkedin.com/in/shota-shun-183640227/"}
+                />
+       
+              </TeamWrapper>
+            </ContainerImages>
           </Container>
-        </AccordionSection>
-      </AccordionContainer>
-    </AccordionWrapper>
-  );
-};
+        </Wrapper>
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
+        backgroundSize: "cover",
+       
+        padding: "72px 0"}}>
+          <h1
+            data-aos="zoom-in-right"
+            data-aos-delay="50"
+            data-aos-duration="3000"
+          >
+            <Logo
+              src={process.env.PUBLIC_URL + "assets/img/bitchro-allocation.svg"}
+            />
+          </h1>
+          <Logo2
+            data-aos="zoom-in-right"
+            data-aos-delay="50"
+            data-aos-duration="3000"
+            src={
+              process.env.PUBLIC_URL + "assets/img/bitchro-allocate-final.svg"
+            }
+          />
+        </Wrapper>
+      </>
+    );
+  }
+}
 
-export const Data = [
-  {
-    question: "ETHICS",
-    answer:
-      "BITChro has always been straightforward and upfront,and this is ingrained in our nature and who we are.",
-  },
-  {
-    question: "CULPABILITY",
-    answer:
-      "In BITChro,we treat our organization very carefully.we take complete responsibility and accountability in front of our shareholders,staff,users and followers. ",
-  },
-  {
-    question: "VERSATILITY",
-    answer:
-      "BITChro belives in progress,but we also believe in being able to adapt to that development.We understand there will be no growth unless we are adaptive and nimble.",
-  },
-];
-
-const AccordionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: black;
-`;
-const AccordionContainer = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: black;
-  padding: 72px 0;
-  opacity: 0.9;
-`;
-
-const Logo = styled.img`
-  max-width: 600px;
-  width: 100%;
-`;
-
-const AccordionSection = styled.div`
-  color: #fff;
-  font-size:30px
-`;
-
-const Container = styled.div`
-  padding: 0 30px;
-`;
-
-const Wrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-`;
-const AccordianItem = styled.div`
-  border-bottom: 1px solid purple;
-  padding-top: 40px;
-  padding-bottom: 20px;
-`;
-
-const Dropdown = styled.div`
+const Wrapper = styled.div`
   background: black;
   color: white;
-  text-align: left;
-  
-  p {
-    margin: 0;
-    margin-top: 20px;
+`;
+const Container = styled.a`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-decoration: none;
+  padding: 72px;
+  justify-content: center;
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;
+const ContainerImages = styled.a`
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  justify-content: center;
+  text-align: center;
+ 
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+  }
 
-export default FAQ;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+`;
+const Logo = styled.img`
+  max-width: 500px;
+  margin: 2rem 0;
+  width: 100%;
+  @media (max-width: 768px) {
+    max-width: 532px;
+  }
+`;
+const Logo2 = styled.img`
+  max-width: 1000px;
+  margin: 2rem 0;
+  width: 100%;
+  @media (max-width: 768px) {
+    max-width: 532px;
+  }
+`;
+const TeamWrapper = styled.div`
+  max-width: 1000px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 1024px) {
+    justify-content: center;
+    alignitems: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  @media (max-width: 425px) {
+    justify-content: center;
+    alignitems: center;
+    flex-wrap: wrap;
+    width: 300px;
+  }
+`;

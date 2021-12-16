@@ -146,6 +146,7 @@ export const styles = StyleSheet.create({
   image_mid: {
     width: "20%",
     padding: "50px",
+    cursor:"pointer",
 
     "@media (max-width: 567px)": {
       textAlign: "center",

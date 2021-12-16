@@ -4,10 +4,10 @@ export default class Section2 extends Component {
   render() {
     return (
       <>
-        <Section2Wrapper id="overview" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        <Section2Wrapper id="overview" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
-        padding: "72px 0"}}>
+        padding: "0"}}>
           <Section2Logo
             data-aos="flip-up"
             data-aos-delay="50"
@@ -15,6 +15,7 @@ export default class Section2 extends Component {
             src={process.env.PUBLIC_URL + "assets/img/title01.svg"}
           />
           <Section2Container>
+      
             <Section2Image1Container
               data-aos="fade-down"
               data-aos-delay="50"
@@ -130,6 +131,7 @@ const Section2Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size:20px;
 `;
 const Section2ListWrapper = styled.div`
   display: flex;
@@ -193,3 +195,15 @@ const Section2List = styled.div`
   align-items: center;
   margin: 8px 0;
 `;
+const CircleImageThree = styled.img`
+  max-width: 100px;
+  width: 100%;
+  position: absolute;
+  top: -0px;
+  
+  left:10000px;
+  @media (max-width: 500px) {
+    top: 20px;
+  }
+`;
+

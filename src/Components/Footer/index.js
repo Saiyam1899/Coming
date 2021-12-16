@@ -7,13 +7,74 @@ export default class Footer extends Component {
       <>
         <MainWrapper>
           <Wrapper>
+          <center>
+          <img
+                    src={process.env.PUBLIC_URL + "assets/img/mainLogo.svg"}
+                    alt="footer"
+                  />
+          </center>
             <Container>
-              <Logo>
-                <img
-                  src={process.env.PUBLIC_URL + "assets/img/mainLogo.svg"}
-                  alt="footer"
-                />
+            <Logo>
+              
+
+                <SocialWrapper>
+                  <SocialIcon href="https://twitter.com/bit_chro">
+                    <SocialIconImg
+                      src={process.env.PUBLIC_URL + "assets/img/twitter.svg"}
+                      alt="footer"
+                    />
+                  </SocialIcon>
+                  <SocialIcon href="https://t.me/BITChro">
+                    <SocialIconImg
+                      src={process.env.PUBLIC_URL + "assets/img/telegram.svg"}
+                      alt="footer"
+                    />
+                  </SocialIcon>
+                  <SocialIcon href="https://m.facebook.com/">
+                    <SocialIconImg
+                      src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
+                      alt="footer"
+                    />
+                  </SocialIcon>
+
+                  <SocialIcon
+                    href="https://bscscan.com/token/0x881c3f97d994f7ba6b8a2d5488f32ed9ab15e502"
+                    target="_blank"
+                  >
+                    <SocialIconImg
+                      src={
+                        process.env.PUBLIC_URL + "assets/img/logobscscan.png"
+                      }
+                      width="70"
+                      alt="footer"
+                    />
+                  </SocialIcon>
+                  <SocialIcon
+                    href="https://github.com/Bitchro/Bitchro"
+                    target="_blank"
+                  >
+                    <SocialIconImg
+                      style={{
+                        backgroundColor: "white",
+                        borderRadius: "999px",
+                      }}
+                      src={process.env.PUBLIC_URL + "assets/img/git.png"}
+                      width="70"
+                      alt="footer"
+                    />
+                  </SocialIcon>
+                </SocialWrapper>
+                <SocialIconImgSet>
+                  Reach US
+                  <FooterLinks href="">finance@BITChro.com</FooterLinks>
+                </SocialIconImgSet>
+                <SocialIconImgSet>
+                  <FooterLinks href="">support@BITChro.com</FooterLinks>
+                </SocialIconImgSet>
               </Logo>
+        
+              
+
               <FooterLinksWrapper>
                 <FooterLinksContainer>
                   <FooterLinks href="#">Home</FooterLinks>
@@ -26,62 +87,7 @@ export default class Footer extends Component {
                   <FooterLinks href="#Team">Team</FooterLinks>
                 </FooterLinksContainer>
               </FooterLinksWrapper>
-              <SocialWrapper>
-                <SocialIcon href="#twitter">
-                  <SocialIconImg
-                    src={process.env.PUBLIC_URL + "assets/img/twitter.svg"}
-                    alt="footer"
-                  />
-                </SocialIcon>
-                <SocialIcon href="#telegram">
-                  <SocialIconImg
-                    src={process.env.PUBLIC_URL + "assets/img/telegram.svg"}
-                    alt="footer"
-                  />
-                </SocialIcon>
-                <SocialIcon href="#fb">
-                  <SocialIconImg
-                    src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
-                    alt="footer"
-                  />
-                </SocialIcon>
-                <SocialIcon href="#ig">
-                  <SocialIconImg
-                    src={process.env.PUBLIC_URL + "assets/img/instagram.svg"}
-                    alt="footer"
-                  />
-                </SocialIcon>
-              </SocialWrapper>
-              <SocialIcon
-                href="https://bscscan.com/token/0x881c3f97d994f7ba6b8a2d5488f32ed9ab15e502"
-                target="_blank"
-              >
-                <SocialIconImgSet
-                  src={process.env.PUBLIC_URL + "assets/img/logobscscan.png"}
-                  width="70"
-                  alt="footer"
-                />
-         </SocialIcon>
-         <SocialIcon href="https://github.com/Bitchro/Bitchro" target="_blank">
-            <SocialIconImgSet
-                style={{backgroundColor:"white",borderRadius:"999px"}}
-                  src={process.env.PUBLIC_URL + "assets/img/git.png"}
-                  width="70"
-                  alt="footer"
-                />
-         </SocialIcon>
-           
-             
-         
-              
-              
             </Container>
-            <h3>Reach Us</h3>
-            <ContainerFoot>
-            
-             <FooterLinks href="">finance@bitchro.com</FooterLinks>
-                <FooterLinks href="">support@bitchro.com</FooterLinks>
- </ContainerFoot>
           </Wrapper>
         </MainWrapper>
       </>
@@ -101,19 +107,21 @@ const MainWrapper = styled.div`
 `;
 const Wrapper = styled.div`
   background-color: #000;
+  padding-top:20px;
 `;
 const Container = styled.div`
   display: flex;
   background: black;
   align-items: center;
-  justify-content: space-around;
-  max-width: 920px;
+  justify-content: space-between;
+  max-width: 860px;
   width: 100%;
   margin: 0 auto;
   padding: 72px 0;
   flex-wrap: wrap;
   @media (max-width: 728px) {
     align-items: center;
+    justify-content:center;
     padding-right: 0;
   }
 `;
@@ -125,7 +133,7 @@ const ContainerFoot = styled.div`
   max-width: 920px;
   width: 100%;
   margin: 0 auto;
-  marginLeft:20px;
+  marginleft: 20px;
   padding: 32px 0;
   flex-wrap: wrap;
   @media (max-width: 728px) {
@@ -144,19 +152,18 @@ const FooterLinksContainer = styled.div`
 `;
 const FooterLinksWrapper = styled.div`
   display: flex;
-  justifycontent: space-between;
 `;
 
 const FooterLinks = styled.a`
   display: flex;
-  margin-bottom: 20px;
-  justifycontent: space;
+
   cursor: pointer;
   color: white;
   text-decoration: none;
 `;
 const SocialWrapper = styled.div`
   display: flex;
+  padding: 10px;
 `;
 const SocialIcon = styled.a`
   margin: 0 10px;
@@ -166,9 +173,17 @@ const SocialIcon = styled.a`
 `;
 
 const SocialIconImg = styled.img`
-  max-width: 32px;
+  max-width: 24px;
 `;
-const SocialIconImgSet = styled.img`
-  max-width: 52px;
-  margin:10px;
+const SocialIconImgSet = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margintop: 10px;
+`;
+
+const SocialWrapperIn = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

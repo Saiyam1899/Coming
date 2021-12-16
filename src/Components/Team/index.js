@@ -10,11 +10,12 @@ export default class Team extends Component {
     return (
       <>
         <Wrapper >
-          <Logo src={process.env.PUBLIC_URL + "assets/img/Team.svg"} />
-          <Container id="Team" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+         
+          <Container id="Team" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
         padding: "72px 0"}}>
+         <Logo src={process.env.PUBLIC_URL + "assets/img/Team.svg"} />
             <ContainerImages>
               <TeamWrapper
                 data-aos="zoom-in-right"
@@ -73,9 +74,9 @@ export default class Team extends Component {
             </ContainerImages>
           </Container>
         </Wrapper>
-        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
-        backgroundColor: "#000",
+       
         padding: "72px 0"}}>
           <h1
             data-aos="zoom-in-right"
@@ -107,7 +108,7 @@ const Wrapper = styled.div`
 const Container = styled.a`
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   color: white;
   text-decoration: none;
   padding: 72px;
@@ -117,11 +118,11 @@ const Container = styled.a`
     background: black;
   }
   @media (max-width: 1024px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   @media (max-width: 768px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 `;
 const ContainerImages = styled.a`

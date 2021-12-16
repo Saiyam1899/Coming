@@ -8,10 +8,10 @@ export default function AlertDismiss() {
   
     if (show) {
       return (
-        <div>
-          <div className="animate-charcter"><b>Private Sale</b> is LIVE Now!</div> 
-          
-        </div>
+        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading><b>Private Sale!</b> is live now <b>Public Sale!</b> Coming Soon....</Alert.Heading>
+      
+        </Alert>
       );
     }
     return null

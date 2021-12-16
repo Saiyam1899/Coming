@@ -2,7 +2,11 @@ import React from "react";
 import "./certificate.css";
 export default function Certificate() {
   return (
-    <div className="containerClass">
+    <div className="containerClass" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
+    backgroundSize: "cover",
+    backgroundColor: "#000",
+   
+    padding: "72px"}}>
 
   
     <a
@@ -17,11 +21,11 @@ export default function Certificate() {
               src={process.env.PUBLIC_URL + "assets/img/textcertificate.svg"}
               className="imageLogo"
             />
-            <p style={{ marginTop: "30px" }}>
+            <p style={{ marginTop: "30px",fontSize:"20px" }}>
               The Registrar of Companies for England and Wales, hereby certifies
               that
               <br />
-              BITCHRO METAVERSE LIMITED
+              BITChro Metaverse Limited
             </p>
           </div>
           <div className="imageFlex">

@@ -17,12 +17,12 @@ export default class Sidebar extends Component {
               />
             </Icon>
             <NavWrapper>
-              <NavLink>Home</NavLink>
-              <NavLink href="#overview" onClick={this.props.toogleButton}>Overview</NavLink>
-              <NavLink href="#works" onClick={this.props.toogleButton}>How it Works</NavLink>
-              <NavLink href="#tokonomics" onClick={this.props.toogleButton}>TokenNomics</NavLink>
-              <NavLink href="#roadmap" onClick={this.props.toogleButton}>Roadmapo</NavLink>
-              <NavLink href="#Team" onClick={this.props.toogleButton}>Team</NavLink>
+              <NavLinkHome to="/"  onClick={this.props.toogleButton}>Home</NavLinkHome>
+              <NavLink href="/#overview" onClick={this.props.toogleButton}>Overview</NavLink>
+              <NavLink href="/#works" onClick={this.props.toogleButton}>How it Works</NavLink>
+              <NavLink href="/#tokonomics" onClick={this.props.toogleButton}>TokenNomics</NavLink>
+              <NavLink href="/#roadmap" onClick={this.props.toogleButton}>Roadmapo</NavLink>
+              <NavLink href="/#Team" onClick={this.props.toogleButton}>Team</NavLink>
             </NavWrapper>
             <SocialWrapper>
               <SocialIcon>
@@ -40,11 +40,7 @@ export default class Sidebar extends Component {
                   src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                 />
               </SocialIcon>
-              <SocialIcon>
-                <SocialIconImg
-                  src={process.env.PUBLIC_URL + "assets/img/instagram.svg"}
-                />
-              </SocialIcon>
+           
             </SocialWrapper>
           </Container>
         </Wrapper>
@@ -82,6 +78,11 @@ const NavWrapper = styled.div`
 `;
 
 const NavLink = styled.a`
+  padding: 20px 40px;
+  color: white;
+  text-direction: none;
+`;
+const NavLinkHome = styled(Link)`
   padding: 20px 40px;
   color: white;
   text-direction: none;

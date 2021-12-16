@@ -38,34 +38,31 @@ export default class Header extends Component {
             {/* For Desktop interface */}
 
             <NavWrapper>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/" show="true">Home</NavLink>
               <HashLink href="/#overview">Overview</HashLink>
               <HashLink href="/#works">How it Works</HashLink>
               <HashLink href="/#tokonomics">TokenNomics</HashLink>
               <HashLink href="/#roadmap">Roadmap</HashLink>
               <HashLink href="/#Team">Team</HashLink>
+              <HashLink href="/#Team">Whitepaper</HashLink>
             </NavWrapper>
             <SocialWrapper>
-              <SocialIcon to="/twitter">
+              <SocialIcon href="https://twitter.com/bit_chro">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/twitter.svg"}
                 />
               </SocialIcon>
-              <SocialIcon to="/telegram">
+              <SocialIcon href="https://t.me/BITChro">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/telegram.svg"}
                 />
               </SocialIcon>
-              <SocialIcon to="/facebook">
+              <SocialIcon href="">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                 />
               </SocialIcon>
-              <SocialIcon to="/instagram">
-                <SocialIconImg
-                  src={process.env.PUBLIC_URL + "assets/img/instagram.svg"}
-                />
-              </SocialIcon>
+           
             </SocialWrapper>
           </Container>
      
@@ -127,10 +124,11 @@ const SocialWrapper = styled.div`
     display: none;
   }
 `;
-const SocialIcon = styled(Link)`
+const SocialIcon = styled.a`
   margin: 0 10px;
   cursor: pointer;
   text-decoration: none;
+  color:white
 `;
 
 const SocialIconImg = styled.img`

@@ -5,7 +5,7 @@ export default class Subscribe extends Component {
   render() {
     return (
       <>
-        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/pbg.png"})`,  backgroundPosition: "right",
+        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
         padding: "72px 0"}}>
@@ -81,7 +81,7 @@ const SubscribeContent = styled.div`
   color: white;
   margin: 1rem 0;
   width: 100%;
-  font-size:24px;
+  font-size:20px;
 
   @media (max-width: 768px) {
     max-width: 532px;
