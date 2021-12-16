@@ -2,25 +2,16 @@ import React from "react";
 import "./certificate.css";
 export default function Certificate() {
   return (
+    <div className="containerClass">
+
+  
     <a
       href="https://drive.google.com/file/d/1mTUVzX3H9lQJIvoptJ-oNLiJxsLp-d2q/view?usp=sharing"
       target="_blank"
-      style={{ textDecoration: "none", fontSize: "30px", color: "white" }}
+      style={{ textDecoration: "none", fontSize: "24px", color: "white" }}
     >
-      <div
-        className="certificate"
-        style={{
-          width: "100%",
-          backgroundImage: `url(${
-            process.env.PUBLIC_URL + "assets/images/pbg.png"
-          })`,
-
-          backgroundSize: "cover",
-          backgroundColor: "#000",
-          padding: "72px 0",
-        }}
-      >
-        <div className="container">
+ 
+      
           <div>
             <img
               src={process.env.PUBLIC_URL + "assets/img/textcertificate.svg"}
@@ -46,9 +37,10 @@ export default function Certificate() {
               src={process.env.PUBLIC_URL + "assets/images/logocertificate.png"}
               className="imageTwo"
             />
-          </div>
-        </div>
+       
+      
       </div>
     </a>
+    </div>
   );
 }
