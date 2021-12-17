@@ -94,7 +94,7 @@ const Hamburger = styled.div`
     display: block;
   }
 `;
-const Logo = styled(Link)`
+const Logo = styled.div`
   cursor: pointer;
  
 `;
