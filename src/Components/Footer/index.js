@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { Modal } from "react-responsive-modal";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
-import "./list.css"
+import "./list.css";
 
 export default function Footer(props) {
   const [open, setOpen] = useState(false);
@@ -16,27 +16,54 @@ export default function Footer(props) {
 
   return (
     <>
+
+      <MainWrapper>
       <Modal open={open} onClose={onCloseModal}>
-        <img
-          src={process.env.PUBLIC_URL + "assets/images/disclaim.jpg"}
-          style={{ width: "100%" }}
-        />
+        <center>
+          <h3 style={{fontWeight:"bolder"}}>DISCLAIMER</h3>
+        </center>
+        <div>
+          <p>
+            To the greatest extent permitted by applicable laws, regulations,
+            and rules, BITChro will not be liable for any indirect, special,
+            incidental, consequential, or other losses of any kind, whether in
+            tort, contract, or otherwise (including, but not limited to, loss of
+            revenue, income, or profits). profits, and loss of use or data),
+            arising from or in connection with any acceptance of or
+            participation in You should not rely on this White Paper or any part
+            of it.
+            <br />
+          </p>
+          <p>
+            The sole purpose (the “Purpose”) of this website and white paper
+            (the “White Paper”) is to offer data at the BITChro Token The Draft
+            White Paper and its contents do now no longer, and aren't meant to,
+            constitute, or shape any element of, a proposal for sale, prospectus
+            or invitation to subscribe for or buy Tokens, nor shall the Draft
+            White Paper, or the reality of its distribution, shape the premise
+            of or be relied upon in reference to any agreement or dedication to
+            accumulate one of these Tokens. Before buying Tokens, ability
+            clients are strongly recommended to take expert advice. No
+            illustration or assurance is given as to the data contained within
+            the Draft White Paper which has now no longer been verified, and no
+            reliance need to be positioned upon such data.
+          </p>
+        </div>
       </Modal>
       <Modal open={openPolicy} onClose={onPolicyCloseModal}>
         <div>
           <h3>BITChro Privacy Policy</h3>
           <h5>
-            Herein is provided the privacy policy of BITChro (owner and
-            operator of BITChro.com) This Privacy Policy describes how
-            BITChro.com will manage end user’s personal information which
-            we collect as a result of your use of BITChro.com, your use of
-            our websites located at https://BITChro.com and any pages or
-            websites under the 'BITChro' brand including any tablet or
-            mobile phone applications that are owned and/or operated by us or
-            whenever we otherwise deal with you. BITChro is committed to
-            ensuring that the personal information we collect about you is
-            protected and is used, stored and disclosed in accordance with the
-            Privacy Act and this Privacy Policy.
+            Herein is provided the privacy policy of BITChro (owner and operator
+            of BITChro.com) This Privacy Policy describes how BITChro.com will
+            manage end user’s personal information which we collect as a result
+            of your use of BITChro.com, your use of our websites located at
+            https://BITChro.com and any pages or websites under the 'BITChro'
+            brand including any tablet or mobile phone applications that are
+            owned and/or operated by us or whenever we otherwise deal with you.
+            BITChro is committed to ensuring that the personal information we
+            collect about you is protected and is used, stored and disclosed in
+            accordance with the Privacy Act and this Privacy Policy.
           </h5>
           <ol>
             <li>
@@ -58,8 +85,8 @@ export default function Footer(props) {
             <li>
               Personal Information
               <p>
-                The kinds of Personal Information that BITChro.com may
-                collect from you is: - Name Email address Personally submitted
+                The kinds of Personal Information that BITChro.com may collect
+                from you is: - Name Email address Personally submitted
                 preferences Location data IP address
               </p>
             </li>
@@ -70,8 +97,8 @@ export default function Footer(props) {
                 lawful and fair means and not in an intrusive way to operate its
                 Service, and to provide you with the following information:
                 <li>
-                  If you wish to subscribe to BITChro.com's weekly
-                  newsletter or other marketing communications.
+                  If you wish to subscribe to BITChro.com's weekly newsletter or
+                  other marketing communications.
                 </li>
                 <li>To update you on technical progress of BITChro.</li>
                 <li>To provide services to you as a User.</li>
@@ -81,64 +108,62 @@ export default function Footer(props) {
                   <p>
                     Occasionally we may use your Personal Information to inform
                     you about BITChro.com's products or services or about
-                    promotional activities which BITChro.com believes may
-                    be of interest or of benefit to you. We may do this via
-                    email, SMS, telephone or mail. If you no longer wish to
-                    receive marketing or promotional material from
-                    BITChro.com at all or in any particular form, you may
-                    contact us at any time by email to support@BITChro.com
-                    with your request with which we will comply as soon as is
-                    practical.
+                    promotional activities which BITChro.com believes may be of
+                    interest or of benefit to you. We may do this via email,
+                    SMS, telephone or mail. If you no longer wish to receive
+                    marketing or promotional material from BITChro.com at all or
+                    in any particular form, you may contact us at any time by
+                    email to support@BITChro.com with your request with which we
+                    will comply as soon as is practical.
                   </p>
                 </li>
                 <li>
                   Management of your Personal Information
                   <p>
-                    BITChro.com will take all reasonable steps to ensure
-                    that the Personal Information which it collects, uses or
+                    BITChro.com will take all reasonable steps to ensure that
+                    the Personal Information which it collects, uses or
                     discloses is correct and is stored in a secure environment
-                    which is accessed only by authorised persons.
-                    BITChro.com will destroy or permanently de-identify the
-                    Personal Information we hold when it is no longer required
-                    for any purpose permitted under the APPs including our legal
-                    or operational obligations.
+                    which is accessed only by authorised persons. BITChro.com
+                    will destroy or permanently de-identify the Personal
+                    Information we hold when it is no longer required for any
+                    purpose permitted under the APPs including our legal or
+                    operational obligations.
                   </p>
                 </li>
                 <li>
                   Security of Personal Information
                   <p>
                     You acknowledge that no data transmission over the Internet
-                    is totally secure. Accordingly, BITChro.com does not
-                    warrant the security of any information which you transmit
-                    to it. Any information which you transmit to
-                    BITChro.com is transmitted at your own risk. However,
-                    once BITChro.com receives your transmission,
-                    BITChro.com will take reasonable steps to protect your
-                    Personal Information from misuse, loss and unauthorised
-                    access, modification and disclosure including by using
-                    password protected systems and databases and Secure Socket
-                    Layer (SSL) technology. BITChro.com’s employees, agents
-                    and contractors are required to maintain the confidentiality
-                    of Users’ Personal Information and trading behaviour.
-                    Information posted on bulletin boards or communicated within
-                    a social media environment (for example, Facebook, Twitter,
-                    Chat Rooms) becomes public information. BITChro.com
-                    cannot guarantee the security of this type of disclosed
-                    information. We take seriously the responsibility to exclude
-                    children from access to our services. We will not accept
-                    their information for the purposes of accessing or using the
-                    Service. It is however, ultimately the responsibility of
-                    parents or guardians to monitor their children’s Internet
-                    activities including where appropriate by using Internet
-                    screening software. Remember to always log out of your
-                    account when you have completed your time on the website.
-                    This is particularly important if you share a computer with
-                    another person. You are responsible for the security of and
-                    access to your own computer, mobile device or any other
-                    handset used to access the website. Ultimately, you are
-                    solely responsible for maintaining the secrecy of your
-                    username, password and any account information. Please be
-                    careful whenever using the Internet and our website.
+                    is totally secure. Accordingly, BITChro.com does not warrant
+                    the security of any information which you transmit to it.
+                    Any information which you transmit to BITChro.com is
+                    transmitted at your own risk. However, once BITChro.com
+                    receives your transmission, BITChro.com will take reasonable
+                    steps to protect your Personal Information from misuse, loss
+                    and unauthorised access, modification and disclosure
+                    including by using password protected systems and databases
+                    and Secure Socket Layer (SSL) technology. BITChro.com’s
+                    employees, agents and contractors are required to maintain
+                    the confidentiality of Users’ Personal Information and
+                    trading behaviour. Information posted on bulletin boards or
+                    communicated within a social media environment (for example,
+                    Facebook, Twitter, Chat Rooms) becomes public information.
+                    BITChro.com cannot guarantee the security of this type of
+                    disclosed information. We take seriously the responsibility
+                    to exclude children from access to our services. We will not
+                    accept their information for the purposes of accessing or
+                    using the Service. It is however, ultimately the
+                    responsibility of parents or guardians to monitor their
+                    children’s Internet activities including where appropriate
+                    by using Internet screening software. Remember to always log
+                    out of your account when you have completed your time on the
+                    website. This is particularly important if you share a
+                    computer with another person. You are responsible for the
+                    security of and access to your own computer, mobile device
+                    or any other handset used to access the website. Ultimately,
+                    you are solely responsible for maintaining the secrecy of
+                    your username, password and any account information. Please
+                    be careful whenever using the Internet and our website.
                   </p>
                 </li>
               </p>
@@ -146,27 +171,26 @@ export default function Footer(props) {
             <li>
               Access to Personal Information
               <p>
-                You may access the Personal Information collected by
-                BITChro.com by contacting us at support@BITChro.com.
-                We will give you access to your Personal Information in the
-                manner requested if that is possible and within a reasonable
-                period. If we refuse your request or cannot give you access in
-                the manner you have requested, we will do what we can to meet
-                your requirements by other means. We may not be required to give
-                you access to your Personal Information in certain circumstances
-                which are set out in the APPs including where it may have an
-                unreasonable impact on other individual's privacy. If we refuse
-                access for such reasons, we will advise you in writing of the
-                refusal and our reasons and the complaint mechanisms available
-                to you.
+                You may access the Personal Information collected by BITChro.com
+                by contacting us at support@BITChro.com. We will give you access
+                to your Personal Information in the manner requested if that is
+                possible and within a reasonable period. If we refuse your
+                request or cannot give you access in the manner you have
+                requested, we will do what we can to meet your requirements by
+                other means. We may not be required to give you access to your
+                Personal Information in certain circumstances which are set out
+                in the APPs including where it may have an unreasonable impact
+                on other individual's privacy. If we refuse access for such
+                reasons, we will advise you in writing of the refusal and our
+                reasons and the complaint mechanisms available to you.
               </p>
             </li>
             <li>
               Use of Website
               <p>
-                By using this website, you agree to BITChro.com collecting
-                and processing your Personal Information on the basis explained
-                in this Privacy Policy.
+                By using this website, you agree to BITChro.com collecting and
+                processing your Personal Information on the basis explained in
+                this Privacy Policy.
               </p>
             </li>
             <li>
@@ -174,14 +198,12 @@ export default function Footer(props) {
               <p>
                 If you have any queries, requests for access or correction or
                 complaints relating to the handling of your personal
-                information, please contact us by email.
-                support@BITChro.com
+                information, please contact us by email. support@BITChro.com
               </p>
             </li>
           </ol>
         </div>
       </Modal>
-      <MainWrapper>
         <Wrapper>
           <center>
             <img
@@ -269,10 +291,12 @@ export default function Footer(props) {
               </FooterDescContainer>
               <FooterDescContainer>
                 <FooterLinksButton
-                 onClick={() => {
+                  onClick={() => {
                     setOpenPolicy(true);
                   }}
-                >Privacy Policy</FooterLinksButton>
+                >
+                  Privacy Policy
+                </FooterLinksButton>
               </FooterDescContainer>
             </Container>
           </Container>
@@ -356,7 +380,7 @@ const FooterLinks = styled.a`
 `;
 const FooterLinksButton = styled.button`
   display: flex;
-  margin: 0 50px;
+  
   cursor: pointer;
   background: transparent;
   border: none;

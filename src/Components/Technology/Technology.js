@@ -41,7 +41,7 @@ export default class Technology extends Component {
                 />
                  <TechComponent
               
-                  img={process.env.PUBLIC_URL + "/assets/Technology/solana.svg"}
+                  img={process.env.PUBLIC_URL + "/assets/Technology/solanalogo.svg"}
                  
                 />
                  <TechComponent
@@ -51,7 +51,7 @@ export default class Technology extends Component {
                 />
                  <TechComponent
                  
-                  img={process.env.PUBLIC_URL + "/assets/Technology/ethereum-final.svg"}
+                  img={process.env.PUBLIC_URL + "/assets/Technology/etherumlogo.png"}
                  
                 />
                  <TechComponent

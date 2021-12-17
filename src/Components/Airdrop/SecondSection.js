@@ -5,6 +5,7 @@ import { StyleSheet, css } from "aphrodite";
 
 import styled, { keyframes } from "styled-components";
 import "./style.css";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 export const styles = StyleSheet.create({
   heading: {
@@ -175,10 +176,13 @@ export default function SecondSection(props) {
               {props.second ? (
                 <button className="completedButton" />
               ) : (
+                <>
                 <button
                   className="pendingButton"
                   onClick={props.secondClick}
                 ></button>
+                <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
+                </>
               )}
               {/* <Button
                 style={{ borderRadius: "15px", border: "2px solid white" }}
@@ -238,10 +242,15 @@ export default function SecondSection(props) {
               {props.second2 ? (
                 <button className="completedButton" />
               ) : (
+                <>
+            
                 <button
                   className="pendingButton"
                   onClick={props.second2Click}
                 ></button>
+                    <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
+                </>
+               
               )}
 
               {/* <Button

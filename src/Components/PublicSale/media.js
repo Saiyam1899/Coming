@@ -56,11 +56,11 @@ export const styles = StyleSheet.create({
       width: "100%",
     },
     "@media only screen and (max-width: 767px)": {
-      width: "60%",
+      width: "80%",
       textAlign: "center",
     },
     "@media only screen and (max-width: 1024px)": {
-      width: "50%",
+      width: "100%",
       textAlign: "center",
     },
   },
@@ -174,7 +174,7 @@ export const styles = StyleSheet.create({
       textAlign: "center",
     },
     "@media only screen and (max-width: 767px)": {
-      width: "40%",
+      width: "80%",
     },
   },
   image_Logo2: {

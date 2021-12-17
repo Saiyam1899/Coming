@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from "react-bootstrap";
 import "./style.css";
 import { css } from "aphrodite";
 import { styles } from "./SecondSection";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function FinalSection(props) {
   return (
@@ -23,10 +24,13 @@ export default function FinalSection(props) {
             {props.fourth ? (
               <button className="completedButton" />
             ) : (
+              <>
               <button
                 className="pendingButton"
                 onClick={props.fourthClick}
               ></button>
+                <FaLongArrowAltRight color="white" size={40} className="fa-arrow-right"/>
+              </>
             )}
             <a href="https://t.me/BITChro" target="_blank">
               <Button

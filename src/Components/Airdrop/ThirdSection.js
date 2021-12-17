@@ -6,6 +6,7 @@ import { StyleSheet, css } from "aphrodite";
 import styled, { keyframes } from "styled-components";
 
 import { styles } from "./SecondSection";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function ThirdSection(props) {
   const textContent="Invest in World's Most innovative %23NFT %26 %23Metaverse %23ICO of the Year.Join BIT_Chro  %23PrivateSale followed by %23publicSale.BIT_Chro(BTCH):next 1000x coin.%23PrivateSale price: 0.003 %23BUSD%23Exchange listing price will be 0.1 BUSD. %23Pancakeswap %23Probit %23kucoin www.bitchro.com"
@@ -26,10 +27,15 @@ export default function ThirdSection(props) {
               {props.third ? (
                 <button className="completedButton" />
               ) : (
+                <>
+
+         
                 <button
                   className="pendingButton"
                   onClick={props.thirdClick}
                 ></button>
+                 <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
+                </>
               )}
               {/* <Button
                 style={{ borderRadius: "15px", border: "2px solid white" }}

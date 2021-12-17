@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 import "./style.css";
 
@@ -122,7 +123,7 @@ export default function FirstSection(props) {
     },
     section_each: {
       margin: "0px",
-      backgroundImage: "url())",
+   
       "@media (max-width: 567px)": {
         textAlign: "center",
       },
@@ -134,7 +135,7 @@ export default function FirstSection(props) {
       fontSize: "28px",
       color: "white",
       textAlign: "center",
-      fontWeight: "bold",
+      fontWeight: "bolder",
 
       "@media (max-width: 567px)": {
         textAlign: "center",
@@ -146,14 +147,14 @@ export default function FirstSection(props) {
     },
     instruction: {
       fontSize: "20px",
-      color: "white",
+      color: "#27DC3A",
       textAlign: "left",
       fontWeight: "bold",
       padding: "20px",
       margin: "10px",
-      border: "1px solid purple",
+      border: "1px solid black",
       borderRadius: "15px",
-      boxShadow: "0 0 1rem 0 rgba(0, 0, 0, 0.9)",
+      boxShadow: "0 0 6rem 0 rgba(0, 0, 0, 1)",
       height: "220px",
       overflow: "hidden",
       position: "relative",
@@ -165,10 +166,11 @@ export default function FirstSection(props) {
       justifyContent: "center",
       "@media (max-width: 567px)": {
         textAlign: "center",
+        fontSize: "10px",
       },
       "@media only screen and (max-width: 767px)": {
-        width: "60%",
-        fontSize: "12px",
+        width: "100%",
+        fontSize: "10px",
         color: "white",
       },
     },
@@ -186,8 +188,9 @@ export default function FirstSection(props) {
         data-aos-delay="50"
         data-aos-duration="1500"
       >
-      <Section1Image imgURL={process.env.PUBLIC_URL+"assets/images/ssssiuhf.jpg"}>
-      <h1 className="animate-charcter">Welcome to BITChro Airdrop</h1>
+      <Section1Image imgURL={process.env.PUBLIC_URL+"assets/images/bgairdrop.jpg"}>
+  
+      <h1 className="animate-charcter">Welcome To BITChro Airdrop</h1>
       <p className={css(styles.secondText)}>
           {" "}
           You have to complete below mentioned tasks to claim 1000 BITChro(BTCH)
@@ -197,7 +200,7 @@ export default function FirstSection(props) {
           {" "}
           <span style={{ color: "red" }}>
             {" "}
-            * All Task are manadtory to participate in BITChro (BTCH) AirDrop
+            * All Task are mandatory to participate in BITChro (BTCH) AirDrop
             <center>
               <p className={css(styles.instruction)}>
                 <ol>
@@ -218,7 +221,7 @@ export default function FirstSection(props) {
       </Section1Image>
 
 
-        
+
 
         
 
@@ -266,8 +269,10 @@ export default function FirstSection(props) {
               {props.first ? (
                 <button className="completedButton" />
               ) : (<>
+       
+                   <FaLongArrowAltLeft color="white" size={50} className="fa-arrow-right"/>
 
-                    <span className="animate-charcter">  </span>
+               
                 <button
                   className="pendingButton"
                   onClick={props.firstClick}

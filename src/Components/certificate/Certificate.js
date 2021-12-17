@@ -33,26 +33,37 @@ export default function Certificate() {
           </p>
         </div>
         <div className="imageFlex">
-          <img
-            src={
-              process.env.PUBLIC_URL + "assets/images/certificateframefinal.jpg"
-            }
-            className="imageOne"
-          />
+          <div>
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "assets/images/certificateframefinal.jpg"
+              }
+              className="imageOne"
+            />
+          </div>
+          <div>
+            <img
+              src={process.env.PUBLIC_URL + "assets/img/btclogo.svg"}
+              className="imageMid"
+            />
+          </div>
 
-          <img
-            src={process.env.PUBLIC_URL + "assets/img/mainLogo.svg"}
-            className="imageMid"
-          />
-          <img
-            src={process.env.PUBLIC_URL + "assets/img/handshake.svg"}
-            className="imageMid"
-          />
+          <div>
+            <img
+              src={process.env.PUBLIC_URL + "assets/img/handshake.svg"}
+              className="imageMid"
+            />
+          </div>
 
-          <img
-            src={process.env.PUBLIC_URL + " assets/images/logocertificate.png"}
-            className="imageTwo"
-          />
+          <div>
+            <img
+              src={
+                process.env.PUBLIC_URL + " assets/images/logocertificate.png"
+              }
+              className="imageTwo"
+            />
+          </div>
         </div>
       </a>
     </div>
