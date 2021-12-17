@@ -286,7 +286,7 @@ export default function Footer(props) {
                     setOpen(true);
                   }}
                 >
-                  Desclaimer
+                 DISCLAIMER
                 </FooterLinksButton>
               </FooterDescContainer>
               <FooterDescContainer>
