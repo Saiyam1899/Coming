@@ -59,7 +59,7 @@ export default function PrivateSales() {
             </button>
             </a>
            
-            <a href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view?usp=sharing">
+            <a href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view?usp=sharing" target="_blank">
               <button
                 style={{
                   background: "none",

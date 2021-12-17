@@ -56,7 +56,7 @@ export default class Airdrop extends React.Component {
         alert("Please complete all below mentioned tasks");
       }
     } else {
-      alert("Please Connect wiht Metamask");
+      alert("Please Connect with Metamask");
     }
   }
 

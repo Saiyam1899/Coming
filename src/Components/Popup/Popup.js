@@ -6,10 +6,11 @@ import { Modal } from "react-responsive-modal";
 import { Link } from "react-router-dom";
 
 export const Popup = (props) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(props.popupToggle);
   console.log(props.popupToggle)
   const onCloseModal = () => {
-    setOpen(false);
+    setOpen(false)
+    
     
   }
   useEffect(() => {

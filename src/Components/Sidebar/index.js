@@ -21,7 +21,7 @@ export default class Sidebar extends Component {
               <NavLink href="/#overview" onClick={this.props.toogleButton}>Overview</NavLink>
               <NavLink href="/#works" onClick={this.props.toogleButton}>How it Works</NavLink>
               <NavLink href="/#tokonomics" onClick={this.props.toogleButton}>TokenNomics</NavLink>
-              <NavLink href="/#roadmap" onClick={this.props.toogleButton}>Roadmapo</NavLink>
+              <NavLink href="/#roadmap" onClick={this.props.toogleButton}>Roadmap</NavLink>
               <NavLink href="/#Team" onClick={this.props.toogleButton}>Team</NavLink>
               <NavLink href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view" onClick={this.props.toogleButton}>Whitepaper</NavLink>
             </NavWrapper>

@@ -1,20 +1,22 @@
 import { render } from "@testing-library/react";
 import { useState } from "react";
 import { Alert, Button } from "react-bootstrap";
-import "./alert.css"
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import "./alert.css";
 
 export default function AlertDismiss() {
-    const [show, setShow] = useState(true);
-  
-    if (show) {
-      return (
-        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-          <Alert.Heading><b>Private Sale!</b> is live now <b>Public Sale!</b> Coming Soon....</Alert.Heading>
+  const [show, setShow] = useState(true);
+
+  if (show) {
+    return (
+      <Link to="/private-sell">
+         <p className="animate-charcter">
+          <b> Private Sale is Live Now!</b>
+        </p>
+      </Link>
+        
       
-        </Alert>
-      );
-    }
-    return null
+    );
   }
-  
-  
+  return null;
+}

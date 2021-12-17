@@ -36,7 +36,7 @@ export default class Subscribe extends Component {
                     Facebook Like companies are working to make it setting for few online sports.
                 </li>
                 <li>
-                    Cryptocurrency can be used to purchase virtual land and other digital items.
+                 BTCH coin can be used to purchase virtual land and other digital items on BIT_Chro platform in near future
                 </li>
             </ul>
             </SubscribeContent>

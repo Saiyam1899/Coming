@@ -24,26 +24,22 @@ export default class Subscribe extends Component {
             </SubscribeFormWrapper>
 
             <SocialWrapper>
-              <SocialIcon>
+              <SocialIcon href="https://twitter.com/bit_chro">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/twitter.svg"}
                 />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon href="https://t.me/BITChro">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/telegram.svg"}
                 />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon href="https://m.facebook.com/ChroBIT/?_rdr/">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                 />
               </SocialIcon>
-              <SocialIcon>
-                <SocialIconImg
-                  src={process.env.PUBLIC_URL + "assets/img/instagram.svg"}
-                />
-              </SocialIcon>
+           
             </SocialWrapper>
             <Certificate/>
           </Container>
@@ -119,7 +115,7 @@ const SubscribeFormButton = styled.form`
 const SocialWrapper = styled.div`
   display: flex;
 `;
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
   margin: 0 10px;
   cursor: pointer;
 `;

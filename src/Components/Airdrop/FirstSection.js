@@ -4,6 +4,8 @@ import { Button, ButtonGroup } from "react-bootstrap";
 import "./style.css";
 
 import { StyleSheet, css } from "aphrodite";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import styled from "styled-components";
 
 export default function FirstSection(props) {
   const styles = StyleSheet.create({
@@ -30,6 +32,7 @@ export default function FirstSection(props) {
       },
     },
     heading2: {
+      paddingBottom:"30px",
       marginTop: "20px",
       fontStyle: "normal",
       fontWeight: "bolder",
@@ -46,7 +49,7 @@ export default function FirstSection(props) {
         fontStyle: "normal",
         fontWeight: "bolder",
         marginTop: "20px",
-        fontSize: "16px",
+        fontSize: "20px",
         lineHeight: "13px",
         textAlign: "center",
         color: "#08ff21",
@@ -104,6 +107,7 @@ export default function FirstSection(props) {
     },
     secondText: {
       fontSize: "28px",
+      paddingBottom:"20px",
       color: "white",
       textAlign: "center",
       fontWeight: "bold",
@@ -118,7 +122,7 @@ export default function FirstSection(props) {
     },
     section_each: {
       margin: "0px",
-
+      backgroundImage: "url())",
       "@media (max-width: 567px)": {
         textAlign: "center",
       },
@@ -145,28 +149,25 @@ export default function FirstSection(props) {
       color: "white",
       textAlign: "left",
       fontWeight: "bold",
-      padding:"20px",
-      margin:"10px",
-      border:"1px solid purple",
-     borderRadius:"15px",
-  
+      padding: "20px",
+      margin: "10px",
+      border: "1px solid purple",
+      borderRadius: "15px",
       boxShadow: "0 0 1rem 0 rgba(0, 0, 0, 0.9)",
-
       height: "220px",
       overflow: "hidden",
       position: "relative",
       width: "370px",
-      textTransform:"capitalize",
-      maxWidth:"1000px",
-      width:"100%",
-      alignItems:"center",
-      justifyContent:"center",
-
+      textTransform: "capitalize",
+      maxWidth: "1000px",
+      width: "100%",
+      alignItems: "center",
+      justifyContent: "center",
       "@media (max-width: 567px)": {
         textAlign: "center",
       },
       "@media only screen and (max-width: 767px)": {
-        width:"60%",
+        width: "60%",
         fontSize: "12px",
         color: "white",
       },
@@ -185,30 +186,42 @@ export default function FirstSection(props) {
         data-aos-delay="50"
         data-aos-duration="1500"
       >
-        <p className={css(styles.heading)}>Welcome To BITChro AirDrop</p>
-
-        <p className={css(styles.secondText)}>
+      <Section1Image imgURL={process.env.PUBLIC_URL+"assets/images/ssssiuhf.jpg"}>
+      <h1 className="animate-charcter">Welcome to BITChro Airdrop</h1>
+      <p className={css(styles.secondText)}>
           {" "}
           You have to complete below mentioned tasks to claim 1000 BITChro(BTCH)
           tokens in your wallet
         </p>
         <p className={css(styles.secondText)}>
           {" "}
-        <span style={{color:"red"}}> * All Task are manadtory to participate in BITChro (BTCH) AirDrop
-        <center>
-        <p className={css(styles.instruction)}>
-         <ol>
-            <li>Complete all the 5 tasks.</li>
-            <li>Click “Pending” options in every task segments, if you have completed the Task.</li>
-            <li>claim your 1000 BTCH coins . </li>
-             Note- You need to connect your MetaMask or Trust wallet to claim BTCH coins instantly in your wallet. Use  BEP-20/BSC-20 wallet to receive the token.
-          </ol>
+          <span style={{ color: "red" }}>
+            {" "}
+            * All Task are manadtory to participate in BITChro (BTCH) AirDrop
+            <center>
+              <p className={css(styles.instruction)}>
+                <ol>
+                  <li>Complete all the 5 tasks.</li>
+                  <li>
+                    Click “Pending” options in every task segments, if you have
+                    completed the Task.
+                  </li>
+                  <li>claim your 1000 BTCH coins . </li>
+                  Note- You need to connect your MetaMask or Trust wallet to
+                  claim BTCH coins instantly in your wallet. Use BEP-20/BSC-20
+                  wallet to receive the token.
+                </ol>
+              </p>
+            </center>
+          </span>
         </p>
-        </center>
-       
+      </Section1Image>
+
+
         
-        </span>
-        </p>
+
+        
+
         <div className={css(styles.heading2)}>
           Task 1: Click the like button to like our facebook page
         </div>
@@ -248,14 +261,18 @@ export default function FirstSection(props) {
                 data-action="like"
                 data-size="large"
                 data-share="false"
+                width="500"
               ></div>
               {props.first ? (
                 <button className="completedButton" />
-              ) : (
+              ) : (<>
+
+                    <span className="animate-charcter">  </span>
                 <button
                   className="pendingButton"
                   onClick={props.firstClick}
                 ></button>
+                  </>
               )}
             </ButtonGroup>
           </div>
@@ -264,3 +281,22 @@ export default function FirstSection(props) {
     </>
   );
 }
+const Section1Image = styled(Link)`
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+  padding:72px 0;
+  opacity:0.9;
+  background-image: url(${(props) => props.imgURL});
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 18px 40px rgb(51 51 51 / 80%);
+  width: 100%;
+  background-position: center;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease-out;
+ 
+`;
