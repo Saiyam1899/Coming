@@ -27,9 +27,10 @@ const HeroSectionContainer = styled.div`
   color: #fff;
 
   @media (max-width: 1200px) {
-    padding: 42px;
+    padding: 0 72px;
   }
   @media (max-width: 1024px) {
-    padding: 32px;
+    padding: 0 5px;
+    
   }
 `;

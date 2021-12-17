@@ -7,9 +7,15 @@
 }
 .flexLine{
   display: flex;
+  align-items:center;
 }
 .textClass{
   margin: 10px;
   font-size: 20px;
   text-align: left;
+}
+.mainClass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

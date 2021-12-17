@@ -20,7 +20,7 @@ export default class Header extends Component {
       <>
         <Wrapper>
           <Container>
-            <Logo>
+            <Logo to="/">
               <img
                 src={process.env.PUBLIC_URL + "assets/img/mainLogo.svg"}
                 alt="footer"
@@ -44,7 +44,7 @@ export default class Header extends Component {
               <HashLink href="/#tokonomics">TokenNomics</HashLink>
               <HashLink href="/#roadmap">Roadmap</HashLink>
               <HashLink href="/#Team">Team</HashLink>
-              <HashLink href="/#Team">Whitepaper</HashLink>
+              <HashLink href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view">Whitepaper</HashLink>
             </NavWrapper>
             <SocialWrapper>
               <SocialIcon href="https://twitter.com/bit_chro">
@@ -57,7 +57,7 @@ export default class Header extends Component {
                   src={process.env.PUBLIC_URL + "assets/img/telegram.svg"}
                 />
               </SocialIcon>
-              <SocialIcon href="">
+              <SocialIcon href="https://m.facebook.com/ChroBIT/?_rdr/">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                 />
@@ -94,8 +94,9 @@ const Hamburger = styled.div`
     display: block;
   }
 `;
-const Logo = styled.div`
+const Logo = styled(Link)`
   cursor: pointer;
+ 
 `;
 const NavWrapper = styled.div`
   display: flex;

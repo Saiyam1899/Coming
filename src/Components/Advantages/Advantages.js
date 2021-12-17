@@ -17,12 +17,9 @@ export default class Team extends Component {
         backgroundColor: "#000",
         padding: "72px 0"}}>
          <Logo src={process.env.PUBLIC_URL + "assets/images/advantages.svg"} />
-            <ContainerImages>
-              <TeamWrapper
-                data-aos="zoom-in-right"
-                data-aos-delay="50"
-                data-aos-duration="3000"
-              >
+           <TeamWrapper>
+
+          
                 <AdvantageCompo
                   desc="BITChro has always been straightforward and upfront,and this is ingrained in our nature and who we are."
                   img={process.env.PUBLIC_URL + "/assets/Advanatages/ethics.svg"}
@@ -39,32 +36,11 @@ export default class Team extends Component {
                   linked={"https://www.linkedin.com/in/shota-shun-183640227/"}
                 />
        
-              </TeamWrapper>
-            </ContainerImages>
+       </TeamWrapper>
+          
           </Container>
         </Wrapper>
-        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
-        backgroundSize: "cover",
-       
-        padding: "72px 0"}}>
-          <h1
-            data-aos="zoom-in-right"
-            data-aos-delay="50"
-            data-aos-duration="3000"
-          >
-            <Logo
-              src={process.env.PUBLIC_URL + "assets/img/bitchro-allocation.svg"}
-            />
-          </h1>
-          <Logo2
-            data-aos="zoom-in-right"
-            data-aos-delay="50"
-            data-aos-duration="3000"
-            src={
-              process.env.PUBLIC_URL + "assets/img/bitchro-allocate-final.svg"
-            }
-          />
-        </Wrapper>
+
       </>
     );
   }
@@ -81,7 +57,7 @@ const Container = styled.a`
   color: white;
   text-decoration: none;
   padding: 72px;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
 
   @media (max-width: 1024px) {
@@ -109,7 +85,7 @@ const ContainerImages = styled.a`
   }
 `;
 const Logo = styled.img`
-  max-width: 500px;
+  max-width: 800px;
   margin: 2rem 0;
   width: 100%;
   @media (max-width: 768px) {
@@ -127,6 +103,7 @@ const Logo2 = styled.img`
 const TeamWrapper = styled.div`
   max-width: 1000px;
   text-align: center;
+  justify-content:flex-start;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -140,6 +117,7 @@ const TeamWrapper = styled.div`
     justify-content: center;
     alignitems: center;
     flex-wrap: wrap;
-    width: 300px;
+    
+  
   }
 `;

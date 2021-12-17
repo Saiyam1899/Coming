@@ -23,19 +23,20 @@ export default class Sidebar extends Component {
               <NavLink href="/#tokonomics" onClick={this.props.toogleButton}>TokenNomics</NavLink>
               <NavLink href="/#roadmap" onClick={this.props.toogleButton}>Roadmapo</NavLink>
               <NavLink href="/#Team" onClick={this.props.toogleButton}>Team</NavLink>
+              <NavLink href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view" onClick={this.props.toogleButton}>Whitepaper</NavLink>
             </NavWrapper>
             <SocialWrapper>
-              <SocialIcon>
+              <SocialIcon href="https://twitter.com/bit_chro">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/twitter.svg"}
                 />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon href="https://t.me/BITChro">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/telegram.svg"}
                 />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon href="https://m.facebook.com/ChroBIT/?_rdr/">
                 <SocialIconImg
                   src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                 />
@@ -93,9 +94,10 @@ const SocialWrapper = styled.div`
   justify-content: center;
   margin-top: 2rem;
 `;
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
   margin: 0 10px;
   cursor: pointer;
+  color:white;
 `;
 
 const SocialIconImg = styled.img`
