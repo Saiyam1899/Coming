@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
       width: "100%",
     },
     "@media only screen and (max-width: 767px)": {
-      width: "80%",
+      width: "60%",
       textAlign: "center",
     },
     "@media only screen and (max-width: 1024px)": {
@@ -68,13 +68,13 @@ export const styles = StyleSheet.create({
     width: "50%",
     paddingRight: "40px",
     "@media only screen and (max-width: 1023px)": {
-      width: "20%",
+      width: "60%",
       textAlign: "center",
     },
     "@media (max-width: 567px)": {
       textAlign: "center",
       float: "center",
-      width: "100%",
+      width: "60%",
     },
   
   },

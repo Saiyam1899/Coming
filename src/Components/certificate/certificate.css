@@ -14,7 +14,7 @@
 }
 .imageTwo {
 
-  width: 60%;
+  width: 80%;
 }
 .imageLogo {
   max-width: 400px;
@@ -27,7 +27,7 @@
 }
 .imageMid{
 
-  width: 100%;
+  width: 80%;
 }
 @media only screen and (max-width: 800px) {
   .containerClass {

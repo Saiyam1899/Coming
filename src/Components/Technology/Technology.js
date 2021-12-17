@@ -51,7 +51,7 @@ export default class Technology extends Component {
                 />
                  <TechComponent
                  
-                  img={process.env.PUBLIC_URL + "/assets/Technology/etherumlogo.png"}
+                  img={process.env.PUBLIC_URL + "/assets/Technology/ethereum-final.svg"}
                  
                 />
                  <TechComponent
