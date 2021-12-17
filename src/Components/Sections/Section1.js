@@ -17,14 +17,15 @@ export default class Section1 extends Component {
             backgroundPosition: "right",
             backgroundSize: "cover",
             backgroundColor: "#000",
-            padding: "72px 0",
+            padding: "0 72px",
           }}
+          data-aos="fade-right"
+            data-aos-delay="50"
+            data-aos-duration="1500"
         >
   
           <Section1Content
-            data-aos="fade-right"
-            data-aos-delay="50"
-            data-aos-duration="1500"
+           
           >
      
             <Section1Logo
@@ -63,7 +64,7 @@ export default class Section1 extends Component {
             </Section1ButtonContainer>
           </Section1Content>
           <Section1ImgContainer
-            data-aos="fade-down-left"
+            data-aos="fade-down-bottom"
             data-aos-delay="50"
             data-aos-duration="1500"
           >
@@ -86,7 +87,7 @@ const Section1Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 72px 0;
+  padding:  0 72px;
   @media (max-width: 920px) {
     flex-direction: column;
   }

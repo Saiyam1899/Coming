@@ -30,7 +30,7 @@ export default class Footer extends Component {
                       alt="footer"
                     />
                   </SocialIcon>
-                  <SocialIcon href="https://m.facebook.com/">
+                  <SocialIcon href="https://m.facebook.com/ChroBIT/?_rdr/">
                     <SocialIconImg
                       src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                       alt="footer"
