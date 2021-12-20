@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import AlertDismiss from "../Alert/AlertDismiss";
@@ -17,7 +16,7 @@ export default class Section1 extends Component {
             backgroundPosition: "right",
             backgroundSize: "cover",
             backgroundColor: "#000",
-            padding: "0 72px",
+            padding: "72px 72px",
           }}
             data-aos="fade-right"
             data-aos-delay="50"
@@ -34,7 +33,9 @@ export default class Section1 extends Component {
 
             <Section1Logo src={process.env.PUBLIC_URL + "assets/img/NFT.svg"} />
             <h3 style={{margin:"30px 0",padding:"0 12px"}}>
-             BITChro is a platform that intends to make nonfungible tokens (NFTs) more accessible as a financial asset in the Metaverse Ecosystem.
+             BITChro is a platform that intends to make nonfungible tokens (NFTs) more accessible as a 
+             financial asset in the 
+             Metaverse Ecosystem.
             </h3>
             <Section1ButtonContainer>
               <Section1Button
