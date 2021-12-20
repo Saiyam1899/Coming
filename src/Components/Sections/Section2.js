@@ -7,7 +7,7 @@ export default class Section2 extends Component {
         <Section2Wrapper id="overview" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
         backgroundSize: "cover",
         backgroundColor: "#000",
-        padding: "0"}}>
+        padding: "72px 0"}}>
           <Section2Logo
             data-aos="flip-up"
             data-aos-delay="50"
