@@ -1,10 +1,9 @@
-.animate-charcter
+.animate-charcter-popup
 {
-   text-transform: uppercase;
-   background: linear-gradient(
+  background: linear-gradient(
     120deg,
-    rgb(203, 1, 255) 0%,
-    rgb(0, 255, 87) 100%
+    rgb(27, 255, 72) 0%,
+    rgb(246, 10, 10) 100%
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -16,7 +15,7 @@
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      font-size: 50px;
+    font-size: 40px;
       font-style: bold;
 }
 

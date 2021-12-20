@@ -68,7 +68,8 @@ export default function FinalSection(props) {
             fontWeight: "bold",
           }}
         >
-          Connect
+          {props.address?<>Disconnect</>:<>Connect</>}
+          
         </div>
         <center
           onClick={props.claimReward}

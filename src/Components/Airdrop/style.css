@@ -57,20 +57,21 @@
 .completedButton {
   background-image: url("../image/completed.png");
   background-color: transparent;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
   border: none;
-  width: 185px;
-  height: 70px;
+  width: 145px;
+  height: 45px;
 }
 
 .animate-charcter
 {
-  
    background: linear-gradient(
     120deg,
     rgb(203, 1, 255) 0%,
-    rgb(0, 255, 87) 100%
+    rgb(9, 238, 85) 100%
   );
+  text-transform: none;
   background-size: auto auto;
   background-clip: border-box;
   background-size: 70% auto;
@@ -81,7 +82,7 @@
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      font-size: 60px;
+      font-size: 40px;
       font-style: bold;
 }
 

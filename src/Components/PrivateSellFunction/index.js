@@ -53,31 +53,22 @@ class App extends React.Component {
 
   //Approve Function
   async Approve() {
-    console.log(this.state.from);
-    if(this.state.from=="")
-    {
-      return 0;
-
-    }
-    else{
-      let ammount = this.state.from * 10 ** 18;
-      let approve = await this.state.contract.methods.approve(
-        ContractAddress,
-        Web3.utils.toBN(ammount)
-      );
-      approve
-        .send({ from: this.state.address })
-        .then((d) => {
-          this.setState({ disable: d.status, approve: d.status });
-        })
-        .catch((err) => {
-          if (err.code === 4001) {
-            alert("denied transaction");
-          }
-        });
-      this.setState({ prefrom: this.state.from });
-    }
-
+    let ammount = this.state.from * 10 ** 18;
+    let approve = await this.state.contract.methods.approve(
+      ContractAddress,
+      Web3.utils.toBN(ammount)
+    );
+    approve
+      .send({ from: this.state.address })
+      .then((d) => {
+        this.setState({ disable: d.status, approve: d.status });
+      })
+      .catch((err) => {
+        if (err.code === 4001) {
+          alert("denied transaction");
+        }
+      });
+    this.setState({ prefrom: this.state.from });
   }
 
   //Get From data
@@ -489,7 +480,7 @@ class App extends React.Component {
               style={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: `${this.state.disable ? "gray" : "purple"}`,
+                backgroundColor: `${this.state.disable || this.state.from<=0 ? "gray" : "purple"}`,
                 color: "rgb(255, 255, 255)",
                 width: "120px",
                 textAlign: "center",
@@ -498,7 +489,7 @@ class App extends React.Component {
                 cursor: "pointer",
                 marginTop: "10px",
               }}
-              onClick={this.state.disable ? null : this.Approve}
+              onClick={this.state.disable  || this.state.from<=0 ? null : this.Approve}
             >
               <div>Approve</div>
             </div>

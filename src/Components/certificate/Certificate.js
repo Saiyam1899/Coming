@@ -16,9 +16,8 @@ export default function Certificate() {
         padding: "72px",
       }}
     >
-      <a
-        href="https://drive.google.com/file/d/1mTUVzX3H9lQJIvoptJ-oNLiJxsLp-d2q/view?usp=sharing"
-        target="_blank"
+      <div
+      
         style={{ textDecoration: "none", fontSize: "24px", color: "white" }}
       >
         <div>
@@ -29,7 +28,7 @@ export default function Certificate() {
           <p style={{ marginTop: "30px", fontSize: "20px" }}>
             BIT_Chro now officially Registered in the Company house of UK as
             BITChro Metaverse Limited.
-            <br /> To know more Click Here.
+            <br />  To know more <a href="https://find-and-update.company-information.service.gov.uk/company/13765689" target="_blank">Click Here.</a>
           </p>
         </div>
         <div className="imageFlex">
@@ -65,7 +64,7 @@ export default function Certificate() {
             />
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }

@@ -246,7 +246,7 @@ export default function SecondSection(props) {
             
                 <button
                   className="pendingButton"
-                  onClick={props.second2Click}
+                  onClick={props.secondTwitter}
                 ></button>
                     <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
                 </>

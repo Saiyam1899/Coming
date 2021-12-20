@@ -7,7 +7,7 @@ import "./style.css";
 import { StyleSheet, css } from "aphrodite";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
-
+const delay = 5;
 export default function FirstSection(props) {
   const styles = StyleSheet.create({
     heading: {
@@ -33,7 +33,7 @@ export default function FirstSection(props) {
       },
     },
     heading2: {
-      paddingBottom:"30px",
+      paddingBottom: "30px",
       marginTop: "20px",
       fontStyle: "normal",
       fontWeight: "bolder",
@@ -108,7 +108,7 @@ export default function FirstSection(props) {
     },
     secondText: {
       fontSize: "28px",
-      paddingBottom:"20px",
+      paddingBottom: "20px",
       color: "white",
       textAlign: "center",
       fontWeight: "bold",
@@ -123,7 +123,7 @@ export default function FirstSection(props) {
     },
     section_each: {
       margin: "0px",
-   
+
       "@media (max-width: 567px)": {
         textAlign: "center",
       },
@@ -138,6 +138,7 @@ export default function FirstSection(props) {
       fontWeight: "bolder",
 
       "@media (max-width: 567px)": {
+        fontSize: "10px",
         textAlign: "center",
       },
       "@media only screen and (max-width: 767px)": {
@@ -146,7 +147,6 @@ export default function FirstSection(props) {
       },
     },
     instruction: {
-      fontSize: "20px",
       color: "#27DC3A",
       textAlign: "left",
       fontWeight: "bold",
@@ -158,28 +158,31 @@ export default function FirstSection(props) {
       height: "220px",
       overflow: "hidden",
       position: "relative",
-      width: "370px",
+
       textTransform: "capitalize",
-      maxWidth: "1000px",
+      maxWidth: "800px",
       width: "100%",
       alignItems: "center",
       justifyContent: "center",
       "@media (max-width: 567px)": {
-        textAlign: "center",
-        fontSize: "10px",
+        maxWidth: "200px",
+        width: "100%",
+        fontSize: "12px",
       },
       "@media only screen and (max-width: 767px)": {
+        maxWidth:"300px",
         width: "100%",
-        fontSize: "10px",
+        fontSize: "16px",
         color: "white",
       },
     },
   });
 
   const [statee, setStatee] = useState(0);
+  const [show, setShow] = useState(false);
   useEffect(() => {
-    setStatee(5);
-  }, [statee]);
+    // window.location.reload(false);
+  }, []);
   return (
     <>
       <section
@@ -188,42 +191,37 @@ export default function FirstSection(props) {
         data-aos-delay="50"
         data-aos-duration="1500"
       >
-      <Section1Image imgURL={process.env.PUBLIC_URL+"assets/images/bgairdrop.jpg"}>
-  
-      <h1 className="animate-charcter">Welcome To BITChro Airdrop</h1>
-      <p className={css(styles.secondText)}>
-          {" "}
-          You have to complete below mentioned tasks to claim 1000 BITChro(BTCH)
-          tokens in your wallet
-        </p>
-        <p className={css(styles.secondText)}>
-          {" "}
-          <span style={{ color: "red" }}>
+        <Section1Image
+          imgURL={process.env.PUBLIC_URL + "assets/images/bgairdrop.jpg"}
+        >
+          <h1 className="animate-charcter">Welcome To BITChro Airdrop</h1>
+          <p className={css(styles.secondText)}>
             {" "}
-            * All Task are mandatory to participate in BITChro (BTCH) AirDrop
-            <center>
-              <p className={css(styles.instruction)}>
-                <ol>
-                  <li>Complete all the 5 tasks.</li>
-                  <li>
-                    Click “Pending” options in every task segments, if you have
-                    completed the Task.
-                  </li>
-                  <li>claim your 1000 BTCH coins . </li>
+            You have to complete below mentioned tasks to claim 1000
+            BITChro(BTCH) tokens in your wallet
+          </p>
+          <p className={css(styles.secondText)}>
+            {" "}
+            <span style={{ color: "red" }}>
+              {" "}
+              * All Task are mandatory to participate in BITChro (BTCH) AirDrop
+              <center>
+                <p className={css(styles.instruction)}>
+                  1.)Complete all the 5 tasks.
+                  <br />
+                  2.) Click “Pending” options in every task segments, if you
+                  have completed the Task.
+                  <br />
+                  3.)claim your 1000 BTCH coins .
+                  <br />
                   Note- You need to connect your MetaMask or Trust wallet to
                   claim BTCH coins instantly in your wallet. Use BEP-20/BSC-20
                   wallet to receive the token.
-                </ol>
-              </p>
-            </center>
-          </span>
-        </p>
-      </Section1Image>
-
-
-
-
-        
+                </p>
+              </center>
+            </span>
+          </p>
+        </Section1Image>
 
         <div className={css(styles.heading2)}>
           Task 1: Click the like button to like our facebook page
@@ -268,16 +266,19 @@ export default function FirstSection(props) {
               ></div>
               {props.first ? (
                 <button className="completedButton" />
-              ) : (<>
-       
-                   <FaLongArrowAltLeft color="white" size={50} className="fa-arrow-right"/>
+              ) : (
+                <>
+                  <FaLongArrowAltLeft
+                    color="white"
+                    size={50}
+                    className="fa-arrow-right"
+                  />
 
-               
-                <button
-                  className="pendingButton"
-                  onClick={props.firstClick}
-                ></button>
-                  </>
+                  <button
+                    className="pendingButton"
+                    onClick={props.firstClick}
+                  ></button>
+                </>
               )}
             </ButtonGroup>
           </div>
@@ -286,13 +287,14 @@ export default function FirstSection(props) {
     </>
   );
 }
-const Section1Image = styled(Link)`
+const Section1Image = styled.div`
+  max-width: 1900px;
   display: flex;
   justify-content: center;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
-  padding:72px 0;
-  opacity:0.9;
+  padding: 72px 0;
+  opacity: 0.9;
   background-image: url(${(props) => props.imgURL});
   background-repeat: no-repeat;
   background-size: cover;
@@ -303,5 +305,4 @@ const Section1Image = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   transition: 0.5s ease-out;
- 
 `;

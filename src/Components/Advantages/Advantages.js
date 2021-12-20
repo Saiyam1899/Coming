@@ -18,9 +18,7 @@ export default class Team extends Component {
         padding: "72px 0"}}>
          <Logo src={process.env.PUBLIC_URL + "assets/images/advantages.svg"} />
            <TeamWrapper>
-
-          
-                <AdvantageCompo
+              <AdvantageCompo
                   desc="BITChro has always been straightforward and upfront,and this is ingrained in our nature and who we are."
                   img={process.env.PUBLIC_URL + "/assets/Advanatages/ethics.svg"}
                   linked={"https://www.linkedin.com/in/salmon-cathol-536459228/"}
@@ -36,7 +34,7 @@ export default class Team extends Component {
                   linked={"https://www.linkedin.com/in/shota-shun-183640227/"}
                 />
        
-       </TeamWrapper>
+            </TeamWrapper>
           
           </Container>
         </Wrapper>

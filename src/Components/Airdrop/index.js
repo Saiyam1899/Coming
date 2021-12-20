@@ -1,12 +1,21 @@
-import React from "react";
+import React, { Suspense } from "react";
+
+
 import { ContactAddress, ABI } from "./Functionlity/config";
+
+
 import { ethers } from "ethers";
 import { Container } from "react-bootstrap";
-import FinalSection from "./FinalSection";
-import FirstSection from "./FirstSection";
-import SecondSection from "./SecondSection";
-import ThirdSection from "./ThirdSection";
+
+import FirstSection from "./FirstSection"
+import SecondSection from "./SecondSection"
+import ThirdSection from "./ThirdSection"
+import FinalSection from "./FinalSection"
+
 import { accessListify } from "ethers/lib/utils";
+import Web3 from "web3";
+import { BUSDABI, BUSDaddress } from "../PrivateSellFunction/config";
+
 export default class Airdrop extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +28,7 @@ export default class Airdrop extends React.Component {
       address: "",
       contract: null,
       isReward: false,
+      changed:false,
     };
     this.ClaimReward = this.ClaimReward.bind(this);
     this.initialize = this.initialize.bind(this);
@@ -84,12 +94,39 @@ export default class Airdrop extends React.Component {
   async initialize() {
     //When metamask is Installed
     if (typeof window.ethereum !== "undefined") {
-      console.log("MetaMask is  installed!");
+      console.log("MetaMask is installed!");
 
       const provider = new ethers.providers.Web3Provider(
         window.ethereum,
         "any"
       );
+      var web3 = new Web3(window.ethereum);
+
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x38" }],
+      });
+
+      window.account = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x38" }],
+      });
+      if ((await web3.eth.getChainId()) === 56) {
+        
+        console.log("yess");
+        console.log(this.state.changed)
+        
+        // Account Balance Check
+
+      }
+      else{
+        this.setState({changed:true})
+        alert("Please switch ")
+      }
 
       const signer = await provider.getSigner();
 
@@ -110,37 +147,43 @@ export default class Airdrop extends React.Component {
       //   address: account[0],
       // });
     } else {
-      alert("MetaMask is not  installed!");
+      alert("MetaMask is not installed!");
     }
   }
 
   render() {
+    // window.location.reload(true)
     return (
       <>
         <div className="one">
-          <FirstSection
-            first={this.state.fLike}
-            firstClick={() => this.setState({ fLike: !this.state.fLike })}
-          />
-          <SecondSection
-            second={this.state.fShare}
-            second2={this.state.tFollow}
-            secondClick={() => this.setState({ fShare: !this.state.fShare })}
-            second2Click={() => this.setState({ tFollow: !this.state.tFollow })}
-          />
-          <ThirdSection
-            third={this.state.tTweet}
-            thirdClick={() => this.setState({ tTweet: !this.state.tTweet })}
-          />
-          <FinalSection
-            fourth={this.state.telegram}
-            claimReward={this.ClaimReward}
-            connect={this.initialize}
-            isReward={this.state.isReward}
-            fourthClick={() =>
-              this.setState({ telegram: !this.state.telegram })
-            }
-          />
+
+            <FirstSection
+              first={this.state.fLike}
+              firstClick={() => this.setState({ fLike: !this.state.fLike })}
+            />
+            <SecondSection
+              second={this.state.fShare}
+              second2={this.state.tFollow}
+              secondClick={() => this.setState({ fShare: !this.state.fShare })}
+              secondTwitter={() =>
+                this.setState({ tFollow: !this.state.tFollow })
+              }
+            />
+            <ThirdSection
+              third={this.state.tTweet}
+              thirdClick={() => this.setState({ tTweet: !this.state.tTweet })}
+            />
+            <FinalSection
+              fourth={this.state.telegram}
+              claimReward={this.ClaimReward}
+              connect={this.initialize}
+              isReward={this.state.isReward}
+              address={this.state.address}
+              fourthClick={() =>
+                this.setState({ telegram: !this.state.telegram })
+              }
+            />
+        
         </div>
       </>
     );
