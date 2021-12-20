@@ -364,16 +364,18 @@ const FooterLinksContainer = styled.div`
 const FooterDescContainer = styled.div`
   display: flex;
   border: 2px solid white;
+  margin-left:10px;
   flex-direction: row;
   text-align: start;
 `;
 const FooterLinksWrapper = styled.div`
   display: flex;
+  
 `;
 
 const FooterLinks = styled.a`
   display: flex;
-  margin: 0 50px;
+  margin: 0 10px;
   cursor: pointer;
   color: white;
   text-decoration: none;
