@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 import { FaLongArrowAltLeft } from "react-icons/fa";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { FacebookProvider, Like } from "react-facebook";
+import { FacebookIcon, TwitterIcon } from "react-share";
 
 import "./style.css";
 
 import { StyleSheet, css } from "aphrodite";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
+import ReactFBLike from "react-fb-like";
+import { id } from "ethers/lib/utils";
 const delay = 5;
 export default function FirstSection(props) {
   const styles = StyleSheet.create({
@@ -51,7 +56,7 @@ export default function FirstSection(props) {
         fontWeight: "bolder",
         marginTop: "20px",
         fontSize: "20px",
-        lineHeight: "13px",
+        lineHeight: "19px",
         textAlign: "center",
         color: "#08ff21",
         fontFamily: "Franklin Gothic",
@@ -167,12 +172,12 @@ export default function FirstSection(props) {
       "@media (max-width: 567px)": {
         maxWidth: "200px",
         width: "100%",
-        fontSize: "12px",
+        fontSize: "10px",
       },
       "@media only screen and (max-width: 767px)": {
-        maxWidth:"300px",
+        maxWidth: "300px",
         width: "100%",
-        fontSize: "16px",
+        fontSize: "12px",
         color: "white",
       },
     },
@@ -180,9 +185,9 @@ export default function FirstSection(props) {
 
   const [statee, setStatee] = useState(0);
   const [show, setShow] = useState(false);
-  useEffect(() => {
-    // window.location.reload(false);
-  }, []);
+
+  
+
   return (
     <>
       <section
@@ -255,15 +260,23 @@ export default function FirstSection(props) {
                 <span className="mx-1">Like</span>
               </Button> */}
               <div
-                class="fb-like"
-                data-href="https://www.facebook.com/ChroBIT"
-                data-width=""
+                className="fb-like"
+                data-href="https://developers.facebook.com/docs/plugins/"
+               
                 data-layout="button"
                 data-action="like"
                 data-size="large"
                 data-share="false"
-                width="500"
               ></div>
+
+              <FacebookProvider appId="458498775678924">
+                <Like
+                  href="http://www.facebook.com"
+                  colorScheme="dark"
+                  showFaces
+                  share
+                />
+              </FacebookProvider>
               {props.first ? (
                 <button className="completedButton" />
               ) : (
@@ -305,4 +318,9 @@ const Section1Image = styled.div`
   cursor: pointer;
   text-decoration: none;
   transition: 0.5s ease-out;
+  @media (max-width: 500px) {
+    max-width: 500px;
+    width: 100%;
+    background-size: cover;
+  }
 `;

@@ -365,7 +365,7 @@ const FooterDescContainer = styled.div`
   display: flex;
   border: 2px solid white;
   margin-left:10px;
-  padding:7px;
+  padding:7+px;
   flex-direction: row;
   text-align: start;
 `;

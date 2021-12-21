@@ -6,6 +6,7 @@ import { StyleSheet, css } from "aphrodite";
 import styled, { keyframes } from "styled-components";
 import "./style.css";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import { FacebookIcon, FacebookShareButton } from "react-share";
 
 export const styles = StyleSheet.create({
   heading: {
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
       fontStyle: "normal",
       fontWeight: "bolder",
       fontSize: "16px",
-      lineHeight: "13px",
+      lineHeight: "15px",
       textAlign: "center",
       color: "#08ff21",
       fontFamily: "Franklin Gothic",
@@ -69,7 +70,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     margin: "10px",
     "@media (max-width: 320px)": {
-     margin:"0px"
+      margin: "0px",
     },
     "@media (max-width: 567px)": {
       textAlign: "center",
@@ -78,10 +79,9 @@ export const styles = StyleSheet.create({
       display: "flex",
       width: "100%",
       marginTop: "10px",
-
+    
       textAlign: "center",
     },
-    
   },
   display: {
     display: "flex",
@@ -147,7 +147,7 @@ export const styles = StyleSheet.create({
   image_mid: {
     width: "20%",
     padding: "50px",
-    cursor:"pointer",
+    cursor: "pointer",
 
     "@media (max-width: 567px)": {
       textAlign: "center",
@@ -167,7 +167,8 @@ export default function SecondSection(props) {
         data-aos-duration="1500"
       >
         <div className={css(styles.heading2)}>
-          Task 2: Click the share button to share information regarding BITChro (BTCH) platform.
+          Task 2: Click the share button to share information regarding BITChro
+          (BTCH) platform.
         </div>
 
         <div className={css(styles.display)}>
@@ -177,11 +178,15 @@ export default function SecondSection(props) {
                 <button className="completedButton" />
               ) : (
                 <>
-                <button
-                  className="pendingButton"
-                  onClick={props.secondClick}
-                ></button>
-                <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
+                  <button
+                    className="pendingButton"
+                    onClick={props.secondClick}
+                  ></button>
+                  <FaLongArrowAltRight
+                    color="white"
+                    size={50}
+                    className="fa-arrow-right"
+                  />
                 </>
               )}
               {/* <Button
@@ -194,20 +199,24 @@ export default function SecondSection(props) {
                 />
                 Share
               </Button> */}
-              <div
-                class="fb-share-button"
-                data-href="https://www.facebook.com/ChroBIT"
-                data-layout="button"
-                data-size="small"
+
+              <FacebookShareButton
+                url={"https://www.bitchro.com/"}
+                quote={
+                  "Invest in World's Most innovative #NFT & #Metaverse #ICO of the Year.Join BIT_Chro #PrivateSale followed by #publicSale.BIT_Chro(BTCH):next 1000x coin.#PrivateSale price: 0.003 #BUSD#Exchange listing price will be 0.1 BUSD. #Pancakeswap #Probit #kucoin http://bitchro.com"
+                }
+                hashtag={
+                  "#NFT","#Metaverse","#ICO","#PublicSale","#PrivateSale","#BUSD","#Exchange","#Pancakeswap","#Probit","#kucoin"
+                }
+              
+                className="Demo__some-network__share-button"
               >
-                <a
-                  target="_blank"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FChroBIT&amp;src=sdkpreparse"
-                  class="fb-xfbml-parse-ignore"
-                >
-                  Share
-                </a>
-              </div>
+                <FacebookIcon size={42} round className="mx-1"/> 
+                <span style={{color:"white"}}>
+                Share
+                </span>
+               
+              </FacebookShareButton>
             </ButtonGroup>
           </div>
 
@@ -243,34 +252,34 @@ export default function SecondSection(props) {
                 <button className="completedButton" />
               ) : (
                 <>
-            
-                <button
-                  className="pendingButton"
-                  onClick={props.secondTwitter}
-                ></button>
-                    <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
+                  <button
+                    className="pendingButton"
+                    onClick={props.secondTwitter}
+                  ></button>
+                  <FaLongArrowAltRight
+                    color="white"
+                    size={50}
+                    className="fa-arrow-right"
+                  />
                 </>
-               
               )}
-
-              {/* <Button
-                style={{ borderRadius: "15px", border: "2px solid white" }}
-              >
-                <img
-                  src={process.env.PUBLIC_URL + "assets/images/twitter.png"}
-                  width={30}
-                  alt="secondimage"
-                />
-                Follow
-              </Button> */}
-
               <a
                 class="twitter-follow-button"
                 href="https://twitter.com/bit_chro"
                 data-size="large"
                 data-show-count="false"
               >
-                Follow @bit_chro
+                <Button
+                  style={{ borderRadius: "15px", border: "2px solid white" }}
+                >
+                  <img
+                    className="mx-1"
+                    src={process.env.PUBLIC_URL + "assets/images/twitter.png"}
+                    width={20}
+                    alt="secondimage"
+                  />
+                  Follow
+                </Button>
               </a>
             </ButtonGroup>
           </div>

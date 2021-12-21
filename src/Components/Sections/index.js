@@ -15,7 +15,7 @@ export default class Section extends Component {
           <Section1 />
           <Section2 />
           <Section3 />
-      </HeroSectionContainer>
+        </HeroSectionContainer>
       </>
     );
   }

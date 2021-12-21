@@ -20,7 +20,7 @@ export default function FinalSection(props) {
           alt="six"
         />
         <div>
-          <div className={css(styles.button_group)}>
+          <ButtonGroup className={css(styles.button_group)}>
             {props.fourth ? (
               <button className="completedButton" />
             ) : (
@@ -35,20 +35,21 @@ export default function FinalSection(props) {
             <a href="https://t.me/BITChro" target="_blank">
               <Button
                 style={{
-                  borderRadius: "15px",
+                  borderRadius: "10px",
                   border: "2px solid white",
                 }}
               >
                 <img
                   src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
-                  width={20}
+                  style={{maxWidth:"13px",width:"100%"}}
+                
                 
                   alt="seventh"
                 />
-                Follow Group
+                 <span className="mx-1" style={{fontSize:"12px"}}>Follow Group</span>
               </Button>
             </a>
-          </div>
+          </ButtonGroup>
         </div>
       </div>
       <div>

@@ -27,7 +27,7 @@ export default class MainComponent extends Component {
                 style={{
                   backgroundColor: "#fff",
                   display: "flex",
-                  padding: "1rem 0.6rem",
+                  padding: "1rem ",
                   textTransform: "uppercase",
                   width: "100%",
                   margin: "0 auto",
@@ -36,10 +36,11 @@ export default class MainComponent extends Component {
                 }}
               >
                 <input
-                  placeholder="0"
+                  className="form-control"
                   type="number"
+                  placeholder="0"
                   onChange={(e) => this.props.ChangeForm(e.target.value)}
-                  style={{ outline: "none", border: "none" }}
+                  style={{borderRadius:"40px"}}
                   value={this.props.fromData}
                 ></input>
                 <div
@@ -47,6 +48,7 @@ export default class MainComponent extends Component {
                     color: "black",
                     fontWeight: "bold",
                   }}
+                  className="mx-1 my-1"
                 >
                   BUSD
                 </div>
@@ -58,7 +60,7 @@ export default class MainComponent extends Component {
                 style={{
                   backgroundColor: "#fff",
                   display: "flex",
-                  padding: "1rem 1rem",
+                  padding: "1rem ",
                   width: "100%",
                   margin: "0 auto",
                   borderRadius: "999px",
@@ -66,17 +68,20 @@ export default class MainComponent extends Component {
                 }}
               >
                 <input
+                className="form-control"
                   placeholder="0.0"
                   type="number"
                   disabled
-                  style={{ outline: "none", border: "purple" }}
+                  style={{ borderRadius:"40px",  }}
                   value={this.props.toData}
                 ></input>
                 <div
                   style={{
                     color: "black",
                     fontWeight: "bold",
+                    
                   }}
+                  className="mx-1 my-1"
                 >
                   BTCH
                 </div>
@@ -84,21 +89,22 @@ export default class MainComponent extends Component {
             </div>
           </div>{" "}
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <div
+            <button
               style={{
                 backgroundColor: `${this.props.isApproved ? "purple" : "gray"}`,
                 borderRadius: "999px",
                 width: "40%",
-                padding: "0.8rem",
+                padding: "0.4rem",
                 color: "#fff",
                 marginTop: "40px",
                 cursor: "pointer",
                 textAlign: "center",
+                border:"none",
               }}
               onClick={this.props.isApproved ? this.props.BuyButton : null}
             >
               Buy Now
-            </div>
+            </button>
           </div>
         </div>
       </>

@@ -35,8 +35,22 @@ export default function ThirdSection(props) {
                   onClick={props.thirdClick}
                 ></button>
                  <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
+            
                 </>
+
               )}
+              <a
+                class="twitter-share-button"
+                href={`${
+                  "https://twitter.com/intent/tweet?text=" + textContent
+                }`}
+                data-size="large"
+              >
+                 <Button style={{borderRadius:"30px",border:"1px solid white"}}>
+                 <img className="mx-1" src={process.env.PUBLIC_URL+"assets/images/twitter.png"} width="20" height="20"/>
+                 Tweet
+               </Button>
+              </a>
               {/* <Button
                 style={{ borderRadius: "15px", border: "2px solid white" }}
               >
@@ -52,15 +66,7 @@ export default function ThirdSection(props) {
                   Tweet
                 </span>
               </Button> */}
-              <a
-                class="twitter-share-button"
-                href={`${
-                  "https://twitter.com/intent/tweet?text=" + textContent
-                }`}
-                data-size="large"
-              >
-                Tweet
-              </a>
+          
             </ButtonGroup>
           </div>
 

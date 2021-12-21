@@ -30,13 +30,11 @@ export const styles = StyleSheet.create({
     color: "#7879f1",
     fontFamily: "Franklin Gothic",
     color: "white",
-    "@media (max-width: 567px)": {
-      textAlign: "left",
-    },
+  
     "@media only screen and (max-width: 767px)": {
       fontStyle: "normal",
       fontWeight: "bolder",
-      fontSize: "12px",
+      fontSize: "10px",
       lineHeight: "13px",
       textAlign: "center",
       color: "white",

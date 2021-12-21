@@ -145,8 +145,8 @@ class App extends React.Component {
     try {
       window.ethereum.on("networkChanged", () => {
         this.setState({
-          from: 0,
-          to: 0,
+          from: "",
+          to: "",
           address: "",
           balance: 0,
           approve: false,
@@ -276,7 +276,7 @@ class App extends React.Component {
   async Connect() {
     //When metamask is Installed
     this.setState({
-      from: 0,
+      from: "",
       to: 0,
       balance: 0,
       approve: false,
@@ -340,7 +340,7 @@ class App extends React.Component {
   async initialize() {
     //When metamask is Installed
     this.setState({
-      from: 0,
+      from: "",
       to: 0,
       balance: 0,
       approve: false,
@@ -447,52 +447,79 @@ class App extends React.Component {
             </div>
           ) : null}
           <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <div
-              style={{
+         
+            
+              {!this.state.connect ? (
+                <button onClick={this.Connect}    style={{
                 display: "flex",
                 alignItems: "center",
                 backgroundColor: "purple",
                 color: "#fff",
-                width: "160px",
+                width: "120px",
                 marginTop: "10px",
                 borderRadius: "5px",
                 cursor: "pointer",
-              }}
-            >
-              <img
+                border:"none"
+             
+              }}>
+                <img
                 src={process.env.PUBLIC_URL + "assets/img/metamask.png"}
-                width="44px"
+              
                 style={{
                   display: "inline",
                   alignSelf: "center",
-                  width: "45px",
+                  width: "35px",
                   padding: "10px",
                   borderRadius: "5px",
                 }}
               />
-              {!this.state.connect ? (
-                <div onClick={this.Connect}>Connect</div>
+                Connect
+                   
+                </button>
               ) : (
-                <div onClick={this.DisconnectMeta}>Disconnect</div>
+                <div onClick={this.DisconnectMeta} style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "purple",
+                color: "#fff",
+                width: "120px",
+                marginTop: "10px",
+                borderRadius: "5px",
+                cursor: "pointer",
+             
+              }}>
+                <img
+                src={process.env.PUBLIC_URL + "assets/img/metamask.png"}
+              
+                style={{
+                  display: "inline",
+                  alignSelf: "center",
+                  width: "35px",
+                  padding: "10px",
+                  borderRadius: "5px",
+                }}
+              />
+                Disconnect</div>
               )}
-            </div>
-            <div
+         
+            <button
               style={{
                 display: "flex",
                 alignItems: "center",
                 backgroundColor: `${this.state.disable || this.state.from<=0 ? "gray" : "purple"}`,
                 color: "rgb(255, 255, 255)",
-                width: "120px",
+                width: "110px",
                 textAlign: "center",
                 justifyContent: "center",
                 borderRadius: "5px",
                 cursor: "pointer",
                 marginTop: "10px",
+                border:"none"
               }}
               onClick={this.state.disable  || this.state.from<=0 ? null : this.Approve}
             >
               <div>Approve</div>
-            </div>
+            </button>
           </div>
           <div
             style={{

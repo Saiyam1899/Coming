@@ -66,10 +66,10 @@
 
 .animate-charcter
 {
-   background: linear-gradient(
+  background: linear-gradient(
     120deg,
-    rgb(203, 1, 255) 0%,
-    rgb(9, 238, 85) 100%
+    rgb(27, 255, 72) 0%,
+    rgb(246, 10, 10) 100%
   );
   text-transform: none;
   background-size: auto auto;
@@ -82,8 +82,8 @@
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      font-size: 40px;
-      font-style: bold;
+  font-size: 40px;
+  font-style: bold;
 }
 
 @keyframes textclip {
