@@ -144,15 +144,17 @@ export const styles = StyleSheet.create({
       margin: "10px",
     },
   },
-  image_mid: {
+image_mid: {
     width: "20%",
     padding: "50px",
     cursor: "pointer",
 
+    
+    "@media only screen and (max-width: 767px)": {
+      width: "60%",
+    },
     "@media (max-width: 567px)": {
       textAlign: "center",
-    },
-    "@media only screen and (max-width: 767px)": {
       width: "50%",
     },
   },
