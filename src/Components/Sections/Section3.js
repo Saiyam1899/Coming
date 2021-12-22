@@ -5,10 +5,19 @@ export default class Section3 extends Component {
   render() {
     return (
       <>
-        <Section3Container id="works" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
-        backgroundSize: "cover",
-        backgroundColor: "#000",
-        padding: "72px 0"}}>
+        <Section3Container
+          id="works"
+          style={{
+            width: "100%",
+            backgroundImage: `url(${
+              process.env.PUBLIC_URL + "assets/images/bg.png"
+            })`,
+            backgroundPosition: "right",
+            backgroundSize: "cover",
+            backgroundColor: "#000",
+            padding: "72px 0",
+          }}
+        >
           <Section2Logo
             data-aos="flip-up"
             data-aos-delay="50"
@@ -66,7 +75,7 @@ export default class Section3 extends Component {
                 }
                 to="/private-sell"
               >
-                <span >Buy Token</span>
+                <span>Buy Token</span>
               </Section1Button>
             </Section3ContentWrapper>
           </Section3Content>
@@ -117,7 +126,7 @@ const Section3ContentWrapper = styled.div`
   width: 100%;
   margin-top: 7rem;
   align-items: center;
-  font-size:20px;
+  font-size: 20px;
   @media (max-width: 768px) {
     align-items: center;
     margin-top: 1rem;
@@ -146,9 +155,9 @@ const Section1Button = styled(Link)`
   height: 50px;
   width: 150px;
   background-position: center;
-  transition:0.5s ease-out;
-   :hover {
-    transition:0.5s ease-in;
+  transition: 0.5s ease-out;
+  :hover {
+    transition: 0.5s ease-in;
     background-image: url(${(props) => props.imgURLHover});
-    }
+  }
 `;

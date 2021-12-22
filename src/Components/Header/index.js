@@ -38,13 +38,17 @@ export default class Header extends Component {
             {/* For Desktop interface */}
 
             <NavWrapper>
-              <NavLink to="/" show="true">Home</NavLink>
+              <NavLink to="/" show="true">
+                Home
+              </NavLink>
               <HashLink href="/#overview">Overview</HashLink>
               <HashLink href="/#works">How it Works</HashLink>
               <HashLink href="/#tokonomics">TokenNomics</HashLink>
               <HashLink href="/#roadmap">Roadmap</HashLink>
               <HashLink href="/#Team">Team</HashLink>
-              <HashLink href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view">Whitepaper</HashLink>
+              <HashLink href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view">
+                Whitepaper
+              </HashLink>
             </NavWrapper>
             <SocialWrapper>
               <SocialIcon href="https://twitter.com/bit_chro">
@@ -62,10 +66,8 @@ export default class Header extends Component {
                   src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                 />
               </SocialIcon>
-           
             </SocialWrapper>
           </Container>
-     
         </Wrapper>
       </>
     );
@@ -76,8 +78,8 @@ const Wrapper = styled.div`
   height: 60px;
   background-color: #380936;
   color: #fff;
-  z-index:1000;
-  position:relative;
+  z-index: 1000;
+  position: relative;
   /* font-family: "FADAM"; */
 `;
 const Container = styled.div`
@@ -96,7 +98,6 @@ const Hamburger = styled.div`
 `;
 const Logo = styled(Link)`
   cursor: pointer;
- 
 `;
 const NavWrapper = styled.div`
   display: flex;
@@ -129,7 +130,7 @@ const SocialIcon = styled.a`
   margin: 0 10px;
   cursor: pointer;
   text-decoration: none;
-  color:white
+  color: white;
 `;
 
 const SocialIconImg = styled.img`

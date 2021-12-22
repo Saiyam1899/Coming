@@ -8,12 +8,10 @@ import { Button } from "react-bootstrap";
 
 export const Popup = (props) => {
   const [open, setOpen] = useState(props.popupToggle);
-  console.log(props.popupToggle)
+  console.log(props.popupToggle);
   const onCloseModal = () => {
-    setOpen(false)
-    
-    
-  }
+    setOpen(false);
+  };
   useEffect(() => {
     if (localStorage.getItem("popup") == "yes") {
       setOpen(false);
@@ -26,24 +24,23 @@ export const Popup = (props) => {
   return (
     <div>
       <Modal open={open} onClose={onCloseModal}>
-    
-          <center>
-            <h1>Welcome to Airdrop Feature</h1>
-            <hr style={{border:"2px solid black"}}/>
-            <p>
-              It's Time to participate BITChro airdrop please follow few basic steps and claim the rewards.
-              Do not missed the opportunity,hurry up because limited time period is left.
-            </p>
-       
+        <center>
+          <h1>Welcome to Airdrop Feature</h1>
+          <hr style={{ border: "2px solid black" }} />
+          <p>
+            It's Time to participate BITChro airdrop please follow few basic
+            steps and claim the rewards. Do not missed the opportunity,hurry up
+            because limited time period is left.
+          </p>
+
           <Link to="/airdrop">
-          <img
-            src={process.env.PUBLIC_URL + "/assets/images/claim-reward.png"}
-            alt="yes"
-            width="200"
-          />
+            <img
+              src={process.env.PUBLIC_URL + "/assets/images/claim-reward.png"}
+              alt="yes"
+              width="200"
+            />
           </Link>
-          </center>
-  
+        </center>
       </Modal>
     </div>
   );

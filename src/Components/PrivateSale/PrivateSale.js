@@ -36,37 +36,41 @@ export default function PrivateSales() {
             </p>
             An open source platform for creation of 3D NFT compatible web-spaced
             (website) and objects, powered by Blockchain.
-            <br/>
-            <span style={{color:"red",fontSize:"18px"}}>* Please click approve button before clicking on buy now.</span>
+            <br />
+            <span style={{ color: "red", fontSize: "18px" }}>
+              * Please click approve button before clicking on buy now.
+            </span>
           </p>
 
           <PrivateSellFunction />
 
-          <div >
+          <div>
             <br />
             <a href="https://t.me/BITChro" target="_blank">
-            <button
-              style={{
-                background: "none",
-                outline: "none",
-                border: "none",
-              }}
-            >
-              <img
-                src={process.env.PUBLIC_URL + "assets/Psale/tg.png"}
-                className={css(styles.image_Logo)}
-              />
-            </button>
-            </a>
-           
-            <a href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view?usp=sharing" target="_blank">
               <button
                 style={{
                   background: "none",
                   outline: "none",
                   border: "none",
                 }}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "assets/Psale/tg.png"}
+                  className={css(styles.image_Logo)}
+                />
+              </button>
+            </a>
 
+            <a
+              href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view?usp=sharing"
+              target="_blank"
+            >
+              <button
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "none",
+                }}
               >
                 <img
                   src={process.env.PUBLIC_URL + "assets/Psale/white.png"}
@@ -93,7 +97,7 @@ const CircleImage = styled.img`
   max-width: 1000px;
   width: 100%;
   position: absolute;
-  z-index:0;
+  z-index: 0;
   top: -180px;
   right: 0;
   @media (max-width: 500px) {

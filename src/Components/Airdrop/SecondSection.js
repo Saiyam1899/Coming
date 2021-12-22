@@ -3,9 +3,8 @@ import { Button, ButtonGroup } from "react-bootstrap";
 
 import { StyleSheet, css } from "aphrodite";
 
-import styled, { keyframes } from "styled-components";
 import "./style.css";
-import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltRight } from "react-icons/fa";
 import { FacebookIcon, FacebookShareButton } from "react-share";
 
 export const styles = StyleSheet.create({
@@ -79,7 +78,7 @@ export const styles = StyleSheet.create({
       display: "flex",
       width: "100%",
       marginTop: "10px",
-    
+
       textAlign: "center",
     },
   },
@@ -144,12 +143,11 @@ export const styles = StyleSheet.create({
       margin: "10px",
     },
   },
-image_mid: {
+  image_mid: {
     width: "20%",
     padding: "50px",
     cursor: "pointer",
 
-    
     "@media only screen and (max-width: 767px)": {
       width: "60%",
     },
@@ -208,16 +206,12 @@ export default function SecondSection(props) {
                   "Invest in World's Most innovative #NFT & #Metaverse #ICO of the Year.Join BIT_Chro #PrivateSale followed by #publicSale.BIT_Chro(BTCH):next 1000x coin.#PrivateSale price: 0.003 #BUSD#Exchange listing price will be 0.1 BUSD. #Pancakeswap #Probit #kucoin http://bitchro.com"
                 }
                 hashtag={
-                  "#NFT","#Metaverse","#ICO","#PublicSale","#PrivateSale","#BUSD","#Exchange","#Pancakeswap","#Probit","#kucoin"
+                  "#NFT #Metaverse#ICO#PublicSale#PrivateSale#BUSD#Exchange#Pancakeswap#Probit#kucoin"
                 }
-              
                 className="Demo__some-network__share-button"
               >
-                <FacebookIcon size={42} round className="mx-1"/> 
-                <span style={{color:"white"}}>
-                Share
-                </span>
-               
+                <FacebookIcon size={42} round className="mx-1" />
+                <span style={{ color: "white" }}>Share</span>
               </FacebookShareButton>
             </ButtonGroup>
           </div>

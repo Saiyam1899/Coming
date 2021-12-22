@@ -8,7 +8,7 @@ import Section from "../Components/Sections";
 import Subscribe from "../Components/Subscribe";
 import Team from "../Components/Team";
 import TokenNomics from "../Components/TokenNomics";
-import Particles from 'react-particles-js';
+import Particles from "react-particles-js";
 import Certificate from "../Components/certificate/Certificate";
 import { Popup } from "../Components/Popup/Popup";
 import { Alert } from "react-bootstrap";
@@ -16,25 +16,25 @@ import AlertDismiss from "../Components/Alert/AlertDismiss";
 import Technology from "../Components/Technology/Technology";
 
 export default function HomePage(props) {
-  const [show,setShow]=useState(true)
+  const [show, setShow] = useState(true);
   useEffect(() => {
- setShow(true)
-  }, [1])
-console.log(props.popupToggle);
+    setShow(true);
+  }, [1]);
+  console.log(props.popupToggle);
   return (
     <>
       <div>
-        <Popup popupToggle={props.popupToggle}/>
+        <Popup popupToggle={props.popupToggle} />
         <Section />
         <TokenNomics />
-        <Technology/>
+        <Technology />
         <Roadmap />
         <Team />
-        <MetaverseShare/>
-        <Advanatges/>
+        <MetaverseShare />
+        <Advanatges />
         <Subscribe />
         <FAQ />
-    </div>
+      </div>
     </>
   );
 }

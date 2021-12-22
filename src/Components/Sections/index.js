@@ -22,7 +22,6 @@ export default class Section extends Component {
 }
 
 const HeroSectionContainer = styled.div`
-
   background: black;
   color: #fff;
 
@@ -31,6 +30,5 @@ const HeroSectionContainer = styled.div`
   }
   @media (max-width: 1024px) {
     padding: 0px;
-    
   }
 `;

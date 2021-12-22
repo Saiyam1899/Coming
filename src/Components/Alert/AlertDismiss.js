@@ -8,12 +8,10 @@ export default function AlertDismiss() {
   if (show) {
     return (
       <Link to="/private-sell">
-         <h3 className="animate-charcter-popup">
+        <h3 className="animate-charcter-popup">
           <b> Private Sale is Live Now!</b>
         </h3>
       </Link>
-        
-      
     );
   }
   return null;

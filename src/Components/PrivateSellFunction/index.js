@@ -447,76 +447,81 @@ class App extends React.Component {
             </div>
           ) : null}
           <div style={{ display: "flex", justifyContent: "space-around" }}>
-         
-            
-              {!this.state.connect ? (
-                <button onClick={this.Connect}    style={{
-                display: "flex",
-                alignItems: "center",
-                backgroundColor: "purple",
-                color: "#fff",
-                width: "120px",
-                marginTop: "10px",
-                borderRadius: "5px",
-                cursor: "pointer",
-                border:"none"
-             
-              }}>
-                <img
-                src={process.env.PUBLIC_URL + "assets/img/metamask.png"}
-              
+            {!this.state.connect ? (
+              <button
+                onClick={this.Connect}
                 style={{
-                  display: "inline",
-                  alignSelf: "center",
-                  width: "35px",
-                  padding: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  backgroundColor: "purple",
+                  color: "#fff",
+                  width: "120px",
+                  marginTop: "10px",
                   borderRadius: "5px",
+                  cursor: "pointer",
+                  border: "none",
                 }}
-              />
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "assets/img/metamask.png"}
+                  style={{
+                    display: "inline",
+                    alignSelf: "center",
+                    width: "35px",
+                    padding: "10px",
+                    borderRadius: "5px",
+                  }}
+                />
                 Connect
-                   
-                </button>
-              ) : (
-                <div onClick={this.DisconnectMeta} style={{
-                display: "flex",
-                alignItems: "center",
-                backgroundColor: "purple",
-                color: "#fff",
-                width: "120px",
-                marginTop: "10px",
-                borderRadius: "5px",
-                cursor: "pointer",
-             
-              }}>
-                <img
-                src={process.env.PUBLIC_URL + "assets/img/metamask.png"}
-              
+              </button>
+            ) : (
+              <div
+                onClick={this.DisconnectMeta}
                 style={{
-                  display: "inline",
-                  alignSelf: "center",
-                  width: "35px",
-                  padding: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  backgroundColor: "purple",
+                  color: "#fff",
+                  width: "120px",
+                  marginTop: "10px",
                   borderRadius: "5px",
+                  cursor: "pointer",
                 }}
-              />
-                Disconnect</div>
-              )}
-         
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "assets/img/metamask.png"}
+                  style={{
+                    display: "inline",
+                    alignSelf: "center",
+                    width: "35px",
+                    padding: "10px",
+                    borderRadius: "5px",
+                  }}
+                />
+                Disconnect
+              </div>
+            )}
+
             <button
               style={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: `${this.state.disable || this.state.from<=0 ? "gray" : "purple"}`,
+                backgroundColor: `${
+                  this.state.disable || this.state.from <= 0 ? "gray" : "purple"
+                }`,
                 color: "rgb(255, 255, 255)",
                 width: "110px",
+                height: "50px",
                 textAlign: "center",
                 justifyContent: "center",
                 borderRadius: "5px",
                 cursor: "pointer",
                 marginTop: "10px",
-                border:"none"
+                border: "none",
               }}
-              onClick={this.state.disable  || this.state.from<=0 ? null : this.Approve}
+              onClick={
+                this.state.disable || this.state.from <= 0 ? null : this.Approve
+              }
             >
               <div>Approve</div>
             </button>

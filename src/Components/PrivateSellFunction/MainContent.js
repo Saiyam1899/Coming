@@ -40,7 +40,7 @@ export default class MainComponent extends Component {
                   type="number"
                   placeholder="0"
                   onChange={(e) => this.props.ChangeForm(e.target.value)}
-                  style={{borderRadius:"40px"}}
+                  style={{ borderRadius: "40px" }}
                   value={this.props.fromData}
                 ></input>
                 <div
@@ -68,18 +68,17 @@ export default class MainComponent extends Component {
                 }}
               >
                 <input
-                className="form-control"
+                  className="form-control"
                   placeholder="0.0"
                   type="number"
                   disabled
-                  style={{ borderRadius:"40px",  }}
+                  style={{ borderRadius: "40px" }}
                   value={this.props.toData}
                 ></input>
                 <div
                   style={{
                     color: "black",
                     fontWeight: "bold",
-                    
                   }}
                   className="mx-1 my-1"
                 >
@@ -99,7 +98,7 @@ export default class MainComponent extends Component {
                 marginTop: "40px",
                 cursor: "pointer",
                 textAlign: "center",
-                border:"none",
+                border: "none",
               }}
               onClick={this.props.isApproved ? this.props.BuyButton : null}
             >

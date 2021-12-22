@@ -1,20 +1,20 @@
-.flexContainer{
-  display:flex;
-  align-items:center;
+.flexContainer {
+  display: flex;
+  align-items: center;
   flex-direction: row-reverse;
   justify-content: space-around;
   margin: 20px;
 }
-.flexLine{
+.flexLine {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
-.textClass{
+.textClass {
   margin: 10px;
   font-size: 20px;
   text-align: left;
 }
-.mainClass{
+.mainClass {
   display: flex;
   justify-content: center;
   align-items: center;

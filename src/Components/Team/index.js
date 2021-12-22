@@ -9,13 +9,21 @@ export default class Team extends Component {
   render() {
     return (
       <>
-        <Wrapper >
-         
-          <Container id="Team" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
-        backgroundSize: "cover",
-        backgroundColor: "#000",
-        padding: "72px 0"}}>
-         <Logo src={process.env.PUBLIC_URL + "assets/img/Team.svg"} />
+        <Wrapper>
+          <Container
+            id="Team"
+            style={{
+              width: "100%",
+              backgroundImage: `url(${
+                process.env.PUBLIC_URL + "assets/images/bg.png"
+              })`,
+              backgroundPosition: "right",
+              backgroundSize: "cover",
+              backgroundColor: "#000",
+              padding: "72px 0",
+            }}
+          >
+            <Logo src={process.env.PUBLIC_URL + "assets/img/Team.svg"} />
             <ContainerImages>
               <TeamWrapper
                 data-aos="zoom-in-right"
@@ -26,7 +34,9 @@ export default class Team extends Component {
                   name="Salmon Cathol"
                   designation="Chief Executive Officer"
                   img={process.env.PUBLIC_URL + "/assets/Team/Selmon.jpg"}
-                  linked={"https://www.linkedin.com/in/salmon-cathol-536459228/"}
+                  linked={
+                    "https://www.linkedin.com/in/salmon-cathol-536459228/"
+                  }
                 />
                 <TeamCompo
                   name="Wilhelm Carl"
@@ -44,7 +54,9 @@ export default class Team extends Component {
                   name="Herman Walter"
                   designation="Chief Technical Officer"
                   img={process.env.PUBLIC_URL + "/assets/Team/Herman.jpg"}
-                  linked={"https://www.linkedin.com/in/hermann-walter-787461228/"}
+                  linked={
+                    "https://www.linkedin.com/in/hermann-walter-787461228/"
+                  }
                 />
                 <TeamCompo
                   name="Akira Botan"
@@ -62,22 +74,28 @@ export default class Team extends Component {
                   name="Steven John"
                   designation="Advisor"
                   img={process.env.PUBLIC_URL + "/assets/Team/StevenJohn.jpg"}
-                  
                 />
                 <TeamCompo
                   name="Henry Max"
                   designation="Advisor"
                   img={process.env.PUBLIC_URL + "/assets/Team/HenryMax.jpg"}
-              
                 />
               </TeamWrapper>
             </ContainerImages>
           </Container>
         </Wrapper>
-        <Wrapper style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
-        backgroundSize: "cover",
-       
-        padding: "72px 0"}}>
+        <Wrapper
+          style={{
+            width: "100%",
+            backgroundImage: `url(${
+              process.env.PUBLIC_URL + "assets/images/bg.png"
+            })`,
+            backgroundPosition: "right",
+            backgroundSize: "cover",
+
+            padding: "72px 0",
+          }}
+        >
           <h1
             data-aos="zoom-in-right"
             data-aos-delay="50"

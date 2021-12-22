@@ -4,10 +4,19 @@ export default class Section2 extends Component {
   render() {
     return (
       <>
-        <Section2Wrapper id="overview" style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
-        backgroundSize: "cover",
-        backgroundColor: "#000",
-        padding: "72px 0"}}>
+        <Section2Wrapper
+          id="overview"
+          style={{
+            width: "100%",
+            backgroundImage: `url(${
+              process.env.PUBLIC_URL + "assets/images/bg.png"
+            })`,
+            backgroundPosition: "right",
+            backgroundSize: "cover",
+            backgroundColor: "#000",
+            padding: "72px 0",
+          }}
+        >
           <Section2Logo
             data-aos="flip-up"
             data-aos-delay="50"
@@ -15,7 +24,6 @@ export default class Section2 extends Component {
             src={process.env.PUBLIC_URL + "assets/img/title01.svg"}
           />
           <Section2Container>
-      
             <Section2Image1Container
               data-aos="fade-down"
               data-aos-delay="50"
@@ -131,7 +139,7 @@ const Section2Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size:20px;
+  font-size: 20px;
 `;
 const Section2ListWrapper = styled.div`
   display: flex;
@@ -141,7 +149,7 @@ const Section2Image1Container = styled.div`
   min-width: 200px;
   width: 100%;
   margin-top: 2rem;
-  marginLeft:2rem;
+  marginleft: 2rem;
 
   @media (max-width: 920px) {
     padding-bottom: 32px;
@@ -167,10 +175,10 @@ const Section2Button = styled.a`
   color: white;
   text-decoration: none;
   cursor: pointer;
-  transition:0.5s ease-out;
+  transition: 0.5s ease-out;
   :hover {
     background-image: url(${(props) => props.imgURLHover});
-    transition:0.5s ease-in;
+    transition: 0.5s ease-in;
   }
 `;
 const Section2Image2Container = styled.div`
@@ -200,10 +208,9 @@ const CircleImageThree = styled.img`
   width: 100%;
   position: absolute;
   top: -0px;
-  
-  left:10000px;
+
+  left: 10000px;
   @media (max-width: 500px) {
     top: 20px;
   }
 `;
-

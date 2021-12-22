@@ -17,13 +17,30 @@ export default class Sidebar extends Component {
               />
             </Icon>
             <NavWrapper>
-              <NavLinkHome to="/"  onClick={this.props.toogleButton}>Home</NavLinkHome>
-              <NavLink href="/#overview" onClick={this.props.toogleButton}>Overview</NavLink>
-              <NavLink href="/#works" onClick={this.props.toogleButton}>How it Works</NavLink>
-              <NavLink href="/#tokonomics" onClick={this.props.toogleButton}>TokenNomics</NavLink>
-              <NavLink href="/#roadmap" onClick={this.props.toogleButton}>Roadmap</NavLink>
-              <NavLink href="/#Team" onClick={this.props.toogleButton}>Team</NavLink>
-              <NavLink href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view" onClick={this.props.toogleButton}>Whitepaper</NavLink>
+              <NavLinkHome to="/" onClick={this.props.toogleButton}>
+                Home
+              </NavLinkHome>
+              <NavLink href="/#overview" onClick={this.props.toogleButton}>
+                Overview
+              </NavLink>
+              <NavLink href="/#works" onClick={this.props.toogleButton}>
+                How it Works
+              </NavLink>
+              <NavLink href="/#tokonomics" onClick={this.props.toogleButton}>
+                TokenNomics
+              </NavLink>
+              <NavLink href="/#roadmap" onClick={this.props.toogleButton}>
+                Roadmap
+              </NavLink>
+              <NavLink href="/#Team" onClick={this.props.toogleButton}>
+                Team
+              </NavLink>
+              <NavLink
+                href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view"
+                onClick={this.props.toogleButton}
+              >
+                Whitepaper
+              </NavLink>
             </NavWrapper>
             <SocialWrapper>
               <SocialIcon href="https://twitter.com/bit_chro">
@@ -41,7 +58,6 @@ export default class Sidebar extends Component {
                   src={process.env.PUBLIC_URL + "assets/img/facebook.svg"}
                 />
               </SocialIcon>
-           
             </SocialWrapper>
           </Container>
         </Wrapper>
@@ -97,7 +113,7 @@ const SocialWrapper = styled.div`
 const SocialIcon = styled.a`
   margin: 0 10px;
   cursor: pointer;
-  color:white;
+  color: white;
 `;
 
 const SocialIconImg = styled.img`

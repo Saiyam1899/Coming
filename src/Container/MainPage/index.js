@@ -8,7 +8,7 @@ export default class MainPage extends Component {
     return (
       <>
         <Header />
-        <Wrapper>{this.props.children}</Wrapper>
+           <Wrapper>{this.props.children}</Wrapper>
         <Footer />
       </>
     );

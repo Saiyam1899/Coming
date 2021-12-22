@@ -25,11 +25,15 @@ export default function FinalSection(props) {
               <button className="completedButton" />
             ) : (
               <>
-              <button
-                className="pendingButton"
-                onClick={props.fourthClick}
-              ></button>
-                <FaLongArrowAltRight color="white" size={40} className="fa-arrow-right"/>
+                <button
+                  className="pendingButton"
+                  onClick={props.fourthClick}
+                ></button>
+                <FaLongArrowAltRight
+                  color="white"
+                  size={40}
+                  className="fa-arrow-right"
+                />
               </>
             )}
             <a href="https://t.me/BITChro" target="_blank">
@@ -41,12 +45,12 @@ export default function FinalSection(props) {
               >
                 <img
                   src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
-                  style={{maxWidth:"13px",width:"100%"}}
-                
-                
+                  style={{ maxWidth: "13px", width: "100%" }}
                   alt="seventh"
                 />
-                 <span className="mx-1" style={{fontSize:"12px"}}>Follow Group</span>
+                <span className="mx-1" style={{ fontSize: "12px" }}>
+                  Follow Group
+                </span>
               </Button>
             </a>
           </ButtonGroup>
@@ -62,15 +66,14 @@ export default function FinalSection(props) {
             textAlign: "center",
             borderRadius: "5px",
             padding: "10px 10px",
-            cursor:"pointer",
+            cursor: "pointer",
             width: "100%",
             margin: "0 auto",
             color: "white",
             fontWeight: "bold",
           }}
         >
-          {props.address?<>Disconnect</>:<>Connect</>}
-          
+          {props.address ? <>Disconnect</> : <>Connect</>}
         </div>
         <center
           onClick={props.claimReward}
@@ -89,4 +92,4 @@ export default function FinalSection(props) {
       <hr style={{ border: "2px solid black", margin: "0px" }} />
     </>
   );
-        }
+}

@@ -1,20 +1,15 @@
 import React, { Suspense } from "react";
 
-
 import { ContactAddress, ABI } from "./Functionlity/config";
 
-
 import { ethers } from "ethers";
-import { Container } from "react-bootstrap";
 
-import FirstSection from "./FirstSection"
-import SecondSection from "./SecondSection"
-import ThirdSection from "./ThirdSection"
-import FinalSection from "./FinalSection"
+import FirstSection from "./FirstSection";
+import SecondSection from "./SecondSection";
+import ThirdSection from "./ThirdSection";
+import FinalSection from "./FinalSection";
 
-import { accessListify } from "ethers/lib/utils";
 import Web3 from "web3";
-import { BUSDABI, BUSDaddress } from "../PrivateSellFunction/config";
 
 export default class Airdrop extends React.Component {
   constructor(props) {
@@ -28,7 +23,7 @@ export default class Airdrop extends React.Component {
       address: "",
       contract: null,
       isReward: false,
-      changed:false,
+      changed: false,
     };
     this.ClaimReward = this.ClaimReward.bind(this);
     this.initialize = this.initialize.bind(this);
@@ -116,16 +111,13 @@ export default class Airdrop extends React.Component {
         params: [{ chainId: "0x38" }],
       });
       if ((await web3.eth.getChainId()) === 56) {
-        
         console.log("yess");
-        console.log(this.state.changed)
-        
-        // Account Balance Check
+        console.log(this.state.changed);
 
-      }
-      else{
-        this.setState({changed:true})
-        alert("Please switch ")
+        // Account Balance Check
+      } else {
+        this.setState({ changed: true });
+        alert("Please switch ");
       }
 
       const signer = await provider.getSigner();
@@ -156,34 +148,32 @@ export default class Airdrop extends React.Component {
     return (
       <>
         <div className="one">
-
-            <FirstSection
-              first={this.state.fLike}
-              firstClick={() => this.setState({ fLike: !this.state.fLike })}
-            />
-            <SecondSection
-              second={this.state.fShare}
-              second2={this.state.tFollow}
-              secondClick={() => this.setState({ fShare: !this.state.fShare })}
-              secondTwitter={() =>
-                this.setState({ tFollow: !this.state.tFollow })
-              }
-            />
-            <ThirdSection
-              third={this.state.tTweet}
-              thirdClick={() => this.setState({ tTweet: !this.state.tTweet })}
-            />
-            <FinalSection
-              fourth={this.state.telegram}
-              claimReward={this.ClaimReward}
-              connect={this.initialize}
-              isReward={this.state.isReward}
-              address={this.state.address}
-              fourthClick={() =>
-                this.setState({ telegram: !this.state.telegram })
-              }
-            />
-        
+          <FirstSection
+            first={this.state.fLike}
+            firstClick={() => this.setState({ fLike: !this.state.fLike })}
+          />
+          <SecondSection
+            second={this.state.fShare}
+            second2={this.state.tFollow}
+            secondClick={() => this.setState({ fShare: !this.state.fShare })}
+            secondTwitter={() =>
+              this.setState({ tFollow: !this.state.tFollow })
+            }
+          />
+          <ThirdSection
+            third={this.state.tTweet}
+            thirdClick={() => this.setState({ tTweet: !this.state.tTweet })}
+          />
+          <FinalSection
+            fourth={this.state.telegram}
+            claimReward={this.ClaimReward}
+            connect={this.initialize}
+            isReward={this.state.isReward}
+            address={this.state.address}
+            fourthClick={() =>
+              this.setState({ telegram: !this.state.telegram })
+            }
+          />
         </div>
       </>
     );

@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     color: "#7879f1",
     fontFamily: "Franklin Gothic",
     color: "white",
-  
+
     "@media only screen and (max-width: 767px)": {
       fontStyle: "normal",
       fontWeight: "bolder",
@@ -74,7 +74,6 @@ export const styles = StyleSheet.create({
       float: "center",
       width: "60%",
     },
-  
   },
   button_group: {
     display: "flex",
@@ -96,7 +95,7 @@ export const styles = StyleSheet.create({
   display: {
     display: "flex",
 
-    alignItems:"center",
+    alignItems: "center",
     flexDirection: "column",
     textAlign: "left",
     "@media (max-width: 567px)": {
@@ -113,7 +112,7 @@ export const styles = StyleSheet.create({
   },
   displayRight: {
     display: "flex",
-    padding:"0 72px ",
+    padding: "0 72px ",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",

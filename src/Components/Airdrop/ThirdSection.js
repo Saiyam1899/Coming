@@ -9,8 +9,9 @@ import { styles } from "./SecondSection";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function ThirdSection(props) {
-  const textContent="Invest in World's Most innovative %23NFT %26 %23Metaverse %23ICO of the Year.Join BIT_Chro  %23PrivateSale followed by %23publicSale.BIT_Chro(BTCH):next 1000x coin.%23PrivateSale price: 0.003 %23BUSD%23Exchange listing price will be 0.1 BUSD. %23Pancakeswap %23Probit %23kucoin www.bitchro.com"
- return(
+  const textContent =
+    "Invest in World's Most innovative %23NFT %26 %23Metaverse %23ICO of the Year.Join BIT_Chro  %23PrivateSale followed by %23publicSale.BIT_Chro(BTCH):next 1000x coin.%23PrivateSale price: 0.003 %23BUSD%23Exchange listing price will be 0.1 BUSD. %23Pancakeswap %23Probit %23kucoin www.bitchro.com";
+  return (
     <>
       <section
         className={css(styles.section_each)}
@@ -19,7 +20,8 @@ export default function ThirdSection(props) {
         data-aos-duration="1500"
       >
         <div className={css(styles.heading2)}>
-          Task 4: Click the tweet button to tweet something about BITChro (BTCH) platfrom.
+          Task 4: Click the tweet button to tweet something about BITChro (BTCH)
+          platfrom.
         </div>
         <div className={css(styles.display)}>
           <div className={css(styles.button_group)}>
@@ -28,16 +30,16 @@ export default function ThirdSection(props) {
                 <button className="completedButton" />
               ) : (
                 <>
-
-         
-                <button
-                  className="pendingButton"
-                  onClick={props.thirdClick}
-                ></button>
-                 <FaLongArrowAltRight color="white" size={50} className="fa-arrow-right"/>
-            
+                  <button
+                    className="pendingButton"
+                    onClick={props.thirdClick}
+                  ></button>
+                  <FaLongArrowAltRight
+                    color="white"
+                    size={50}
+                    className="fa-arrow-right"
+                  />
                 </>
-
               )}
               <a
                 class="twitter-share-button"
@@ -46,10 +48,17 @@ export default function ThirdSection(props) {
                 }`}
                 data-size="large"
               >
-                 <Button style={{borderRadius:"30px",border:"1px solid white"}}>
-                 <img className="mx-1" src={process.env.PUBLIC_URL+"assets/images/twitter.png"} width="20" height="20"/>
-                 Tweet
-               </Button>
+                <Button
+                  style={{ borderRadius: "30px", border: "1px solid white" }}
+                >
+                  <img
+                    className="mx-1"
+                    src={process.env.PUBLIC_URL + "assets/images/twitter.png"}
+                    width="20"
+                    height="20"
+                  />
+                  Tweet
+                </Button>
               </a>
               {/* <Button
                 style={{ borderRadius: "15px", border: "2px solid white" }}
@@ -66,7 +75,6 @@ export default function ThirdSection(props) {
                   Tweet
                 </span>
               </Button> */}
-          
             </ButtonGroup>
           </div>
 

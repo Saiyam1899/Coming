@@ -1,5 +1,4 @@
-.animate-charcter-popup
-{
+.animate-charcter-popup {
   background: linear-gradient(
     120deg,
     rgb(27, 255, 72) 0%,
@@ -15,8 +14,8 @@
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-    font-size: 40px;
-      font-style: bold;
+  font-size: 40px;
+  font-style: bold;
 }
 
 @keyframes textclip {

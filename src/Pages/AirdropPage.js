@@ -3,8 +3,7 @@ import Airdrop from "../Components/Airdrop";
 const AirDropPage = () => {
   return (
     <>
-      <Airdrop/>
-      
+      <Airdrop />
     </>
   );
 };

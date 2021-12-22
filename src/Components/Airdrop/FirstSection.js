@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { ButtonGroup } from "react-bootstrap";
 import { FaLongArrowAltLeft } from "react-icons/fa";
-import { FacebookShareButton, TwitterShareButton } from "react-share";
+
 import { FacebookProvider, Like } from "react-facebook";
-import { FacebookIcon, TwitterIcon } from "react-share";
 
 import "./style.css";
 
@@ -182,12 +181,6 @@ export default function FirstSection(props) {
       },
     },
   });
-
-  const [statee, setStatee] = useState(0);
-  const [show, setShow] = useState(false);
-
-  
-
   return (
     <>
       <section
@@ -259,24 +252,16 @@ export default function FirstSection(props) {
                 />
                 <span className="mx-1">Like</span>
               </Button> */}
-              <div
-                className="fb-like"
-                data-href="https://developers.facebook.com/docs/plugins/"
-               
-                data-layout="button"
-                data-action="like"
-                data-size="large"
-                data-share="false"
-              ></div>
 
-              <FacebookProvider appId="458498775678924">
-                <Like
-                  href="http://www.facebook.com"
-                  colorScheme="dark"
-                  showFaces
-                  share
-                />
-              </FacebookProvider>
+              <iframe
+                src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=button&action=like&size=large&height=35&appId=458498775678924"
+                width="100"
+                height="35"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
               {props.first ? (
                 <button className="completedButton" />
               ) : (
@@ -286,7 +271,6 @@ export default function FirstSection(props) {
                     size={50}
                     className="fa-arrow-right"
                   />
-
                   <button
                     className="pendingButton"
                     onClick={props.firstClick}

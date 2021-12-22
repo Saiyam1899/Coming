@@ -3,20 +3,26 @@ import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { AiFillLinkedin } from "react-icons/ai";
 
-
 import TeamCompo from "../Team/TeamCompo";
 import TechComponent from "./TechComponent";
 export default class Technology extends Component {
   render() {
     return (
       <>
-        <Wrapper >
-         
-          <Container  style={{   width: "100%",backgroundImage: `url(${process.env.PUBLIC_URL + "assets/images/bg.png"})`,  backgroundPosition: "right",
-        backgroundSize: "cover",
-        backgroundColor: "black",
-        padding: "72px 0"}}>
-         <Logo src={process.env.PUBLIC_URL + "assets/img/Technology.svg"} />
+        <Wrapper>
+          <Container
+            style={{
+              width: "100%",
+              backgroundImage: `url(${
+                process.env.PUBLIC_URL + "assets/images/bg.png"
+              })`,
+              backgroundPosition: "right",
+              backgroundSize: "cover",
+              backgroundColor: "black",
+              padding: "72px 0",
+            }}
+          >
+            <Logo src={process.env.PUBLIC_URL + "assets/img/Technology.svg"} />
             <ContainerImages>
               <TeamWrapper
                 data-aos="zoom-in-right"
@@ -24,53 +30,49 @@ export default class Technology extends Component {
                 data-aos-duration="3000"
               >
                 <TechComponent
-     
-                 
-                  img={process.env.PUBLIC_URL + "/assets/Technology/binacechain.png"}
-           
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/Technology/binacechain.png"
+                  }
                 />
-                 <TechComponent
-            
-                  img={process.env.PUBLIC_URL + "/assets/Technology/poladot.svg"}
-           chain
+                <TechComponent
+                  img={
+                    process.env.PUBLIC_URL + "/assets/Technology/poladot.svg"
+                  }
+                  chain
                 />
-                 <TechComponent
-              
+                <TechComponent
                   img={process.env.PUBLIC_URL + "/assets/Technology/heco.svg"}
-   
                 />
-                 <TechComponent
-              
-                  img={process.env.PUBLIC_URL + "/assets/Technology/solanalogo.svg"}
-                 
+                <TechComponent
+                  img={
+                    process.env.PUBLIC_URL + "/assets/Technology/solanalogo.svg"
+                  }
                 />
-                 <TechComponent
-                
-                  img={process.env.PUBLIC_URL + "/assets/Technology/maticlogo.png"}
-            
+                <TechComponent
+                  img={
+                    process.env.PUBLIC_URL + "/assets/Technology/maticlogo.png"
+                  }
                 />
-                 <TechComponent
-                 
-                  img={process.env.PUBLIC_URL + "/assets/Technology/ethereum-final.svg"}
-                 
+                <TechComponent
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/Technology/ethereum-final.svg"
+                  }
                 />
-                 <TechComponent
-                 
-                 img={process.env.PUBLIC_URL + "/assets/Technology/tron.png"}
-                
-               />
-                  <TechComponent
-                 
-                 img={process.env.PUBLIC_URL + "/assets/Technology/cardanologo.png"}
-                
-               />
-              
-     
+                <TechComponent
+                  img={process.env.PUBLIC_URL + "/assets/Technology/tron.png"}
+                />
+                <TechComponent
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/Technology/cardanologo.png"
+                  }
+                />
               </TeamWrapper>
             </ContainerImages>
           </Container>
         </Wrapper>
-      
       </>
     );
   }
@@ -78,13 +80,13 @@ export default class Technology extends Component {
 
 const Wrapper = styled.div`
   background: white;
-  background-color:white;
+  background-color: white;
   color: white;
 `;
 const Container = styled.a`
   display: flex;
   align-items: center;
-  background-color:white;
+  background-color: white;
   flex-direction: column;
   color: white;
   text-decoration: none;
@@ -107,7 +109,7 @@ const ContainerImages = styled.a`
   text-decoration: none;
   justify-content: center;
   text-align: center;
-  
+
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
   }
@@ -140,8 +142,8 @@ const TeamWrapper = styled.div`
   flex-wrap: wrap;
 
   justify-content: space-evenly;
-    align-items: self-end;
-  margin:40px;
+  align-items: self-end;
+  margin: 40px;
   @media (max-width: 1024px) {
     justify-content: center;
     alignitems: center;
