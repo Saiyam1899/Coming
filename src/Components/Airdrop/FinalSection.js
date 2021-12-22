@@ -25,10 +25,7 @@ export default function FinalSection(props) {
               <button className="completedButton" />
             ) : (
               <>
-                <button
-                  className="pendingButton"
-                  onClick={props.fourthClick}
-                ></button>
+                <button className="pendingButton"></button>
                 <FaLongArrowAltRight
                   color="white"
                   size={40}
@@ -42,6 +39,7 @@ export default function FinalSection(props) {
                   borderRadius: "10px",
                   border: "2px solid white",
                 }}
+                onClick={props.fourthClick}
               >
                 <img
                   src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
@@ -76,7 +74,13 @@ export default function FinalSection(props) {
           {props.address ? <>Disconnect</> : <>Connect</>}
         </div>
         <center
-          onClick={props.claimReward}
+          onClick={
+            props.counter == 2 ? (
+              <>{alert("Please check all fields")}</>
+            ) : (
+              props.claimReward
+            )
+          }
           data-aos="fade-right"
           data-aos-delay="50"
           data-aos-duration="1500"

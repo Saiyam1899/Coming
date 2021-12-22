@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ButtonGroup } from "react-bootstrap";
 import { FaLongArrowAltLeft } from "react-icons/fa";
+import Iframe from "react-iframe-click";
 
 import { FacebookProvider, Like } from "react-facebook";
 
@@ -253,7 +254,7 @@ export default function FirstSection(props) {
                 <span className="mx-1">Like</span>
               </Button> */}
 
-              <iframe
+              <Iframe
                 src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=button&action=like&size=large&height=35&appId=458498775678924"
                 width="100"
                 height="35"
@@ -261,7 +262,11 @@ export default function FirstSection(props) {
                 frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              ></iframe>
+                onInferredClick={() => {
+                  props.firstClick();
+                }}
+              ></Iframe>
+
               {props.first ? (
                 <button className="completedButton" />
               ) : (
@@ -271,10 +276,7 @@ export default function FirstSection(props) {
                     size={50}
                     className="fa-arrow-right"
                   />
-                  <button
-                    className="pendingButton"
-                    onClick={props.firstClick}
-                  ></button>
+                  <button className="pendingButton"></button>
                 </>
               )}
             </ButtonGroup>

@@ -18,6 +18,7 @@ export default class Airdrop extends React.Component {
       tFollow: false,
       tTweet: false,
       telegram: false,
+      count: 0,
       fShare: false,
       fLike: false,
       address: "",
@@ -151,6 +152,8 @@ export default class Airdrop extends React.Component {
           <FirstSection
             first={this.state.fLike}
             firstClick={() => this.setState({ fLike: !this.state.fLike })}
+            countInc={() => this.setState({ count: !this.state.count + 1 })}
+            count={this.state.count}
           />
           <SecondSection
             second={this.state.fShare}
@@ -170,6 +173,7 @@ export default class Airdrop extends React.Component {
             connect={this.initialize}
             isReward={this.state.isReward}
             address={this.state.address}
+            count={() => this.setState({ count: this.state.count + 1 })}
             fourthClick={() =>
               this.setState({ telegram: !this.state.telegram })
             }
