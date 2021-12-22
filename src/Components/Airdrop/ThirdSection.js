@@ -30,7 +30,10 @@ export default function ThirdSection(props) {
                 <button className="completedButton" />
               ) : (
                 <>
-                  <button className="pendingButton"></button>
+                  <button
+                    className="pendingButton"
+                    onClick={props.thirdClick}
+                  ></button>
                   <FaLongArrowAltRight
                     color="white"
                     size={50}
@@ -48,7 +51,7 @@ export default function ThirdSection(props) {
               >
                 <Button
                   style={{ borderRadius: "30px", border: "1px solid white" }}
-                  onClick={props.thirdClick}
+                  onClick={props.shareTwitter}
                 >
                   <img
                     className="mx-1"

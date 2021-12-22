@@ -262,9 +262,7 @@ export default function FirstSection(props) {
                 frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                onInferredClick={() => {
-                  props.firstClick();
-                }}
+                onInferredClick={props.likeFb}
               ></Iframe>
 
               {props.first ? (
@@ -276,7 +274,10 @@ export default function FirstSection(props) {
                     size={50}
                     className="fa-arrow-right"
                   />
-                  <button className="pendingButton"></button>
+                  <button
+                    className="pendingButton"
+                    onClick={props.firstClick}
+                  ></button>
                 </>
               )}
             </ButtonGroup>

@@ -25,9 +25,15 @@ export default class Airdrop extends React.Component {
       contract: null,
       isReward: false,
       changed: false,
+      fLikeCounter: false,
+      fShareCOUNTER: false,
+      TFollowCounter: false,
+      tTweetCounter: false,
+      telegramCounter: false,
     };
     this.ClaimReward = this.ClaimReward.bind(this);
     this.initialize = this.initialize.bind(this);
+    console.log(this.state.fLikeCounter);
   }
 
   ClaimReward() {
@@ -37,7 +43,12 @@ export default class Airdrop extends React.Component {
         this.state.tTweet &&
         this.state.telegram &&
         this.state.fShare &&
-        this.state.fLike
+        this.state.fLike &&
+        this.state.tTweetCounter &&
+        this.state.telegramCounter &&
+        this.state.TFollowCounter &&
+        this.state.fLikeCounter &&
+        this.state.fShareCOUNTER
       ) {
         this.state.contract
           .buyToken()
@@ -54,6 +65,11 @@ export default class Airdrop extends React.Component {
                 fShare: false,
                 fLike: false,
                 isReward: false,
+                tTweetCounter: false,
+                TFollowCounter: false,
+                fLikeCounter: false,
+                fShareCOUNTER: false,
+                telegramCounter: false,
                 contract: null,
               });
             }
@@ -78,6 +94,11 @@ export default class Airdrop extends React.Component {
           address: "",
           contract: null,
           isReward: false,
+          tTweetCounter: false,
+          TFollowCounter: false,
+          fLikeCounter: false,
+          fShareCOUNTER: false,
+          telegramCounter: false,
         });
         this.initialize();
       });
@@ -151,24 +172,38 @@ export default class Airdrop extends React.Component {
         <div className="one">
           <FirstSection
             first={this.state.fLike}
+            firstCounter={this.state.fLikeCounter}
             firstClick={() => this.setState({ fLike: !this.state.fLike })}
-            countInc={() => this.setState({ count: !this.state.count + 1 })}
-            count={this.state.count}
+            likeFb={() =>
+              this.setState({ fLikeCounter: !this.state.fLikeCounter })
+            }
           />
           <SecondSection
             second={this.state.fShare}
             second2={this.state.tFollow}
+            shareFb={() =>
+              this.setState({ fShareCOUNTER: !this.state.fShareCOUNTER })
+            }
+            followTwitter={() =>
+              this.setState({ TFollowCounter: !this.state.TFollowCounter })
+            }
             secondClick={() => this.setState({ fShare: !this.state.fShare })}
             secondTwitter={() =>
               this.setState({ tFollow: !this.state.tFollow })
-            }
+            }s
           />
           <ThirdSection
+            shareTwitter={() =>
+              this.setState({ tTweetCounter: !this.state.tTweetCounter })
+            }
             third={this.state.tTweet}
             thirdClick={() => this.setState({ tTweet: !this.state.tTweet })}
           />
           <FinalSection
             fourth={this.state.telegram}
+            followTelegram={() =>
+              this.setState({ telegramCounter: !this.state.telegramCounter })
+            }
             claimReward={this.ClaimReward}
             connect={this.initialize}
             isReward={this.state.isReward}

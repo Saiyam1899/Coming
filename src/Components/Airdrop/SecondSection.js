@@ -178,7 +178,10 @@ export default function SecondSection(props) {
                 <button className="completedButton" />
               ) : (
                 <>
-                  <button className="pendingButton"></button>
+                  <button
+                    className="pendingButton"
+                    onClick={props.secondClick}
+                  ></button>
                   <FaLongArrowAltRight
                     color="white"
                     size={50}
@@ -206,9 +209,7 @@ export default function SecondSection(props) {
                   "#NFT #Metaverse#ICO#PublicSale#PrivateSale#BUSD#Exchange#Pancakeswap#Probit#kucoin"
                 }
                 className="Demo__some-network__share-button"
-                onClick={() => {
-                  props.secondClick();
-                }}
+                onClick={props.shareFb}
                 target="_blank"
               >
                 <FacebookIcon size={42} round className="mx-1" />
@@ -249,7 +250,10 @@ export default function SecondSection(props) {
                 <button className="completedButton" />
               ) : (
                 <>
-                  <button className="pendingButton"></button>
+                  <button
+                    className="pendingButton"
+                    onClick={props.secondTwitter}
+                  ></button>
                   <FaLongArrowAltRight
                     color="white"
                     size={50}
@@ -266,9 +270,7 @@ export default function SecondSection(props) {
               >
                 <Button
                   style={{ borderRadius: "15px", border: "2px solid white" }}
-                  onClick={() => {
-                    props.secondTwitter();
-                  }}
+                  onClick={props.followTwitter}
                 >
                   <img
                     className="mx-1"

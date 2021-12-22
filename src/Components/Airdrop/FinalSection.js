@@ -25,7 +25,10 @@ export default function FinalSection(props) {
               <button className="completedButton" />
             ) : (
               <>
-                <button className="pendingButton"></button>
+                <button
+                  className="pendingButton"
+                  onClick={props.fourthClick}
+                ></button>
                 <FaLongArrowAltRight
                   color="white"
                   size={40}
@@ -39,7 +42,7 @@ export default function FinalSection(props) {
                   borderRadius: "10px",
                   border: "2px solid white",
                 }}
-                onClick={props.fourthClick}
+                onClick={props.followTelegram}
               >
                 <img
                   src={process.env.PUBLIC_URL + "/assets/images/telegram.png"}
