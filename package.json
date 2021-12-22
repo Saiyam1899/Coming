@@ -18,6 +18,7 @@
     "react-facebook": "^8.1.4",
     "react-fb-like": "^0.5.1",
     "react-icons": "^4.3.1",
+    "react-iframe-click": "^2.0.2",
     "react-multi-bar-slider": "^1.4.0",
     "react-particles-js": "^3.6.0",
     "react-redux": "^7.2.6",
