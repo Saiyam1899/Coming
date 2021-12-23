@@ -39,7 +39,7 @@ export default function FinalSection(props) {
             <a href="https://t.me/BITChro" target="_blank">
               <Button
                 style={{
-                  borderRadius: "10px",
+                  borderRadius: "20px",
                   border: "2px solid white",
                 }}
                 onClick={props.followTelegram}
@@ -74,7 +74,7 @@ export default function FinalSection(props) {
             fontWeight: "bold",
           }}
         >
-          {props.address ? <>Disconnect</> : <>Connect</>}
+          {props.address ? <> Disconnect </> : <> Connect </>}
         </div>
         <center
           onClick={

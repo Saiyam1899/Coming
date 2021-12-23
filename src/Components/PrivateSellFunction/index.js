@@ -460,6 +460,7 @@ class App extends React.Component {
                   borderRadius: "5px",
                   cursor: "pointer",
                   border: "none",
+                  
                 }}
               >
                 <img

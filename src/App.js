@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import "./App.css";
-
 import MainPage from "./Container/MainPage";
 import AOS from "aos";
 import { Route, Switch } from "react-router-dom";

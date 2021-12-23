@@ -190,7 +190,7 @@ export default class Airdrop extends React.Component {
             secondClick={() => this.setState({ fShare: !this.state.fShare })}
             secondTwitter={() =>
               this.setState({ tFollow: !this.state.tFollow })
-            }s
+            }
           />
           <ThirdSection
             shareTwitter={() =>

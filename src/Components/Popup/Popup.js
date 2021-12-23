@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 export const Popup = (props) => {
-  const [open, setOpen] = useState(props.popupToggle);
+  const [open, setOpen] = useState(false);
   console.log(props.popupToggle);
   const onCloseModal = () => {
     setOpen(false);
