@@ -72,6 +72,7 @@ export default class Airdrop extends React.Component {
                 fShareCOUNTER: false,
                 telegramCounter: false,
                 contract: null,
+                connect: false,
               });
             }
           });
@@ -111,7 +112,6 @@ export default class Airdrop extends React.Component {
 
   async initialize() {
     if (this.state.connect) {
-      alert("metamask");
     }
 
     //When metamask is Installed
