@@ -87,21 +87,21 @@ export default class Airdrop extends React.Component {
   componentDidMount() {
     try {
       window.ethereum.on("accountsChanged", () => {
-        this.setState({
-          tFollow: false,
-          tTweet: false,
-          telegram: false,
-          fShare: false,
-          fLike: false,
-          address: "",
-          contract: null,
-          isReward: false,
-          tTweetCounter: false,
-          TFollowCounter: false,
-          fLikeCounter: false,
-          fShareCOUNTER: false,
-          telegramCounter: false,
-        });
+        // this.setState({
+        //   tFollow: ,
+        //   tTweet: false,
+        //   telegram: false,
+        //   fShare: false,
+        //   fLike: false,
+        //   address: "",
+        //   contract: null,
+        //   isReward: false,
+        //   tTweetCounter: false,
+        //   TFollowCounter: false,
+        //   fLikeCounter: false,
+        //   fShareCOUNTER: false,
+        //   telegramCounter: false,
+        // });
       });
     } catch (e) {
       alert("Please Install metamask app");

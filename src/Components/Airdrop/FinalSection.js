@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 import "./style.css";
 import { css } from "aphrodite";
@@ -6,6 +6,7 @@ import { styles } from "./SecondSection";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function FinalSection(props) {
+  const [state,setState]=useState(false);
   return (
     <>
       <div
@@ -79,7 +80,8 @@ export default function FinalSection(props) {
         >
           {props.checkConnect ? <> Disconnect </> : <> Connect </>}
         </div>
-        <center
+     {props.checkConnect?<>
+      <center
           onClick={
             props.counter == 2 ? (
               <>{alert("Please check all fields")}</>
@@ -97,6 +99,8 @@ export default function FinalSection(props) {
             className={css(styles.image_mid)}
           />
         </center>
+
+     </>:<></>}  
       </div>
 
       <hr style={{ border: "2px solid black", margin: "0px" }} />
