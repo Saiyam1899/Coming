@@ -80,7 +80,7 @@ export default function FinalSection(props) {
         >
           {props.checkConnect ? <> Disconnect </> : <> Connect </>}
         </div>
-     {props.checkConnect?<>
+     
       <center
           onClick={
             props.counter == 2 ? (
@@ -100,7 +100,7 @@ export default function FinalSection(props) {
           />
         </center>
 
-     </>:<></>}  
+
       </div>
 
       <hr style={{ border: "2px solid black", margin: "0px" }} />

@@ -90,8 +90,8 @@ export default function ThirdSection(props) {
       {/* <RainParticle/> */}
       <section className={css(styles.section_each)}>
         <div className={css(styles.heading2)}>
-          Task 5: Join our telegram group to recive latest updates regarding our
-          platform.
+          Task 5: Join our telegram group to receive latest updates regarding
+          our platform.
         </div>
       </section>
     </>

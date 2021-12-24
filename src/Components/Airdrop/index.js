@@ -56,7 +56,7 @@ export default class Airdrop extends React.Component {
           .then((data) => alert(`This is the Transaction Hash: ${data.hash}`))
           .catch((err) => {
             if (err.code == 4001) {
-              alert("You Denied this Transaction");
+              alert("You Denied This Transaction");
             } else if (err.code === -32603) {
               alert("You have already claimed");
               this.setState({
@@ -112,62 +112,63 @@ export default class Airdrop extends React.Component {
 
   async initialize() {
     if (this.state.connect) {
+      this.setState({
+        contract: null,
+      });
     }
 
     //When metamask is Installed
     else if (!this.state.connect) {
-      if (!this.state.connect) {
-        if (typeof window.ethereum !== "undefined") {
-          console.log("MetaMask is installed!");
+      if (typeof window.ethereum !== "undefined") {
+        console.log("MetaMask is installed!");
 
-          const provider = new ethers.providers.Web3Provider(
-            window.ethereum,
-            "any"
-          );
-          var web3 = new Web3(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(
+          window.ethereum,
+          "any"
+        );
+        var web3 = new Web3(window.ethereum);
 
-          await window.ethereum.request({
-            method: "wallet_switchEthereumChain",
-            params: [{ chainId: "0x38" }],
-          });
+        await window.ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x38" }],
+        });
 
-          window.account = await window.ethereum.request({
-            method: "eth_requestAccounts",
-          });
+        window.account = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
 
-          await window.ethereum.request({
-            method: "wallet_switchEthereumChain",
-            params: [{ chainId: "0x38" }],
-          });
-          if ((await web3.eth.getChainId()) === 56) {
-            console.log("yess");
-            console.log(this.state.changed);
+        await window.ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x38" }],
+        });
+        if ((await web3.eth.getChainId()) === 56) {
+          console.log("yess");
+          console.log(this.state.changed);
 
-            // Account Balance Check
-          } else {
-            this.setState({ changed: true });
-            alert("Please switch ");
-          }
-
-          const signer = await provider.getSigner();
-
-          //Get Account details from metamask
-          const account = await window.ethereum.request({
-            method: "eth_requestAccounts",
-          });
-
-          console.log(new ethers.Contract(ContactAddress, ABI, signer));
-          //Create the contract
-          this.setState({
-            address: account[0],
-            contract: new ethers.Contract(ContactAddress, ABI, signer),
-            isReward: true,
-          });
-
-          // this.setState({
-          //   address: account[0],
-          // });
+          // Account Balance Check
+        } else {
+          this.setState({ changed: true });
+          alert("Please switch ");
         }
+
+        const signer = await provider.getSigner();
+
+        //Get Account details from metamask
+        const account = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+
+        console.log(new ethers.Contract(ContactAddress, ABI, signer));
+        //Create the contract
+        this.setState({
+          address: account[0],
+          contract: new ethers.Contract(ContactAddress, ABI, signer),
+          isReward: true,
+        });
+
+        // this.setState({
+        //   address: account[0],
+        // });
       }
     } else {
       alert("MetaMask is not installed!");
