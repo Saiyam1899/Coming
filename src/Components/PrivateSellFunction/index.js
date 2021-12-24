@@ -82,7 +82,7 @@ class App extends React.Component {
     let TO;
     if (data !== "") {
       this.setState({ from: data });
-      if (data >= 100) {
+      if (data >= 1000) {
         TO = (data * 1000) / 3;
       }
     } else {
@@ -138,7 +138,7 @@ class App extends React.Component {
         if (error.code === -32603) {
           alert("User Already Exists");
         } else {
-          console.log(error); 
+          console.log(error);
         }
       });
   }
