@@ -112,8 +112,11 @@ export default class Airdrop extends React.Component {
 
   async initialize() {
     if (this.state.connect) {
+      console.log("yes");
+
       this.setState({
         contract: null,
+        connect: false,
       });
     }
 
@@ -143,10 +146,12 @@ export default class Airdrop extends React.Component {
         });
         if ((await web3.eth.getChainId()) === 56) {
           console.log("yess");
+          this.setState({ connect: true });
           console.log(this.state.changed);
 
           // Account Balance Check
         } else {
+          this.setState({ connect: false });
           this.setState({ changed: true });
           alert("Please switch ");
         }
@@ -216,7 +221,6 @@ export default class Airdrop extends React.Component {
             }
             claimReward={this.ClaimReward}
             connect={this.initialize}
-            counter={() => this.setState({ connect: !this.state.connect })}
             isReward={this.state.isReward}
             address={this.state.address}
             checkConnect={this.state.connect}
