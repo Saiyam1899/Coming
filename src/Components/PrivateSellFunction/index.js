@@ -39,8 +39,12 @@ class App extends React.Component {
 
   //CheckApproved Function
   CheckApproved(Fdata) {
+    console.log(Fdata);
     if (Fdata == "") {
       this.setState({ from: "" });
+    } else if (Fdata < 100) {
+      this.setState({ from: "" });
+      console.log("yesss");
     }
     if (this.state.connect === true) {
       if (this.state.balance > Fdata && Fdata >= 0) {
@@ -78,7 +82,9 @@ class App extends React.Component {
     let TO;
     if (data !== "") {
       this.setState({ from: data });
-      TO = (data * 1000) / 3;
+      if (data >= 100) {
+        TO = (data * 1000) / 3;
+      }
     } else {
       TO = 0;
     }
@@ -132,7 +138,7 @@ class App extends React.Component {
         if (error.code === -32603) {
           alert("User Already Exists");
         } else {
-          console.log(error);
+          console.log(error); 
         }
       });
   }
@@ -460,7 +466,6 @@ class App extends React.Component {
                   borderRadius: "5px",
                   cursor: "pointer",
                   border: "none",
-                  
                 }}
               >
                 <img

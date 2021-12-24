@@ -30,6 +30,7 @@ export default class Airdrop extends React.Component {
       TFollowCounter: false,
       tTweetCounter: false,
       telegramCounter: false,
+      connect: false,
     };
     this.ClaimReward = this.ClaimReward.bind(this);
     this.initialize = this.initialize.bind(this);
@@ -100,7 +101,6 @@ export default class Airdrop extends React.Component {
           fShareCOUNTER: false,
           telegramCounter: false,
         });
-        this.initialize();
       });
     } catch (e) {
       alert("Please Install metamask app");
@@ -108,58 +108,67 @@ export default class Airdrop extends React.Component {
   }
 
   //initialize function for
+
   async initialize() {
+    if (this.state.connect) {
+      alert("metamask");
+    }
+
     //When metamask is Installed
-    if (typeof window.ethereum !== "undefined") {
-      console.log("MetaMask is installed!");
+    else if (!this.state.connect) {
+      if (!this.state.connect) {
+        if (typeof window.ethereum !== "undefined") {
+          console.log("MetaMask is installed!");
 
-      const provider = new ethers.providers.Web3Provider(
-        window.ethereum,
-        "any"
-      );
-      var web3 = new Web3(window.ethereum);
+          const provider = new ethers.providers.Web3Provider(
+            window.ethereum,
+            "any"
+          );
+          var web3 = new Web3(window.ethereum);
 
-      await window.ethereum.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x38" }],
-      });
+          await window.ethereum.request({
+            method: "wallet_switchEthereumChain",
+            params: [{ chainId: "0x38" }],
+          });
 
-      window.account = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
+          window.account = await window.ethereum.request({
+            method: "eth_requestAccounts",
+          });
 
-      await window.ethereum.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x38" }],
-      });
-      if ((await web3.eth.getChainId()) === 56) {
-        console.log("yess");
-        console.log(this.state.changed);
+          await window.ethereum.request({
+            method: "wallet_switchEthereumChain",
+            params: [{ chainId: "0x38" }],
+          });
+          if ((await web3.eth.getChainId()) === 56) {
+            console.log("yess");
+            console.log(this.state.changed);
 
-        // Account Balance Check
-      } else {
-        this.setState({ changed: true });
-        alert("Please switch ");
+            // Account Balance Check
+          } else {
+            this.setState({ changed: true });
+            alert("Please switch ");
+          }
+
+          const signer = await provider.getSigner();
+
+          //Get Account details from metamask
+          const account = await window.ethereum.request({
+            method: "eth_requestAccounts",
+          });
+
+          console.log(new ethers.Contract(ContactAddress, ABI, signer));
+          //Create the contract
+          this.setState({
+            address: account[0],
+            contract: new ethers.Contract(ContactAddress, ABI, signer),
+            isReward: true,
+          });
+
+          // this.setState({
+          //   address: account[0],
+          // });
+        }
       }
-
-      const signer = await provider.getSigner();
-
-      //Get Account details from metamask
-      const account = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-
-      console.log(new ethers.Contract(ContactAddress, ABI, signer));
-      //Create the contract
-      this.setState({
-        address: account[0],
-        contract: new ethers.Contract(ContactAddress, ABI, signer),
-        isReward: true,
-      });
-
-      // this.setState({
-      //   address: account[0],
-      // });
     } else {
       alert("MetaMask is not installed!");
     }
@@ -206,8 +215,10 @@ export default class Airdrop extends React.Component {
             }
             claimReward={this.ClaimReward}
             connect={this.initialize}
+            counter={() => this.setState({ connect: !this.state.connect })}
             isReward={this.state.isReward}
             address={this.state.address}
+            checkConnect={this.state.connect}
             count={() => this.setState({ count: this.state.count + 1 })}
             fourthClick={() =>
               this.setState({ telegram: !this.state.telegram })

@@ -59,7 +59,10 @@ export default function FinalSection(props) {
       </div>
       <div>
         <div
-          onClick={props.connect}
+          onClick={() => {
+            props.connect();
+            props.counter();
+          }}
           style={{
             background:
               "linear-gradient( 120deg, rgb(203,1,255) 0%, rgb(0,255,87) 100%",
@@ -74,7 +77,7 @@ export default function FinalSection(props) {
             fontWeight: "bold",
           }}
         >
-          {props.address ? <> Disconnect </> : <> Connect </>}
+          {props.checkConnect ? <> Disconnect </> : <> Connect </>}
         </div>
         <center
           onClick={

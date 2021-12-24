@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import "react-responsive-modal/styles.css";
 import "./popup.css";
 import { Modal } from "react-responsive-modal";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
 export const Popup = (props) => {
   const [open, setOpen] = useState(false);
-  console.log(props.popupToggle);
   const onCloseModal = () => {
     setOpen(false);
   };
