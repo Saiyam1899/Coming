@@ -8,7 +8,7 @@ import Section from "../Components/Sections";
 import Subscribe from "../Components/Subscribe";
 import Team from "../Components/Team";
 import TokenNomics from "../Components/TokenNomics";
-import Particles from "react-particles-js";
+
 import Certificate from "../Components/certificate/Certificate";
 import { Popup } from "../Components/Popup/Popup";
 import { Alert } from "react-bootstrap";
