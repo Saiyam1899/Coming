@@ -35,12 +35,9 @@ export default class Sidebar extends Component {
               <NavLink href="/#Team" onClick={this.props.toogleButton}>
                 Team
               </NavLink>
-              <NavLink
-                href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view"
-                onClick={this.props.toogleButton}
-              >
+              <NavLinkHome to="/whitepaper" onClick={this.props.toogleButton}>
                 Whitepaper
-              </NavLink>
+              </NavLinkHome>
             </NavWrapper>
             <SocialWrapper>
               <SocialIcon href="https://twitter.com/bit_chro">

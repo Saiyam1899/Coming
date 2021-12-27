@@ -43,12 +43,10 @@ export default class Header extends Component {
               </NavLink>
               <HashLink href="/#overview">Overview</HashLink>
               <HashLink href="/#works">How it Works</HashLink>
-              <HashLink href="/#tokonomics">TokenNomics</HashLink>
+              <HashLink href="/#tokonomics">Tokenomics</HashLink>
               <HashLink href="/#roadmap">Roadmap</HashLink>
               <HashLink href="/#Team">Team</HashLink>
-              <HashLink href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view">
-                Whitepaper
-              </HashLink>
+              <NavLink to="/whitepaper">Whitepaper</NavLink>
             </NavWrapper>
             <SocialWrapper>
               <SocialIcon href="https://twitter.com/bit_chro">

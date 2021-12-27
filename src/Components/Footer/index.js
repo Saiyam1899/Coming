@@ -276,11 +276,11 @@ export default function Footer(props) {
             <FooterLinksWrapper>
               <FooterLinksContainer>
                 <FooterLinks href="#">Home</FooterLinks>
-                <FooterLinks href="#overview">Overiew</FooterLinks>
+                <FooterLinks href="#overview">Overview</FooterLinks>
                 <FooterLinks href="#works">How it Works</FooterLinks>
               </FooterLinksContainer>
               <FooterLinksContainer>
-                <FooterLinks href="#tokonomics">TokenNomics</FooterLinks>
+                <FooterLinks href="#tokonomics">Tokenomics</FooterLinks>
                 <FooterLinks href="#roadmap">Roadmap</FooterLinks>
                 <FooterLinks href="#Team">Team</FooterLinks>
               </FooterLinksContainer>
