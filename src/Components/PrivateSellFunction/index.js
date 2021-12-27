@@ -537,17 +537,20 @@ class App extends React.Component {
                 border: "none",
               }}
               onClick={
-                this.state.disable || this.state.from <= 0
+                this.state.disable || this.state.from < 0
                   ? null
                   : () => {
+                      console.log(this.state.from);
                       if (this.state.from <= 1000) {
-                        alert(
-                          "Invested amount should be greater then 1000 BUSD"
-                        );
+                        alert("Invested Amount Should be Minimum 1000 BUSD");
                         this.setState({ from: 0 });
                         this.setState({ to: 0 });
+                        this.setState({ disable: true });
+                        return;
                       } else {
                         this.Approve();
+                        console.log("in this");
+                        return;
                       }
                     }
               }
