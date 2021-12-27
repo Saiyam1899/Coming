@@ -13,7 +13,7 @@ export default function PdfViewer(props) {
   }
 
   return (
-    <Container>
+    <>
       <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
         {Array.from(new Array(numPages), (el, index) => (
           <Page key={`page_${index + 1}`} pageNumber={index + 1} />
@@ -28,6 +28,6 @@ export default function PdfViewer(props) {
       >
         <Button>Download</Button>
       </a>
-    </Container>
+    </>
   );
 }
