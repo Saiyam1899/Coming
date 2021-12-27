@@ -62,8 +62,8 @@ export default function PrivateSales() {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/17-OAlLGg6RResO9wrcnKlJLBrXyW3TWN/view?usp=sharing"
-              target="_blank"
+              href="https://github.com/Saiyam1899/Coming/raw/ac56f7ca43fbd71a67e86a1ac85814e532169e91/public/assets/final-white-paper_compressed.pdf"
+              data-view-component="true"
             >
               <button
                 style={{

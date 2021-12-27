@@ -23,6 +23,7 @@ class App extends React.Component {
       contract: null,
       approvedHash: null,
       TransactionHash: null,
+      amount: false,
     };
 
     // this.Transfer = this.Transfer.bind(this);
@@ -42,7 +43,7 @@ class App extends React.Component {
     console.log(Fdata);
     if (Fdata == "") {
       this.setState({ from: "" });
-    } else if (Fdata < 100) {
+    } else if (Fdata < 1000) {
       this.setState({ from: "" });
       console.log("yesss");
     }
@@ -82,9 +83,7 @@ class App extends React.Component {
     let TO;
     if (data !== "") {
       this.setState({ from: data });
-      if (data >= 1000) {
-        TO = (data * 1000) / 3;
-      }
+      TO = (data * 1000) / 3;
     } else {
       TO = 0;
     }
@@ -452,6 +451,18 @@ class App extends React.Component {
               Insufficient funds
             </div>
           ) : null}
+          {this.state.amount ? (
+            <div
+              style={{
+                color: "red",
+                textAlign: "center",
+                fontwWeight: "600",
+                margin: "1rem 0",
+              }}
+            >
+              Insufficient funds
+            </div>
+          ) : null}
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             {!this.state.connect ? (
               <button
@@ -513,9 +524,7 @@ class App extends React.Component {
                 display: "flex",
                 alignItems: "center",
                 backgroundColor: `${
-                  this.state.disable || this.state.from < 1000
-                    ? "gray"
-                    : "purple"
+                  this.state.disable || this.state.from < 0 ? "gray" : "purple"
                 }`,
                 color: "rgb(255, 255, 255)",
                 width: "110px",
@@ -528,9 +537,19 @@ class App extends React.Component {
                 border: "none",
               }}
               onClick={
-                this.state.disable || this.state.from < 1000
+                this.state.disable || this.state.from <= 0
                   ? null
-                  : this.Approve
+                  : () => {
+                      if (this.state.from <= 1000) {
+                        alert(
+                          "Invested amount should be greater then 1000 BUSD"
+                        );
+                        this.setState({ from: 0 });
+                        this.setState({ to: 0 });
+                      } else {
+                        this.Approve();
+                      }
+                    }
               }
             >
               <div>Approve</div>
