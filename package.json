@@ -20,7 +20,6 @@
     "react-icons": "^4.3.1",
     "react-iframe-click": "^2.0.2",
     "react-multi-bar-slider": "^1.4.0",
-    "react-particles-js": "^3.6.0",
     "react-redux": "^7.2.6",
     "react-responsive-modal": "^6.2.0",
     "react-router-dom": "^5.2.0",
@@ -33,7 +32,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "react-scripts build GENERATE_SOURCEMAP=false",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
