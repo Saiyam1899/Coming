@@ -5,6 +5,7 @@ import { styles } from "../PublicSale/media";
 import { AppCounter } from "../Counter/Counter";
 import PrivateSellFunction from "../PrivateSellFunction";
 import styled from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function PrivateSales() {
   return (
@@ -61,10 +62,7 @@ export default function PrivateSales() {
               </button>
             </a>
 
-            <a
-              href="https://github.com/Saiyam1899/Coming/raw/ac56f7ca43fbd71a67e86a1ac85814e532169e91/public/assets/final-white-paper_compressed.pdf"
-              data-view-component="true"
-            >
+            <Link to="/whitepaper">
               <button
                 style={{
                   background: "none",
@@ -77,7 +75,7 @@ export default function PrivateSales() {
                   className={css(styles.image_Logo)}
                 />
               </button>
-            </a>
+            </Link>
           </div>
         </div>
         <CircleImage src={process.env.PUBLIC_URL + "assets/images/bg.png"} />

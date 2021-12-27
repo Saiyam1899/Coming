@@ -9,6 +9,7 @@ import LandingPage from "./Pages/LandingPage";
 import PrivateSellPage from "./Pages/PrivateSellPage";
 import PublicSellPage from "./Pages/PublicSellPage";
 import "aos/dist/aos.css";
+import PdfViewer from "./Components/Pdf/PdfView";
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/airdrop" component={AirDropPage} />
           <Route path="/private-sell" component={PrivateSellPage} />
           <Route path="/public-sell" component={PublicSellPage} />
+          <Route path="/whitepaper" component={PdfViewer} />
         </MainPage>
       </Switch>
     </div>
