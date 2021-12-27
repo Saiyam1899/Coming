@@ -513,7 +513,9 @@ class App extends React.Component {
                 display: "flex",
                 alignItems: "center",
                 backgroundColor: `${
-                  this.state.disable || this.state.from <= 0 ? "gray" : "purple"
+                  this.state.disable || this.state.from < 1000
+                    ? "gray"
+                    : "purple"
                 }`,
                 color: "rgb(255, 255, 255)",
                 width: "110px",
@@ -526,7 +528,9 @@ class App extends React.Component {
                 border: "none",
               }}
               onClick={
-                this.state.disable || this.state.from <= 0 ? null : this.Approve
+                this.state.disable || this.state.from < 1000
+                  ? null
+                  : this.Approve
               }
             >
               <div>Approve</div>
