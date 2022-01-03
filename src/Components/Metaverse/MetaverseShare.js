@@ -30,9 +30,6 @@ export default class Subscribe extends Component {
           >
             <SubscribeContent>
               <ul style={{ textAlign: "left" }}>
-                The Metaverse is constantly digital enviorment in which sevrel
-                individuals can intrect and build articles while operating on
-                digital represtations or symbols of themselves.
                 <li>Metaverse is a sci-fi concept.</li>
                 <li>It's merely a dream right now.</li>
                 <li>
@@ -69,6 +66,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 0 72px;
 
   align-items: center;
@@ -88,7 +86,6 @@ const SubscribeLogo = styled.img`
 const SubscribeContent = styled.div`
   color: white;
   font-size: 20px;
-  textalign: left;
 
   @media (max-width: 768px) {
     max-width: 532px;

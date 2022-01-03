@@ -11,17 +11,7 @@ export default function TeamCompo(props) {
         <div className="caption">
           <h3> {props.name}</h3>
 
-          <p>
-            {props.linked ? (
-              <>
-                <a className="social-links" href={props.linked} target="_blank">
-                  <FaLinkedin color="blue" size={20} />
-                </a>
-                <br />
-              </>
-            ) : null}
-            {props.designation}
-          </p>
+          <p>{props.designation}</p>
         </div>
       </div>
     </>

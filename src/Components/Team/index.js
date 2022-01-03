@@ -33,52 +33,47 @@ export default class Team extends Component {
                 <TeamCompo
                   name="Salmon Cathol"
                   designation="Chief Executive Officer"
-                  img={process.env.PUBLIC_URL + "/assets/Team/Selmon.jpg"}
-                  linked={
-                    "https://www.linkedin.com/in/salmon-cathol-536459228/"
-                  }
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-01.svg"}
+               
                 />
                 <TeamCompo
                   name="Wilhelm Carl"
                   designation="Business Manager"
-                  img={process.env.PUBLIC_URL + "/assets/Team/WilhelmCarl.jpg"}
-                  linked={"https://www.linkedin.com/in/wilhelm-carl-b02639227/"}
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-02.svg"}
+      
                 />
                 <TeamCompo
                   name="Shota Shum"
                   designation="Marketing Head"
-                  img={process.env.PUBLIC_URL + "/assets/Team/ShotaShun.jpg"}
-                  linked={"https://www.linkedin.com/in/shota-shun-183640227/"}
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-03.svg"}
+
                 />
                 <TeamCompo
                   name="Herman Walter"
                   designation="Chief Technical Officer"
-                  img={process.env.PUBLIC_URL + "/assets/Team/Herman.jpg"}
-                  linked={
-                    "https://www.linkedin.com/in/hermann-walter-787461228/"
-                  }
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-04.svg"}
+              
                 />
                 <TeamCompo
                   name="Akira Botan"
                   designation="Senior Manager"
-                  img={process.env.PUBLIC_URL + "/assets/Team/AkiraBotan.jpg"}
-                  linked={"https://www.linkedin.com/in/akira-botan-108641227/"}
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-05.svg"}
+
                 />
                 <TeamCompo
                   name="Uyemura Akio"
                   designation="Senior Manager"
-                  img={process.env.PUBLIC_URL + "/assets/Team/UyemuraAkio.jpg"}
-                  linked={"https://www.linkedin.com/in/uyemura-akio-a36705227/"}
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-06.svg"}
                 />
                 <TeamCompo
                   name="Steven John"
                   designation="Advisor"
-                  img={process.env.PUBLIC_URL + "/assets/Team/StevenJohn.jpg"}
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-07.svg"}
                 />
                 <TeamCompo
                   name="Henry Max"
                   designation="Advisor"
-                  img={process.env.PUBLIC_URL + "/assets/Team/HenryMax.jpg"}
+                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-08.svg"}
                 />
               </TeamWrapper>
             </ContainerImages>

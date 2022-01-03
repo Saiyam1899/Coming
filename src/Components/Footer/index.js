@@ -238,12 +238,11 @@ export default function Footer(props) {
                     alt="footer"
                   />
                 </SocialIcon>
-
                 <SocialIcon
                   href="https://bscscan.com/token/0x881c3f97d994f7ba6b8a2d5488f32ed9ab15e502"
                   target="_blank"
                 >
-                  <SocialIconImg
+                <SocialIconImg
                     src={process.env.PUBLIC_URL + "assets/img/logobscscan.png"}
                     width="70"
                     alt="footer"
@@ -259,6 +258,17 @@ export default function Footer(props) {
                       borderRadius: "999px",
                     }}
                     src={process.env.PUBLIC_URL + "assets/img/git.png"}
+                    width="70"
+                    alt="footer"
+                  />
+                </SocialIcon>
+                <SocialIcon href="https://medium.com/@BITChro" target="_blank">
+                  <SocialIconImg
+                    style={{
+                      backgroundColor: "white",
+                      borderRadius: "999px",
+                    }}
+                    src="http://cdn.onlinewebfonts.com/svg/img_256332.png"
                     width="70"
                     alt="footer"
                   />

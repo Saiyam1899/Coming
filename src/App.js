@@ -10,6 +10,7 @@ import PrivateSellPage from "./Pages/PrivateSellPage";
 import PublicSellPage from "./Pages/PublicSellPage";
 import "aos/dist/aos.css";
 import PdfViewer from "./Components/Pdf/PdfView";
+import TrustWallet from "./Components/PrivateSellFunction/trustWallet";
 
 function App() {
   useEffect(() => {
