@@ -29,6 +29,14 @@ function App() {
           <Route path="/private-sell" component={PrivateSellPage} />
           <Route path="/public-sell" component={PublicSellPage} />
           <Route path="/whitepaper" component={PdfViewer} />
+             <Route path="/logo">
+            <div style={{ height: "100vh", display: "flex" }}>
+              <img
+                src={process.env.PUBLIC_URL + "assets/img/mainLogo.svg"}
+                alt="footer"
+              />
+            </div>
+          </Route>
         </MainPage>
       </Switch>
     </div>
