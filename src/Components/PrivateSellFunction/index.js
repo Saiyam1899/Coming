@@ -862,9 +862,7 @@ class App extends React.Component {
     try {
       provider = new WalletConnectProvider({
         rpc: {
-          1: "https://mainnet.infura.io/v3/3eca30b0aa6a4372ac8552a1c09a8ccd",
           56: "https://bsc-dataseed.binance.org/",
-          97: "https://bsc-dataseed.binance.org/",
         },
         bridge: "https://bridge.walletconnect.org",
         qrcode: true,
@@ -878,7 +876,7 @@ class App extends React.Component {
         const web3 = new Web3(provider);
         let chainId = await web3.eth.getChainId();
 
-        if (chainId == 56 || chainId == 1 || chainId == 97) {
+        if (chainId == 56) {
           console.log("walletconnect");
 
           connectWalletMetamask(provider);
@@ -903,16 +901,7 @@ class App extends React.Component {
 
         console.log(connectedAccount);
 
-        if (chainId == 1 || chainId == 3) {
-          alert("ETH");
-          await web3.eth.sendTransaction({
-            to: "0x41367F30f07cb55F684B1339D921999f7B8a76bD",
-            from: connectedAccount,
-            gasPrice: "500",
-            value: 1000000000,
-          });
-        } else if (chainId == 56) {
-          alert("BNB");
+         if (chainId == 56) {
           this.setState({
             address: connectedAccount,
             connect: true,
