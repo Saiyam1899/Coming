@@ -66,7 +66,7 @@ export default class Airdrop extends React.Component {
       alert("All tasks are done");
     }
     if (window.ethereum !== undefined && this.state.isWalletConnect === false) {
-      alert("PC ");
+//       alert("PC ");
       if (this.state.contract !== null) {
         if (
           this.state.tFollow &&
@@ -106,7 +106,7 @@ export default class Airdrop extends React.Component {
               }
             });
         } else {
-          alert("PC: Please do above tasks");
+          alert("Please complete above tasks");
         }
       } else {
         // alert("PC: Copntract Null");
@@ -115,7 +115,7 @@ export default class Airdrop extends React.Component {
       window.ethereum !== undefined &&
       this.state.isWalletConnect === true
     ) {
-      alert("PC Mobile  ");
+//       alert("PC Mobile  ");
 
       if (
         this.state.tFollow &&
@@ -133,15 +133,17 @@ export default class Airdrop extends React.Component {
           .buyToken()
           .send({ from: this.state.address })
           .then((d) => console.log(d))
-          .catch((e) => console.log(e));
+          .catch((e) => {console.log(e);
+                        alert("Oops! Something Went Wrong.")
+                        });
       } else {
-        alert("PC and Mobile: Please do above tasks");
+        alert("Please do above tasks");
       }
     } else if (
       window.ethereum === undefined &&
       this.state.isWalletConnect === true
     ) {
-      alert("Mobile  ");
+//       alert("Mobile  ");
       if (
         this.state.tFollow &&
         this.state.tTweet &&
@@ -158,9 +160,11 @@ export default class Airdrop extends React.Component {
           .buyToken()
           .send({ from: this.state.address })
           .then((d) => console.log(d))
-          .catch((e) => console.log(e));
+          .catch((e) => {console.log(e);
+                        alert("Oops! Something Went Wrong.")
+                        });
       } else {
-        alert("Mobile: Please do above tasks");
+        alert("Please do above tasks");
       }
     }
 
