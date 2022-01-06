@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "./sell.css";
 export default class MainComponent extends Component {
   constructor(props) {
@@ -86,7 +87,7 @@ export default class MainComponent extends Component {
                 </div>
               </div>
             </div>
-          </div>{" "}
+          </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <button
               style={{

