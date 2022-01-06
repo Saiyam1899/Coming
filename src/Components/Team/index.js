@@ -33,47 +33,82 @@ export default class Team extends Component {
                 <TeamCompo
                   name="Salmon Cathol"
                   designation="Chief Executive Officer"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-01.svg"}
-               
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-01.svg"
+                  }
                 />
                 <TeamCompo
                   name="Wilhelm Carl"
                   designation="Business Manager"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-02.svg"}
-      
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-02.svg"
+                  }
                 />
                 <TeamCompo
                   name="Shota Shum"
                   designation="Marketing Head"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-03.svg"}
-
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-03.svg"
+                  }
                 />
                 <TeamCompo
                   name="Herman Walter"
                   designation="Chief Technical Officer"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-04.svg"}
-              
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-04.svg"
+                  }
                 />
                 <TeamCompo
                   name="Akira Botan"
                   designation="Senior Manager"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-05.svg"}
-
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-05.svg"
+                  }
                 />
                 <TeamCompo
                   name="Uyemura Akio"
                   designation="Senior Manager"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-06.svg"}
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-06.svg"
+                  }
                 />
                 <TeamCompo
                   name="Steven John"
                   designation="Advisor"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-07.svg"}
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-07.svg"
+                  }
                 />
                 <TeamCompo
                   name="Henry Max"
                   designation="Advisor"
-                  img={process.env.PUBLIC_URL + "/assets/img/team/avatar-bitchro-08.svg"}
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-08.svg"
+                  }
+                />
+                <TeamCompo
+                  name="Babatunde David"
+                  designation="Senior Marketing Manager"
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-09.svg"
+                  }
+                />
+                <TeamCompo
+                  name="D Krushna"
+                  designation="Advisor"
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-10.svg"
+                  }
                 />
               </TeamWrapper>
             </ContainerImages>
