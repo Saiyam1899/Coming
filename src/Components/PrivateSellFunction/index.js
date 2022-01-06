@@ -1226,7 +1226,7 @@ class App extends React.Component {
                   ? null
                   : () => {
                       console.log(this.state.from);
-                      if (this.state.from <= 0.001) {
+                      if (this.state.from <= 1000) {
                         alert("Invested Amount Should be Minimum 1000 BUSD");
                         this.setState({ from: 0 });
                         this.setState({ to: 0 });
