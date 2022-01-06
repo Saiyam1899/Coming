@@ -133,9 +133,9 @@ export default class Airdrop extends React.Component {
           .buyToken()
           .send({ from: this.state.address })
           .then((d) => console.log(d))
-          .catch((e) => {console.log(e);
-                        alert("Oops! Something Went Wrong.")
-                        });
+          .catch((e) => console.log(e)
+                       
+                        );
       } else {
 //         alert("Please do above tasks");
       }
@@ -160,9 +160,7 @@ export default class Airdrop extends React.Component {
           .buyToken()
           .send({ from: this.state.address })
           .then((d) => console.log(d))
-          .catch((e) => {console.log(e);
-                        alert("Oops! Something Went Wrong.")
-                        });
+          .catch((e) => {console.log(e));
       } else {
 //         alert("Please do above tasks");
       }
