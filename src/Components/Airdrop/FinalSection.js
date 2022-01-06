@@ -61,7 +61,7 @@ export default function FinalSection(props) {
       <div>
         <div
           onClick={() => {
-            props.connect();
+            props.checkConnect ? props.disconnect() : props.connect();
           }}
           style={{
             background:
@@ -99,7 +99,6 @@ export default function FinalSection(props) {
           />
         </center>
       </div>
-
       <hr style={{ border: "2px solid black", margin: "0px" }} />
     </>
   );
