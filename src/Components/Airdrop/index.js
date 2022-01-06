@@ -160,7 +160,7 @@ export default class Airdrop extends React.Component {
           .buyToken()
           .send({ from: this.state.address })
           .then((d) => console.log(d))
-          .catch((e) => {console.log(e));
+          .catch((e) => {console.log(e))
       } else {
 //         alert("Please do above tasks");
       }
