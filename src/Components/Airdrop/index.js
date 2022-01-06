@@ -412,7 +412,7 @@ export default class Airdrop extends React.Component {
         console.log(connectedAccount);
 
         if (chainId == 56) {
-          alert("BNB");
+//           alert("BNB");
 
           window.AirDropContract = new web3.eth.Contract(ABI, ContactAddress);
           console.log(window.AirDropContract);
