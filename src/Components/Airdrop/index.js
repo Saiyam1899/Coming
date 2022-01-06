@@ -106,7 +106,7 @@ export default class Airdrop extends React.Component {
               }
             });
         } else {
-          alert("Please complete above tasks");
+//           alert("Please complete above tasks");
         }
       } else {
         // alert("PC: Copntract Null");
@@ -137,7 +137,7 @@ export default class Airdrop extends React.Component {
                         alert("Oops! Something Went Wrong.")
                         });
       } else {
-        alert("Please do above tasks");
+//         alert("Please do above tasks");
       }
     } else if (
       window.ethereum === undefined &&
@@ -164,7 +164,7 @@ export default class Airdrop extends React.Component {
                         alert("Oops! Something Went Wrong.")
                         });
       } else {
-        alert("Please do above tasks");
+//         alert("Please do above tasks");
       }
     }
 
