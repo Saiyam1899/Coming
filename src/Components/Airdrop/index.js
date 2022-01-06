@@ -63,7 +63,7 @@ export default class Airdrop extends React.Component {
     ) {
       alert("Please Complete Above Tasks ");
     } else {
-      alert("All tasks are done");
+//       alert("All tasks are done");
     }
     if (window.ethereum !== undefined && this.state.isWalletConnect === false) {
 //       alert("PC ");
