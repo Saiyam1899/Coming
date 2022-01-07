@@ -21,7 +21,7 @@ export default function PdfViewer(props) {
       </Document>
 
       <a
-        href="/Saiyam1899/Coming/raw/main/public/assets/final-white-paper_compressed%20(13).pdf"
+        href="https://github.com/Saiyam1899/Coming/raw/main/public/assets/final-white-paper_compressed%20(13).pdf"
         id="raw-url"
         data-view-component="true"
         class="btn-sm btn BtnGroup-item"
