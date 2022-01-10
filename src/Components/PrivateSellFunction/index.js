@@ -564,7 +564,7 @@ class App extends React.Component {
     this.accountsChanged = this.accountsChanged.bind(this);
     this.Connect = this.Connect.bind(this);
     this.ConnectModal = this.ConnectModal.bind(this);
-    this.DisconnectModal = this.DisconnectModal.bind(this);
+    // this.DisconnectModal = this.DisconnectModal.bind(this);
     this.MetamaskWalletConnect = this.MetamaskWalletConnect.bind(this);
     this.WalletConnect = this.WalletConnect.bind(this);
   }
@@ -867,7 +867,7 @@ class App extends React.Component {
         bridge: "https://bridge.walletconnect.org",
         qrcode: true,
         qrcodeModalOptions: {
-          mobileLinks: ["metamask"],
+          mobileLinks: ["metamask", "trust"],
         },
       });
 
@@ -881,7 +881,7 @@ class App extends React.Component {
 
           connectWalletMetamask(provider);
         } else {
-          this.DisconnectModal();
+          // this.DisconnectModal();
         }
       }, 1000);
     } catch (e) {
@@ -899,9 +899,12 @@ class App extends React.Component {
 
         let connectedAccount = accounts[0];
 
-        console.log(connectedAccount);
+        console.log(
+          connectedAccount,
+          await BSDContract.methods.balanceOf(connectedAccount).call()
+        );
 
-         if (chainId == 56) {
+        if (chainId == 56) {
           this.setState({
             address: connectedAccount,
             connect: true,
@@ -1215,7 +1218,7 @@ class App extends React.Component {
                   ? null
                   : () => {
                       console.log(this.state.from);
-                      if (this.state.from <= 1000) {
+                      if (this.state.from <= 0.001) {
                         alert("Invested Amount Should be Minimum 1000 BUSD");
                         this.setState({ from: 0 });
                         this.setState({ to: 0 });
