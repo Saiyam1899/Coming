@@ -46,6 +46,14 @@ export default class Team extends Component {
                     "/assets/img/team/avatar-bitchro-02.svg"
                   }
                 />
+                 <TeamCompo
+                  name="Babatunde David"
+                  designation="Senior Marketing Manager"
+                  img={
+                    process.env.PUBLIC_URL +
+                    "/assets/img/team/avatar-bitchro-09.svg"
+                  }
+                />
                 <TeamCompo
                   name="Shota Shum"
                   designation="Marketing Head"
@@ -94,14 +102,7 @@ export default class Team extends Component {
                     "/assets/img/team/avatar-bitchro-08.svg"
                   }
                 />
-                <TeamCompo
-                  name="Babatunde David"
-                  designation="Senior Marketing Manager"
-                  img={
-                    process.env.PUBLIC_URL +
-                    "/assets/img/team/avatar-bitchro-09.svg"
-                  }
-                />
+               
                 <TeamCompo
                   name="D Krushna"
                   designation="Advisor"
